@@ -9,19 +9,253 @@ from versatileimagefield.fields import PPOIField
 from versatileimagefield.fields import VersatileImageField
 
 
+PROFILE_CHOICES = (
+    ("", "-- select --"),
+    ("Self", "Self"),
+    ("Son", "Son"),
+    ("Daughter", "Daughter"),
+    ("Sister", "Sister"),
+    ("Brother", "Brother"),
+    ("Friend", "Friend"),
+    ("Father", "Father"),
+    ("Mother", "Mother"),
+)
+COMMUNITY_CHOICES = (
+    ("", "-- select --"),
+    ("AMuslim", "A Muslim"),
+    ("Sunni", "Sunni"),
+    ("Sunni (EK)", "Sunni (EK)"),
+    ("Sunni (AP)", "Sunni (AP)"),
+    ("Salafi (KNM)", "Salafi (KNM)"),
+    ("Salafi (Markaz dawa)", "Salafi (Markaz dawa)"),
+    ("Salafi (Wisdom)", "Salafi (Wisdom)"),
+    ("Jamayath Islam ", "Jamayath Islam "),
+    ("Thableeg Jamath ", "Thableeg Jamath "),
+    ("Maliki", "Maliki"),
+    ("Hanafi", "Hanafi"),
+    ("Sayyid", "Sayyid"),
+    ("Soofism", "Soofism"),
+    ("Other", "Other"),
+)
+STATUS_CHOICE = (("", "-- select --"), ("Never Married", "Never Married"), ("Divorced", "Divorced"), ("Married", "Married"), ("Widow", "Widow"))
+BODYTYPE_CHOICE = (("", "-- select --"), ("slim", "Slim"), ("Muscular", "Muscular"), ("Fat", ("Fat")), ("Normal", ("Normal")))
+PHYSICAL_CHOICE = (
+    ("", "-- select --"),
+    ("Sound/Normal", "Sound/Normal"),
+    ("Blind", "Blind"),
+    ("Physically Challenged", "Physically Challenged"),
+    ("MentallyChallenged", "Mentally Challenged"),
+    ("OtherDisabilities", "Other Disabilities"),
+)
+GENDER_CHOICES = (("", "-- select --"), ("Male", "Male"), ("Female", "Female"), ("Other", "Other"))
+PROFESSION = (
+    ("", "-- select --"),
+    ("Private", "Private"),
+    ("GovtEmployee", "Govt-Employee"),
+    ("Nri", "Nri"),
+    ("Parttime", "Part time"),
+    ("Fulltime", "Full time"),
+    ("Homemaker", "Home maker"),
+    ("Selfemployee", "Self Employee"),
+    ("Retired", "Retired"),
+    ("Kooli", "Kooli"),
+    ("Farmer", "Farmer"),
+    ("Business", "Business"),
+    ("Others", "Others"),
+)
+READQURAN_CHOICES = (
+    ("", "-- select --"),
+    ("Always", "Always"),
+    ("Sometimes", "Sometimes"),
+    ("Only Friday", "Only Friday"),
+    ("During Ramadan", "During Ramadan"),
+    ("Never", "Never"),
+    ("Prefer not to say", "Prefer not to say"),
+)
+ISLAMICSERVICES_CHOICES = (("", "-- select --"), ("Yes", "Yes"), ("No", "No"))
+PERFORMNAMAZ_CHOICES = (("", "-- select --"), ("Always", "Always"), ("Sometimes", "Sometimes"), ("Never", "Never"), ("Prefer not to say", "Prefer not to say"))
+SMOKING_CHOICES = (("", "-- select --"), ("Yes", "Yes"), ("No", "No"), ("Occasionally", "Occasionally"), ("Addicted", "Addicted"), ("Social", "Social"))
+FASTING_CHOICES = (
+    ("", "-- select --"),
+    ("Always", "Always"),
+    ("Sometimes", "Sometimes"),
+    ("Never", "Never"),
+    ("Prefer not to say", "Prefer not to say"),
+    ("Only in Ramadan", "Only in Ramadan"),
+)
+WORKING_WITH = (
+    ("", "-- select --"),
+    ("NotWorking", "Not Working"),
+    ("PrivateSector", "Private Sector"),
+    ("PublicSector", "Public Sector"),
+    ("CivilService", "Civil Service"),
+    ("Defence", "Defence"),
+    ("Business", "Business"),
+    ("SelfEmployed", "Self Employed"),
+    ("NRI", "NRI"),
+    ("Other", "Other"),
+)
+WORKING_AS = (
+    ("", "-- select --"),
+    ("NotWorking", "Not Working"),
+    ("Accountant", "Accountant"),
+    ("CA", "CA"),
+    ("Secretary", "Secretary"),
+    ("Doctor", "Doctor"),
+    ("Nurse", "Nurse"),
+    ("Marketingexecutive", "Marketing Executive"),
+    ("HRM", "HRM"),
+    ("Pharmacist", "Pharmacist"),
+    ("Self employed", "Self Employed"),
+    ("Parttime", "Part Time"),
+    ("Professor", "Professor"),
+    ("Teacher", "Teacher"),
+    ("Softwaredeveloper", "Software Developer"),
+    ("Graphicsdesigner", "Graphics Designer"),
+    ("Administrator", "Administrator"),
+    ("Business", "Business"),
+    ("Driver", "Driver"),
+    ("Coolie", "Coolie"),
+    ("Farmer", "Farmer"),
+    ("Consultant", "Consultant"),
+    ("Sales Person", "Sales Person"),
+    ("Tax Consultant", "Tax Consultant"),
+    ("Bank Employee", "Bank Employee"),
+    ("Engineer", "Engineer"),
+    ("Trainer", "Trainer"),
+    ("Service Advicer", "Service Advicer"),
+    ("Electrician", "Electrician"),
+    ("Plumber", "Plumber"),
+    ("Mechanic", "Mechanic"),
+    ("Chef", "Chef"),
+    ("Other", "Other"),
+)
+FAMILYTYPE_CHOICES = (("", "-- select --"), ("Nuclear Family", "Nuclear Family"), ("Joint Family", "Joint Family"), ("Extended Family", "Extended Family"), ("Other", "Other"))
+RELEGION_CHOICES = (
+    ("", "-- select --"),
+    ("Very religious", "Very religious"),
+    ("Religious", " Religious "),
+    ("Liberal", "Liberal"),
+    ("Prefer not to say", "Prefer not to say"),
+    ("Not religious", "Not religious"),
+)
+FATHEROCCUPATION_CHOICES = (
+    ("", "-- select --"),
+    ("Private", "Private"),
+    ("Self Employed", "Self Employed"),
+    ("NRI", "NRI"),
+    ("Home Maker", "Home Maker"),
+    ("Govt Employee", "Govt Employee"),
+    ("Retired", "Retired"),
+    ("Buisness", "Buisness"),
+    ("Coolie", "Coolie"),
+    ("Farmer", "Farmer"),
+    ("Business", "Business"),
+    ("Driver", "Driver"),
+    ("Doctor", "Doctor"),
+    ("Pharmacist", "Pharmacist"),
+    ("Engineer", "Engineer"),
+    ("Advocate", "Advocate"),
+    ("Defence", "Defence"),
+    ("Police", "Police"),
+    ("Civil Servant", "Civil Servant"),
+    ("Teacher", "Teacher"),
+    ("Accountant", "Accountant"),
+    ("Administrator", "Administrator"),
+    ("Consultant", "Consultant"),
+    ("Sales", "Sales"),
+    ("Marketing", "Marketing"),
+    ("Bank Employee", "Bank Employee"),
+    ("Electrician", "Electrician"),
+    ("Plumber", "Plumber"),
+    ("Mehanic", "Mechanic"),
+    ("Chef", "Chef"),
+    ("Other", "Other"),
+)
+MOTHEROCCUPATION_CHOICES = (
+    ("", "-- select --"),
+    ("House Wife", "House Wife"),
+    ("Private", "Private"),
+    ("Self Employed", "Self Employed"),
+    ("NRI", "NRI"),
+    ("Home Maker", "Home Maker"),
+    ("Govt Employee", "Govt Employee"),
+    ("Retired", "Retired"),
+    ("Buisness", "Buisness"),
+    ("Coolie", "Coolie"),
+    ("Farmer", "Farmer"),
+    ("Business", "Business"),
+    ("Driver", "Driver"),
+    ("Doctor", "Doctor"),
+    ("Pharmacist", "Pharmacist"),
+    ("Engineer", "Engineer"),
+    ("Advocate", "Advocate"),
+    ("Defence", "Defence"),
+    ("Police", "Police"),
+    ("Civil Servant", "Civil Servant"),
+    ("Teacher", "Teacher"),
+    ("Accountant", "Accountant"),
+    ("Administrator", "Administrator"),
+    ("Consultant", "Consultant"),
+    ("Sales", "Sales"),
+    ("Marketing", "Marketing"),
+    ("Bank Employee", "Bank Employee"),
+    ("Electrician", "Electrician"),
+    ("Plumber", "Plumber"),
+    ("Mehanic", "Mechanic"),
+    ("Chef", "Chef"),
+    ("Other", "Other"),
+)
+FAMILYSTATUS_CHOICES = (
+    ("", "-- select --"),
+    ("Rich", "Rich"),
+    ("Upper middle class", "Upper middle class"),
+    ("Middle class", "Middle class"),
+    ("Lower middle class", "Lower middle class"),
+    ("Poor", "Poor"),
+)
+MARITAL_STATUS_CHOICES = (("", "-- select --"), ("Never Married", "Never Married"), ("Divorced", "Divorced"), ("Married", "Married"), ("Widow", "Widow"))
+COMPLEXION_CHOICES = (
+    ("", "-- select --"),
+    ("Fair skin", "Fair skin"),
+    ("Extremely fair skin", "Extremely fair skin"),
+    ("Black skin", "Black skin"),
+    ("Medium skin", "Medium skin"),
+    ("Olive skin", "Olive skin"),
+    ("Brown skin", "Brown skin"),
+)
+HIGHESTEDUCATION_CHOICE = (
+    ("", "-- select --"),
+    ("Masters", "Masters"),
+    ("Doctorate", "Doctorate"),
+    ("Bachelors", "Bachelors"),
+    ("Diploma", "Diploma"),
+    ("ITI", "ITI"),
+    ("Islamic Education", "Islamic Education"),
+    ("High School", "High School"),
+    ("Other", "Other"),
+)
+LOCATION_CHOICES = (
+    ("", "-- select --"),
+    ("Kasaragod", "Kasaragod"),
+    ("Kannur", "Kannur"),
+    ("Kozhikode", "Kozhikode"),
+    ("Wayanad", "Wayanad"),
+    ("Malappuram", "Malappuram"),
+    ("Ernakulam", "Ernakulam"),
+    ("Alappuzha", "Alappuzha"),
+    ("Idukki", "Idukki"),
+    ("Kollam", "Kollam"),
+    ("Kottayam", "Kottayam"),
+    ("Palakkad", "Palakkad"),
+    ("Pathanamthitta", "Pathanamthitta"),
+    ("Thrissur", "Thrissur"),
+    ("Thiruvananthapuram", "Thiruvananthapuram"),
+)
+
+
 # CommitFlag
 class Register(models.Model):
-    PROFILE_CHOICES = (
-        ("Self", "Self"),
-        ("Son", "Son"),
-        ("Daughter", "Daughter"),
-        ("Sister", "Sister"),
-        ("Brother", "Brother"),
-        ("Friend", "Friend"),
-        ("Father", "Father"),
-        ("Mother", "Mother"),
-    )
-
     profile_for = models.CharField(max_length=128, choices=PROFILE_CHOICES, default="personal")
     name = models.CharField(max_length=128)
     mobile_number = models.CharField(max_length=128, unique=True)
@@ -84,56 +318,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 class UserProfile(models.Model):
     """ "user profile"""
 
-    COMMUNITY_CHOICES = (
-        ("AMuslim", "A Muslim"),
-        ("Sunni", "Sunni"),
-        ("Sunni (EK)", "Sunni (EK)"),
-        ("Sunni (AP)", "Sunni (AP)"),
-        ("Salafi (KNM)", "Salafi (KNM)"),
-        ("Salafi (Markaz dawa)", "Salafi (Markaz dawa)"),
-        ("Salafi (Wisdom)", "Salafi (Wisdom)"),
-        ("Jamayath Islam ", "Jamayath Islam "),
-        ("Thableeg Jamath ", "Thableeg Jamath "),
-        ("Maliki", "Maliki"),
-        ("Hanafi", "Hanafi"),
-        ("Sayyid", "Sayyid"),
-        ("Soofism", "Soofism"),
-        ("Other", "Other"),
-    )
-    COMPLEXION_CHOICES = (
-        ("Fair skin", "Fair skin"),
-        ("Extremely fair skin", "Extremely fair skin"),
-        ("Black skin", "Black skin"),
-        ("Medium skin", "Medium skin"),
-        ("Olive skin", "Olive skin"),
-        ("Brown skin", "Brown skin"),
-    )
-    STATUS_CHOICE = (("Never Married", "Never Married"), ("Divorced", "Divorced"), ("Married", "Married"), ("Widow", "Widow"))
-    BODYTYPE_CHOICE = (("slim", "Slim"), ("Muscular", "Muscular"), ("Fat", ("Fat")), ("Normal", ("Normal")))
-    PHYSICAL_CHOICE = (
-        ("Sound/Normal", "Sound/Normal"),
-        ("Blind", "Blind"),
-        ("Physically Challenged", "Physically Challenged"),
-        ("MentallyChallenged", "Mentally Challenged"),
-        ("OtherDisabilities", "Other Disabilities"),
-    )
-
-    # HIGHESTEDUCATION_CHOICE   = (('Bachelordegree','Bachelor Degrees'),('Masterdegrees','Master Degrees'),('Highersecondary','Higher Secondary'), ('Highschool','High School'))
-    GENDER_CHOICES = (("Male", "Male"), ("Female", "Female"), ("Other", "Other"))
-    # PROFESSION = (('Private','Private'),('GovtEmployee','Govt-Employee'),('Nri','Nri'),('Parttime','Part time'),('Fulltime','Full time'),('Homemaker','Home maker'),('Selfemployee','Self Employee'),('Retired','Retired'),('Kooli','Kooli'),('Farmer','Farmer'),('Business','Business'),('Others','Others'))
-    READQURAN_CHOICES = (
-        ("Always", "Always"),
-        ("Sometimes", "Sometimes"),
-        ("Only Friday", "Only Friday"),
-        ("During Ramadan", "During Ramadan"),
-        ("Never", "Never"),
-        ("Prefer not to say", "Prefer not to say"),
-    )
-    ISLAMICSERVICES_CHOICES = (("Yes", "Yes"), ("No", "No"))
-    PERFORMNAMAZ_CHOICES = (("Always", "Always"), ("Sometimes", "Sometimes"), ("Never", "Never"), ("Prefer not to say", "Prefer not to say"))
-    SMOKING_CHOICES = (("Yes", "Yes"), ("No", "No"), ("Occasionally", "Occasionally"), ("Addicted", "Addicted"), ("Social", "Social"))
-    FASTING_CHOICES = (("Always", "Always"), ("Sometimes", "Sometimes"), ("Never", "Never"), ("Prefer not to say", "Prefer not to say"), ("Only in Ramadan", "Only in Ramadan"))
-
     no_of_children = models.IntegerField(null=True, blank=True)
     bismID = models.CharField(max_length=10, default="BISM1000")
     height = models.IntegerField()
@@ -163,62 +347,6 @@ class UserProfile(models.Model):
 
 
 class UserProfession(models.Model):
-    HIGHESTEDUCATION_CHOICE = (
-        ("Masters", "Masters"),
-        ("Doctorate", "Doctorate"),
-        ("Bachelors", "Bachelors"),
-        ("Diploma", "Diploma"),
-        ("ITI", "ITI"),
-        ("Islamic Education", "Islamic Education"),
-        ("High School", "High School"),
-        ("Other", "Other"),
-    )
-    WORKING_WITH = (
-        ("NotWorking", "Not Working"),
-        ("PrivateSector", "Private Sector"),
-        ("PublicSector", "Public Sector"),
-        ("CivilService", "Civil Service"),
-        ("Defence", "Defence"),
-        ("Business", "Business"),
-        ("SelfEmployed", "Self Employed"),
-        ("NRI", "NRI"),
-        ("Other", "Other"),
-    )
-    WORKING_AS = (
-        ("NotWorking", "Not Working"),
-        ("Accountant", "Accountant"),
-        ("CA", "CA"),
-        ("Secretary", "Secretary"),
-        ("Doctor", "Doctor"),
-        ("Nurse", "Nurse"),
-        ("Marketingexecutive", "Marketing Executive"),
-        ("HRM", "HRM"),
-        ("Pharmacist", "Pharmacist"),
-        ("Self employed", "Self Employed"),
-        ("Parttime", "Part Time"),
-        ("Professor", "Professor"),
-        ("Teacher", "Teacher"),
-        ("Softwaredeveloper", "Software Developer"),
-        ("Graphicsdesigner", "Graphics Designer"),
-        ("Administrator", "Administrator"),
-        ("Business", "Business"),
-        ("Driver", "Driver"),
-        ("Coolie", "Coolie"),
-        ("Farmer", "Farmer"),
-        ("Consultant", "Consultant"),
-        ("Sales Person", "Sales Person"),
-        ("Tax Consultant", "Tax Consultant"),
-        ("Bank Employee", "Bank Employee"),
-        ("Engineer", "Engineer"),
-        ("Trainer", "Trainer"),
-        ("Service Advicer", "Service Advicer"),
-        ("Electrician", "Electrician"),
-        ("Plumber", "Plumber"),
-        ("Mechanic", "Mechanic"),
-        ("Chef", "Chef"),
-        ("Other", "Other"),
-    )
-
     highestEducation = models.CharField(max_length=225, choices=HIGHESTEDUCATION_CHOICE, default="plustwo")
     profession = models.CharField(max_length=255)
     working_with = models.CharField(max_length=255, choices=WORKING_WITH, null=True, blank=True)
@@ -234,87 +362,6 @@ class UserProfession(models.Model):
 
 
 class UserFamily(models.Model):
-    FAMILYTYPE_CHOICES = (("Nuclear Family", "Nuclear Family"), ("Joint Family", "Joint Family"), ("Extended Family", "Extended Family"), ("Other", "Other"))
-    RELEGION_CHOICES = (
-        ("Very religious", "Very religious"),
-        ("Religious", " Religious "),
-        ("Liberal", "Liberal"),
-        ("Prefer not to say", "Prefer not to say"),
-        ("Not religious", "Not religious"),
-    )
-    FATHEROCCUPATION_CHOICES = (
-        ("Private", "Private"),
-        ("Self Employed", "Self Employed"),
-        ("NRI", "NRI"),
-        ("Home Maker", "Home Maker"),
-        ("Govt Employee", "Govt Employee"),
-        ("Retired", "Retired"),
-        ("Buisness", "Buisness"),
-        ("Coolie", "Coolie"),
-        ("Farmer", "Farmer"),
-        ("Business", "Business"),
-        ("Driver", "Driver"),
-        ("Doctor", "Doctor"),
-        ("Pharmacist", "Pharmacist"),
-        ("Engineer", "Engineer"),
-        ("Advocate", "Advocate"),
-        ("Defence", "Defence"),
-        ("Police", "Police"),
-        ("Civil Servant", "Civil Servant"),
-        ("Teacher", "Teacher"),
-        ("Accountant", "Accountant"),
-        ("Administrator", "Administrator"),
-        ("Consultant", "Consultant"),
-        ("Sales", "Sales"),
-        ("Marketing", "Marketing"),
-        ("Bank Employee", "Bank Employee"),
-        ("Electrician", "Electrician"),
-        ("Plumber", "Plumber"),
-        ("Mehanic", "Mechanic"),
-        ("Chef", "Chef"),
-        ("Other", "Other"),
-    )
-    MOTHEROCCUPATION_CHOICES = (
-        ("House Wife", "House Wife"),
-        ("Private", "Private"),
-        ("Self Employed", "Self Employed"),
-        ("NRI", "NRI"),
-        ("Home Maker", "Home Maker"),
-        ("Govt Employee", "Govt Employee"),
-        ("Retired", "Retired"),
-        ("Buisness", "Buisness"),
-        ("Coolie", "Coolie"),
-        ("Farmer", "Farmer"),
-        ("Business", "Business"),
-        ("Driver", "Driver"),
-        ("Doctor", "Doctor"),
-        ("Pharmacist", "Pharmacist"),
-        ("Engineer", "Engineer"),
-        ("Advocate", "Advocate"),
-        ("Defence", "Defence"),
-        ("Police", "Police"),
-        ("Civil Servant", "Civil Servant"),
-        ("Teacher", "Teacher"),
-        ("Accountant", "Accountant"),
-        ("Administrator", "Administrator"),
-        ("Consultant", "Consultant"),
-        ("Sales", "Sales"),
-        ("Marketing", "Marketing"),
-        ("Bank Employee", "Bank Employee"),
-        ("Electrician", "Electrician"),
-        ("Plumber", "Plumber"),
-        ("Mehanic", "Mechanic"),
-        ("Chef", "Chef"),
-        ("Other", "Other"),
-    )
-    FAMILYSTATUS_CHOICES = (
-        ("Rich", "Rich"),
-        ("Upper middle class", "Upper middle class"),
-        ("Middle class", "Middle class"),
-        ("Lower middle class", "Lower middle class"),
-        ("Poor", "Poor"),
-    )
-
     familyType = models.CharField(max_length=225, choices=FAMILYTYPE_CHOICES, default="Nuclear Family", null=True, blank=True)
     relegion = models.CharField(max_length=225, choices=RELEGION_CHOICES, default="Islam")
     fatherOccupation = models.CharField(max_length=225, choices=FATHEROCCUPATION_CHOICES, default="Private")
@@ -394,95 +441,6 @@ class UserImage(models.Model):
 class PartnerPreference(models.Model):
     """ "partner preference"""
 
-    MARITAL_STATUS_CHOICES = (("Never Married", "Never Married"), ("Divorced", "Divorced"), ("Married", "Married"), ("Widow", "Widow"))
-    COMPLEXION_CHOICES = (
-        ("Fair skin", "Fair skin"),
-        ("Extremely fair skin", "Extremely fair skin"),
-        ("Black skin", "Black skin"),
-        ("Medium skin", "Medium skin"),
-        ("Olive skin", "Olive skin"),
-        ("Brown skin", "Brown skin"),
-    )
-    PHYSICAL_CHOICE = (("sound", "Sound"), ("challenged", "Challenged"))
-    HIGHESTEDUCATION_CHOICE = (
-        ("Masters", "Masters"),
-        ("Doctorate", "Doctorate"),
-        ("Bachelors", "Bachelors"),
-        ("Diploma", "Diploma"),
-        ("ITI", "ITI"),
-        ("Islamic Education", "Islamic Education"),
-        ("High School", "High School"),
-        ("Other", "Other"),
-    )
-    COMMUNITY_CHOICES = (
-        ("AMuslim", "A Muslim"),
-        ("Sunni", "Sunni"),
-        ("Sunni (EK)", "Sunni (EK)"),
-        ("Sunni (AP)", "Sunni (AP)"),
-        ("Salafi (KNM)", "Salafi (KNM)"),
-        ("Salafi (Markaz dawa)", "Salafi (Markaz dawa)"),
-        ("Salafi (Wisdom)", "Salafi (Wisdom)"),
-        ("Jamayath Islam ", "Jamayath Islam "),
-        ("Thableeg Jamath ", "Thableeg Jamath "),
-        ("Maliki", "Maliki"),
-        ("Hanafi", "Hanafi"),
-        ("Sayyid", "Sayyid"),
-        ("Soofism", "Soofism"),
-        ("Other", "Other"),
-    )
-    WORKING_AS = (
-        ("NotWorking", "Not Working"),
-        ("Accountant", "Accountant"),
-        ("CA", "CA"),
-        ("Secretary", "Secretary"),
-        ("Doctor", "Doctor"),
-        ("Nurse", "Nurse"),
-        ("Marketingexecutive", "Marketing Executive"),
-        ("HRM", "HRM"),
-        ("Pharmacist", "Pharmacist"),
-        ("Self employed", "Self Employed"),
-        ("Parttime", "Part Time"),
-        ("Professor", "Professor"),
-        ("Teacher", "Teacher"),
-        ("Softwaredeveloper", "Software Developer"),
-        ("Graphicsdesigner", "Graphics Designer"),
-        ("Administrator", "Administrator"),
-        ("Business", "Business"),
-        ("Driver", "Driver"),
-        ("Coolie", "Coolie"),
-        ("Farmer", "Farmer"),
-        ("Consultant", "Consultant"),
-        ("Sales Person", "Sales Person"),
-        ("Tax Consultant", "Tax Consultant"),
-        ("Bank Employee", "Bank Employee"),
-        ("Engineer", "Engineer"),
-        ("Trainer", "Trainer"),
-        ("Service Advicer", "Service Advicer"),
-        ("Electrician", "Electrician"),
-        ("Plumber", "Plumber"),
-        ("Mechanic", "Mechanic"),
-        ("Chef", "Chef"),
-        ("Other", "Other"),
-    )
-
-    BODYTYPE_CHOICE = (("slim", "Slim"), ("Muscular", "Muscular"), ("Fat", "Fat"), ("Normal", "Normal"))
-    LOCATION_CHOICES = (
-        ("Kasaragod", "Kasaragod"),
-        ("Kannur", "Kannur"),
-        ("Kozhikode", "Kozhikode"),
-        ("Wayanad", "Wayanad"),
-        ("Malappuram", "Malappuram"),
-        ("Ernakulam", "Ernakulam"),
-        ("Alappuzha", "Alappuzha"),
-        ("Idukki", "Idukki"),
-        ("Kollam", "Kollam"),
-        ("Kottayam", "Kottayam"),
-        ("Palakkad", "Palakkad"),
-        ("Pathanamthitta", "Pathanamthitta"),
-        ("Thrissur", "Thrissur"),
-        ("Thiruvananthapuram", "Thiruvananthapuram"),
-    )
-
     age_from = models.IntegerField(null=True, blank=True)
     age_to = models.IntegerField(blank=True, null=True)
     marital_status = models.CharField(max_length=225, choices=MARITAL_STATUS_CHOICES, null=True, blank=True)
@@ -552,9 +510,7 @@ class Message(models.Model):
 
 
 class Subscription(models.Model):
-
     DURATION_CHOICE_TYPE = (("month", "month"), ("days", "days"))
-
     plan_title = models.CharField(max_length=128)
     content = HTMLField(blank=True, null=True)
     duration = models.IntegerField()

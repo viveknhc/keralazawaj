@@ -315,26 +315,6 @@ class UserImageViewSet(viewsets.ModelViewSet):
         return UserImageSerializer
 
 
-class CollectProfileDetails(viewsets.ModelViewSet):
-    """Manage recipes in the database"""
-
-    serializer_class = CollectUserToDashboardSerializer
-    queryset = UserImage.objects.all()
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
-
-    def get_queryset(self):
-        return self.queryset.all()
-
-    def get_serializer_class(self):
-        """Return appropriate serializer class"""
-        if self.action == "retrieve":
-
-            return CollectUserDetailedSerializer
-
-        return self.serializer_class
-
-
 class CollectProfilesViewset(viewsets.ModelViewSet):
     """Manage recipes in the database"""
 

@@ -168,24 +168,6 @@ class UserProfessionSerializer(serializers.ModelSerializer):
         read_only_fields = ("id", "user", "register", "user_profile")
 
 
-class CollectUserDetailedSerializer(serializers.ModelSerializer):
-    """Serialize a User Properties"""
-
-    image_one = VersatileImageFieldSerializer(sizes=[("medium_square_crop", "crop__400x400")])
-    image_two = VersatileImageFieldSerializer(sizes=[("medium_square_crop", "crop__400x400")])
-    image_three = VersatileImageFieldSerializer(sizes=[("medium_square_crop", "crop__400x400")])
-    user_profile = UserProfileSerializer(read_only=True)
-    register = RegisterSerializer(read_only=True)
-    user_location = UserLocationSerializer(read_only=True)
-    user = UserGetSerilizer(read_only=True)
-    user_profession = UserProfessionSerializer(read_only=True)
-
-    class Meta:
-        model = UserImage
-        fields = "__all__"
-        read_only_fields = ("id", "user", "register", "user_profile", "user_location")
-
-
 class UserMinimaldataSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -311,12 +293,6 @@ class PartnerPrefenceSerializer(serializers.ModelSerializer):
             "location",
             "body_type",
         )
-
-
-class UpdatePartnerPreferenceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PartnerPreference
-        fields = ("age_from", "age_to", "marital_status", "height_from", "height_to", "complexion", "community", "highestEducation", "profession", "location", "body_type")
 
 
 class GetUserImageOne(serializers.ModelSerializer):

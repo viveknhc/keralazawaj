@@ -1,6 +1,6 @@
+from .models import Story
+from .models import Testimonial
 from django.contrib import admin
-from django.db import models
-from .models import Story, Testimonial
 
 
 @admin.register(Story)

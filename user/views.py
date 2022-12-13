@@ -3,7 +3,7 @@ from datetime import datetime
 
 import razorpay
 from .filterprofile import MatchedFilter
-from .filterprofile import Subscription
+from .models import Subscription
 from .filterprofile import likedYouFilter
 
 # from bismillaDjango.web.views import register

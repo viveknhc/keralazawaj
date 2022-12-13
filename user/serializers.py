@@ -9,6 +9,7 @@ from user.models import UserImage
 from user.models import UserLocation
 from user.models import UserProfession
 from user.models import UserProfile
+from user.models import SubscripedUser
 
 from .chatHelper import getchatImage
 from .chatHelper import getchatToUserID

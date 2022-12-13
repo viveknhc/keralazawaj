@@ -1,0 +1,178 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top main-nav main-nav-bg">
+            <!-- Brand/logo -->
+            <a class="navbar-brand " href="/">
+              <img src="{% static 'web/images/KeralZawaj.svg' %}" alt="logo" class="bismi-logo">
+            </a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+
+                <li class="nav-item d-md-flex d-sm-none d-none">
+                    <a class="nav-link pr-4 " href="#">Already a member ?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link sign-in-btn" href="{% url 'web:login' %}">Sign In</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==============for mobile banner-view============ -->
+        <section class="register-page-header d-lg-none d-md-block d-sm-block d-block"> 
+            <div class="container-fluid mob-bg">
+              <div class="row">
+                <div class=" col-12 text-center p-5">
+                  <h2 class="mob-pic-up-ban-head-tt">Add your best shots!</h2>
+                  <p class="d-lg-none d-sm-block d-block">Upload your photos to complete the profile</p>
+                </div>
+              </div>
+              
+        </section>
+        <!-- ==============for mobile banner-view end ============ -->
+
+
+        <section class="profilepic-add p-5">
+            
+            <div class="container">
+                <!-- ==========for-desktop- -->
+                <div class="row pb-4 d-lg-flex d-md-none d-sm-none d-none" >
+                    <div class="col-10">
+                        <div class="text-center" id="hideDIvonpopup">
+                            <h4>Add your best shots!</h4>
+                            <p>Upload your photos to complete the profile</p>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button id="btnNotNow" type="button" class="skip-btn btn">Not now</button>
+                    </div>
+                </div> 
+                <!-- ==========for-desktop end- -->
+            
+                <div class="row box p-5" >
+                   <div class="col-12"> 
+                    <div class="card text-center upload-box d-block mx-auto" >
+                      <form name="propicUpload" id="propicUpload" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row" style="place-content: center;" id="fileUploadDiv">
+
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                        <img width="222px"  height="222px" class="card-img-top propic text-center" src="{% static 'web/images/icons/photo.png' %}"  alt="Card image cap"  id="div-image-upload-id1">
+                        <div class="file btn btn-lg btn-success up-btn">
+                            Upload Image
+                            <input type="file" name="image_one" id="image_one" class="file-input"/>
+                           
+                            
+                          </div>
+                        
+                          </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-6" id="imageTwoDiv">
+                          <img width="222px" height="222px" class="card-img-top propic text-center" src="{% static 'web/images/icons/photo.png' %}"  alt="Card image cap"  id="div-image-upload-id2">
+                        <div class="file btn btn-lg btn-success up-btn">
+                            Upload Image
+                            <input type="file" name="image_two" id="image_two" class="file-input"/>
+                           
+                
+                          </div>
+                          </div>
+
+
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                          <img width="222px" height="222px" class="card-img-top propic text-center" src="{% static 'web/images/icons/photo.png' %}"  alt="Card image cap"  id="div-image-upload-id3">
+                        <div class="file btn btn-lg btn-success up-btn">
+                            Upload Image
+                            <input type="file" name="image_three" id="image_three" class="file-input"/>
+                           
+                            
+                          </div>
+                          </div>
+
+                          <!-- <div class="col-12 p-3">
+
+                            <button type="submit" class="skip-btn btn float-right">Submit</button> 
+                          </div> -->
+
+                          </div>
+                          <div class="like-premium-box-3 p-4" id="imgup-popup">
+                            <div class="">
+                              <img src="{% static 'web/images/icons/imgsave-logo.png' %}" alt="missing" class="mx-auto d-block pre-icon" id="img-view-id">
+                            </div>
+                            <p class="text-center upload-title"> <span class="bismi-title-up bismi-color"></span>
+                                Thanks for being awesome!<br>
+                              <span>We are glad that you joined us, <br>
+                                Find your perfect match with <span class="bismi-title-up bismi-color"> Kerala Zawaj </span>partner preferences on your profile</span>
+                             
+                            </p>
+                            <div class="text-center p-4">
+                              <button id="btnViewProfile" type="button" class="btn pre-button">Submit</button> 
+                    
+                            </div>
+                          </div>
+                         
+                      </form>
+                    </div>
+ 
+                        <div class="d-lg-none d-md-block d-sm-block d-block" >
+
+                            <button class="btn mob-skip-button" id="btnNotNow"  >Skip <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        
+                    </div>
+    
+                   </div>
+                       
+    
+                   
+                </div>
+
+            </div>
+        </section>
+
+        <section class="area-seven position-relative">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card ">
+                <a href=""><img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card">
+                <a href=""><img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+                <div class="download-content">
+                  <p class="dan">Download the app now!</p>
+      
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                <div class="">
+                  <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block javascript %}
+
+<script src="{% static 'web/js/profile-picupload.js' %}"></script>
+<script src="{% static 'web/js/login-check.js' %}"></script>
+<script src="{% static 'web/js/helper.js' %}"></script>
+
+
+
+{% endblock %}

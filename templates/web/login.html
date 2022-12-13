@@ -1,0 +1,81 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="login-form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <div id="first">
+                        <div class="myform form ">
+                            <div class="logo mb-3">
+                                <div class="col-md-12 text-center">
+                                    <!-- <a class="d-flex" href="/" style="">
+                                        <img src="{% static 'web/images/KeralZawaj.svg' %}" alt="logo" class="bismi-logo mx-auto">
+                                      </a> -->
+                                    <h1 class="login-bismi-ttl">keralazawaj</h1>
+                                </div>
+                            </div>
+
+                            <form id="loginForm">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">email</label>
+                                    <input type="text" id="email" name="email" class="form-control" aria-describedby="emailHelp"
+                                        placeholder="Enter Email">
+                                    <!-- <p class="" style="color: red;">invalid password</p> -->
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                        aria-describedby="emailHelp" placeholder="Enter Password">
+                                    <!-- <p class="" style="color: red;">invalid password</p> -->
+                                </div>
+                                <!-- <div class="form-group">
+                                  <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+                               </div> -->
+                                <div class="col-md-12 text-center ">
+                                    <p id="errorPtagId" style="color: red;"></p>
+                                    <button type="submit"
+                                        class=" btn btn-success login-form-btn btn-block mybtn tx-tfm">Sign in</button>
+                                </div>
+                                <!-- <div class="col-md-12 ">
+                                    <div class="login-or">
+                                        <br>
+                                        <span class="span-or">or</span>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-md-12 mb-3">
+                                    <p class="text-center">
+                                        <a href="javascript:void();" class="google btn mybtn"><i
+                                                class="fa fa-google-plus">
+                                            </i> Signup using Google
+                                        </a>
+                                    </p>
+                                </div> -->
+                                <div class="form-group">
+                                <p class="text-center signup-para">Don't have account? <a href="/" id="signup">Sign up here</a></p>
+                                </div>
+                                <div class="form-group">
+                                    <p class="text-center signup-para">Forgot password? <a href="/password_reset/">Reset</a></p>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+{% block javascript %}
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    <script src="{% static 'web/js/login.js' %}"></script>
+    
+
+{% endblock %}

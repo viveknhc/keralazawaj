@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}Kerala Zawaj - Admin {% endblock %}</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'adminpage/vendors/feather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'adminpage/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'adminpage/vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'adminpage/vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+  <link rel="stylesheet" href="{% static 'adminpage/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'adminpage/js/select.dataTables.min.css' %}">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'adminpage/css/vertical-layout-light/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'web/images/Kerala-icon.png' %}" />
+</head>
+
+<body>
+
+    {% include 'adminpage/partials/header.html' %}
+    {% block content %}
+
+    {% endblock %}
+    
+
+
+  <!-- plugins:js -->
+  <script src="{% static 'adminpage/vendors/js/vendor.bundle.base.js' %}"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{% static 'adminpage/vendors/chart.js/Chart.min.js' %}"></script>
+  <script src="{% static 'adminpage/vendors/datatables.net/jquery.dataTables.js' %}"></script>
+  <script src="{% static 'adminpage/vendors/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+  <script src="{% static 'adminpage/js/dataTables.select.min.js' %}"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{% static 'adminpage/js/off-canvas.js' %}"></script>
+  <script src="{% static 'adminpage/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'adminpage/js/template.js' %}"></script>
+  <script src="{% static 'adminpage/js/settings.js' %}"></script>
+  <script src="{% static 'adminpage/js/todolist.js' %}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{% static 'adminpage/js/dashboard.js' %}"></script>
+  <script src="{% static 'adminpage/js/Chart.roundedBarCharts.js' %}"></script>
+  <script src="{% static 'adminpage/js/bismillah/helper.js' %}"></script>
+
+  {% block javascript %}
+
+  {% endblock %}
+
+  <!-- End custom js for this page-->
+</body>
+</html>

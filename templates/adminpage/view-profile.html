@@ -1,0 +1,284 @@
+{% extends 'adminpage/base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'web/css/owl-carousel/owl.carousel.min.css' %}">
+
+<div class="container-scroller">
+	<!-- partial:../../partials/_navbar.html -->
+
+	<!-- partial -->
+	<div class="container-fluid page-body-wrapper">
+		<!-- partial:../../partials/_settings-panel.html -->
+
+		<!-- partial -->
+
+		<!-- partial:../../partials/_sidebar.html -->
+		{% include 'adminpage/partials/sidebar.html' %}
+        <main>
+            <section class="pb-5 py-5" style="margin-top: -3rem;">
+              <input type="number" id="userId" value="{{pk}}" hidden>
+                <!-- -------------ok -->
+    
+                <div class="container dash-box">
+            <form>
+                 {% csrf_token %}
+              <div class="row py-4 d-lg-flex d-md-none d-sm-none d-none">
+    
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-12 p-user-details">
+                      <h5 class="u-name-id" id="userfullName"></h5>
+                      <h5 class="u-name-id" id="bismiId"></h5>
+                      <span class="dt" id="userAge"></span><sup> <i class="fas fa-heart"></i></sup> </span>
+                      <span class="dt" id="userMartialStatus"><sup> <i class="fas fa-heart"></i></sup> </span>
+                      <span class="dt" id="userLocation"> </span>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-12"></div>
+                    
+                      <div class="col-lg-4 col-md-12 col-sm-12 col-12" id="likeDiv">
+                        <!-- <a href="" class="btn pass-btn"><i class="fas fa-times-circle"></i>Pass</a> -->
+                        
+                      </div>
+    
+                  </div>
+                </form>
+                  <!-- ----------ok -->
+      
+                  <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-12 py-2">
+                      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img class="d-block w-100" id="userImageOne" alt="First slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" id="userImageTwo" alt="Second slide">
+                          </div>
+                          <div class="carousel-item">
+                            <img class="d-block w-100" id="userImageThree" alt="Third slide">
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+    
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-user-details d-lg-none d-md-block d-sm-block d-block mob-dash-prof-view px-4">
+                        <h5 class="u-name-id" id="userfullName"></h5>
+                        <h5 class="u-name-id" id="bismiId"></h5>
+                        <span class="dt">22<sup> <i class="fas fa-heart"></i></sup> </span>
+                        <span class="dt" id="usrMartialStatusMob"><sup> <i class="fas fa-heart"></i></sup> </span>
+                        <span class="dt" id="usrLocationMob"></span>
+                    </div>
+    
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-12 py-2 mob-abt-rs">
+                      <div class="">
+                        <h5 class="view-prof-titles d-lg-block d-md-none d-sm-none d-none">My self-summary</h5>
+                        <h5 class="view-prof-titles d-lg-none d-md-block d-sm-block d-block">About</h5>
+                        <p class="my-self-description" id="about"></p>
+                      </div>
+                      <div class="person-description">
+                        <div class="row">
+                          <div class="col-lg-6 col-12">
+                            <p class="p-desc"> <i class=""> Height</i> :<span class="person-details" id="userHeight"></span> </p>
+                            <p class="p-desc"> <i class=""> Weight</i> :<span class="person-details" id="userWieght"></span> </p>
+                            <p class="p-desc"> <i class=""> Community</i> :<span class="person-details" id="community"></span> </p>
+                            <p class="p-desc"> <i class=""> Body Type</i> :<span class="person-details" id="bodytype"></span> </p>
+                            <p class="p-desc"> <i class=""> Complexion</i> :<span class="person-details" id="complexion"></span> </p>
+                            <p class="p-desc"> <i class=""> Mother Tongue</i> :<span class="person-details" id="motherTongue"></span> </p>
+                            <!-- <p class="p-desc"> <i class="fas fa-globe"></i> <span class="person-details" id="userHigestQualification"></span></p> -->
+                            <!-- <p class="p-desc"> <i class="fas fa-suitcase"></i> <span class="person-details" id="userProfession"></span></p> -->
+    
+                          </div>
+                         
+                        </div>
+                          
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3">
+                      <div class="prof-head">
+                        <h6 class="viewprof-dtls-head">Personal Details</h6>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6  col-12 v-prof-dt-cntnt">
+                          <p class="p-desc"> <i class=""> Physical Status</i> :<span class="person-details" id="physicalStatus"></span></p>
+                          <p class="p-desc"> <i class=""> Perform Namaz</i> :<span class="person-details"  id="performNamaz"></span></p>
+                          <p class="p-desc"> <i class=""> Fasting</i> :<span class="person-details" id="fasting"></span></p>
+                          <p class="p-desc"> <i class=""> Smoking Habit</i> :<span class="person-details" id="smokingHabbit"></span></p>
+                        </div>
+                        <div class="col-lg-6 col-12 v-prof-dt-cntnt">
+                          <p class="p-desc"> <i class=""> Language Known</i> :<span class="person-details" id="languageKnown"></span></p>
+                            <p class="p-desc"> <i class=""> Reading Quran </i> :<span class="person-details" id="readingQuran"></span></p>
+                            <p class="p-desc"> <i class=""> Attend Islamic Services </i> :<span class="person-details" id="attendIslamicServices"></span></p>
+                            <p class="p-desc"> <i class=""> Drinking Habit</i> :<span class="person-details" id="drinkingHabit"></span></p>
+                        </div>
+                      </div>
+                    </div>
+    
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="row d-lg-none d-md-flex d-sm-flex d-flex">
+                            <div class="col-12">
+                            <h6 class="mob-contact-tt"><i class="fas fa-phone-alt" id="userContactDetails"></i>Contact details </h6>
+    
+                            </div>
+    
+                            <div class="col-lg-12 col-md-6 col-sm-6 col-6 mob-for-numb">
+                                <p id="userPrimaryNumber"></p>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-6 col-6 mob-for-numb" id="userSecondaryNumber"></div>
+                        </div>
+                        <div class="justify-content-space-around person-contact-details d-lg-flex d-sm-none d-none">
+                            <p class="ct-title mob-ct-title"><i class="fas fa-phone-alt"></i> <span></span> <span></span> Contact details</p>
+                            <p class="ct-title" id="primaryTiltle">Primary<br><span id="userPrimaryMobNumber"></span></p>
+                            <p class="ct-title">Secondary Number <br><span id="userSecondaryMobNumber"></span></p> 
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="person-adrs">
+                          <p> <i class="fas fa-home adrs-icon" ></i>Native Address</p>
+                          <p><address class="location" id="userNativeAddress">
+                             <br>
+                          </address></p>
+      
+                        </div>
+                      
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                      <div class="person-adrs ">
+                        <p> <i class="fas fa-map-marker-alt adrs-icon"></i>Current Address</p>
+                        <p><address class="location" id="userCurrentAddress">
+                            Kerala House, Vaidhyarangadi <br>
+                            Ramanattukara  Pin: 678 876
+                        </address></p>
+      
+                      </div>
+                     
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3">
+                      <div class="prof-head">
+                        <h6 class="viewprof-dtls-head">Profession Details</h6>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6  col-12 v-prof-dt-cntnt">
+                          <p class="p-desc"> <i class=""> Heighest Education</i> :<span class="person-details" id="highestEducation"></span></p>
+                          <p class="p-desc"> <i class=""> Working With</i> :<span class="person-details" id="workingWith"></span></p>
+                          <p class="p-desc"> <i class=""> Annual income</i> :<span class="person-details" id="annualIncome"></span></p>
+                        </div>
+                        <div class="col-lg-6 col-12 v-prof-dt-cntnt">
+                          <p class="p-desc"> <i class=""> Specialization</i> :<span class="person-details" id="specialization"></span></p>
+                          <p class="p-desc"> <i class=""> Working as</i> :<span class="person-details" id="workingAs"></span></p>
+    
+    
+                        </div>
+                      </div>
+                      
+    
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3">
+                      <div class="prof-head">
+                        <h6 class="viewprof-dtls-head">Family Details</h6>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6 col-12 v-prof-dt-cntnt">
+                          <p class="p-desc"> <i class=""> Family Type</i> :<span class="person-details" id="familyType"></span> </p>
+                          <p class="p-desc"> <i class=""> Father's Job</i> :<span class="person-details" id="fathersJob"></span> </p>
+                          <p class="p-desc"> <i class=""> Number of Brothers</i> :<span class="person-details" id="numberOfBrothers"></span> </p>
+                          <p class="p-desc"> <i class=""> Religion</i> :<span class="person-details" id="relegion"></span> </p>
+                        </div>
+                        <div class="col-lg-6 col-12 v-prof-dt-cntnt">
+                          <p class="p-desc"> <i class=""> Family Status</i> :<span class="person-details" id="familyStatus"></span> </p>
+                          <p class="p-desc"> <i class=""> Mother's Job</i> :<span class="person-details" id="mothersJob"></span> </p>
+                          <p class="p-desc"> <i class=""> Number of Sisters</i> :<span class="person-details" id="numberOfSisters"></span> </p>
+                        </div>
+                      </div>
+                      
+    
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3" id="partnerPrefDivId"> 
+                      <div class="prof-head">
+                        <h6 class="viewprof-dtls-head">Partner Preference</h6>
+                      </div>
+                      <div class="row">
+                      <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+                        <div class="row">
+                          <div class="col-6"><label class="p-desc view-prof-details-label" id="txtAgeRange"> Age Range </label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="ageRange"></p>
+                          </div>
+          
+                          <div class="col-6"><label class="p-desc view-prof-details-label" id="txtMartialStatus"> Marital Status </label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="prefmartialStatus"></p>
+                          </div>
+          
+                          <div class="col-6"><label class="p-desc view-prof-details-label" id="txtEducation"> Heighest Education</label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="prefhighestEducation"></p>
+                          </div>
+          
+                          <div class="col-6"><label class="p-desc view-prof-details-label" id="txtLocation"> Location </label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="prefLocation"></p>
+                          </div>
+          
+                        </div>
+                      </div>
+          
+                      <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+                        <div class="row">
+          
+                          <div class="col-6"> <label class="p-desc view-prof-details-label" id="txtHeight"> Height </label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="prefHeight"></p>
+                          </div>
+          
+                          <div class="col-6"><label class="p-desc view-prof-details-label" id="txtCommunity"> Community </label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="prefCommunity"></p>
+                          </div>
+          
+                          <div class="col-6"><label class="p-desc view-prof-details-label" id="txtProfession"> Profession </label></div>
+                          <div class="col-6">
+                            <p class="person-details" id="prefProfession"></p>
+                          </div>
+          
+                        </div>
+                      </div>
+                    </div>
+                      
+    
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-none d-md-block d-sm-block d-block mob-prof-like-part">
+                        
+                        <div class="mob-llps-btn p-3 text-center" id="mob-like-button-div">
+                        </div>
+                    </div>
+                  </div>
+    
+                </div>  
+    
+             
+            </section>
+            
+            
+            {% include 'adminpage/partials/footer.html' %}
+        </main>
+    
+
+       
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'web/js/customjs/discovery.js' %}"></script>
+<script src="{% static 'web/js/owl-carosel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'adminpage\js\bismillah\view-profile.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'adminpage/base.html' %} {% load static %} {% block content %}
+
+<div class="container-scroller">
+	<!-- partial:../../partials/_navbar.html -->
+
+	<!-- partial -->
+	<div class="container-fluid page-body-wrapper">
+		<!-- partial:../../partials/_settings-panel.html -->
+
+		<!-- partial -->
+
+		<!-- partial:../../partials/_sidebar.html -->
+		{% include 'adminpage/partials/sidebar.html' %}
+		<!-- partial -->
+		<div class="main-panel">
+			<div class="content-wrapper">
+				<div class="row" id="pendingVerificationDetailsDiv">
+
+					<!-- <div class="col-md-4 grid-margin stretch-card">
+						<div class="card">
+							<div class="checkbox-off text-right pt-3 px-4">
+								<input type="checkbox" class="input-ch">
+							</div>
+							<div class="card-body">
+								<div class="d-sm-flex flex-row flex-wrap text-center text-sm-left align-items-center">
+									<img src="{% static 'adminpage/images/faces/3.jpg' %}" class="img-lg rounded"
+										alt="profile image">
+										
+									<div class="ml-sm-3 ml-md-0 ml-xl-3 mt-2 mt-sm-0 mt-md-2 mt-xl-0">
+										<h6 class="mb-0">Dulqer Salman</h6> 
+										<p class="text-muted mb-1 ph-num">9876543210</p>
+										<p class="mb-0 text-success font-weight-bold">software developer</p>
+										<p class="mb-0 text-success font-weight-bold">11-12-1999</p>
+										<p class="mb-0 text-success font-weight-bold">Place</p>
+										<p id="updateStatus"></p>
+										
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+					
+					<!-- <div class="col-md-4 grid-margin stretch-card">
+						<div class="card">
+							<div class="checkbox-off text-right pt-3 px-4">
+								<input type="checkbox" class="input-ch">
+							</div>
+							<div class="card-body">
+								<div class="d-sm-flex flex-row flex-wrap text-center text-sm-left align-items-center">
+									<img src="{% static 'adminpage/images/faces/3.jpg' %}" class="img-lg rounded"
+										alt="profile image" />
+										
+									<div class="ml-sm-3 ml-md-0 ml-xl-3 mt-2 mt-sm-0 mt-md-2 mt-xl-0">
+										<h6 class="mb-0">Dulqer Salman</h6> 
+										<p class="text-muted mb-1 ph-num">9876543210</p>
+										<p class="mb-0 text-success font-weight-bold">software developer</p>
+										<p class="mb-0 text-success font-weight-bold">11-12-1999</p>
+										<p class="mb-0 text-success font-weight-bold">Place</p>
+										
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+
+
+				</div>
+				
+				
+			</div>
+			<!-- content-wrapper ends -->
+			<!-- partial:../../partials/_footer.html -->
+			{% include 'adminpage/partials/footer.html' %}
+			<!-- partial -->
+		</div>
+		<!-- main-panel ends -->
+	</div>
+	<!-- page-body-wrapper ends -->
+</div>
+
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'adminpage\js\bismillah\pending-verification.js' %}"></script>
+{% endblock %}

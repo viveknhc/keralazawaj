@@ -1,0 +1,146 @@
+{% extends 'adminpage/base.html' %}
+ {% load static %} 
+ {% block content %}
+
+  <div class="container-scroller">
+    
+    <div class="container-fluid page-body-wrapper">
+     
+      {% include 'adminpage/partials/sidebar.html' %}
+
+     
+      <div class="main-panel" id="formDiv">        
+        <div class="content-wrapper">
+          <div class="row" >
+            
+            <div class="col-12 grid-margin stretch-card" >
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title" >Subscription plans </h4>
+                  
+                  <form id="subscriptionplanForm" class="forms-sample row" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input  type="number" id="editId" hidden>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12" >
+                      <label for="exampleInputName1">Plan title</label>
+                      <input type="text" name="plan_title" class="form-control" id="exampleInputName1" placeholder="Name" required>
+                      
+                    </div>
+                   
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12" >
+                      <label >Duration Type</label>
+                      <select class="js-example-basic-single w-100 form-control" name="duration_type">
+                        <option value="month">Month</option>
+                        <option value="days">Days</option>
+                       
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12" >
+                      <label for="exampleInputName1">Duration</label>
+                      <input type="number" name="duration" class="form-control"  placeholder="Duration" required>
+                      
+                    </div>
+                    <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12" >
+                      <label for="exampleInputName1">Price</label>
+                      <input type="number" name="price" class="form-control"  placeholder="Price" required>
+                      
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+                      <label for="exampleInputName1">Content</label>
+                      <textarea name="content">
+                        Edit your content here...
+                      </textarea>
+                      
+                    </div>
+    
+                    
+
+                    <div id="alertDivId" class="alert alert-success" role="alert" style="width: 400px;">
+                      
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <button id="btnReset" class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Subscription plans</h4>
+                    <!-- <p class="card-description">
+                      Add class <code>.table-striped</code>
+                    </p> -->
+                    <div class="table-responsive">
+                      <table id="subscriptionTable" class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>
+                              Plan Title
+                            </th>
+                            <th>
+                              Duration Type
+                            </th>
+                            <th>
+                              Duration
+                            </th>
+                            <th>
+                              Price
+                            </th>
+                            <th>
+                              Content
+                            </th>
+                            <th>
+                              Edit
+                            </th>
+                            <th>
+                              Delete
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            
+          </div>
+        </div>
+       
+        {% include 'adminpage/partials/footer.html' %}
+        
+      </div>
+     
+    </div>
+   
+  </div>
+  {% endblock %}
+  {% block javascript %}
+  <script src="{% static 'adminpage\js\bismillah\subscriptionplan.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/tinymce.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/jquery.tinymce.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  tinymce.init({
+    selector: 'textarea',
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table contextmenu paste code'
+    ],
+    toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify |  bullist numlist outdent indent | link image',
+    content_css: '//www.tinymce.com/css/codepen.min.css'
+  });
+});
+  </script>
+ {% endblock %}

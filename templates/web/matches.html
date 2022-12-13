@@ -1,0 +1,138 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+{% block content %}
+  
+
+    <main>
+        <div class="like-premium-box p-4">
+            <div class="">
+              <img src="{% static 'web/images/icons/pre matches.png' %}" alt="missing" class="mx-auto d-block pre-icon">
+            </div>
+            <p class="pre-titile text-center">
+                You have great matches,<br>see all matches with <br>
+              <span class="bismi-title-lk bismi-color">Kerala Zawaj</span> <br> 
+              Premium
+            </p>
+            <div class="text-center p-4">
+            <a href="{% url 'web:matches_premium' %}"> <button class="btn pre-button">See all matches</button> </a> 
+    
+            </div>
+        </div>
+    
+        <section class="profile-blur-section view-section-mt"> 
+              <div class="container py-5">
+                  <div class="row">
+                      <div class="col-12">
+                          <div class="text-center">
+                              <h2>Profiles with Matches</h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+    
+              <div class="container like-box">
+                  <div class="row">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-6 like-box-col">
+                        <div class="card like-box-card p-3">
+                            <img class="card-img-top d-block mx-auto blur-img" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap">
+                            <div class="card-body text-center">
+                              <h5 class="card-title">Jasmin</h5>
+                              <p class="card-text">Lorem ipsum elit.</p>
+                              
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-6 like-box-col">
+                        <div class="card like-box-card p-3">
+                            <img class="card-img-top d-block mx-auto blur-img" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jasmin</h5>
+                                <p class="card-text">Lorem ipsum elit.</p>
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-6 like-box-col">
+                        <div class="card like-box-card p-3">
+                            <img class="card-img-top d-block mx-auto blur-img" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jasmin</h5>
+                                <p class="card-text">Lorem ipsum elit.</p>
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-6 like-box-col">
+                        <div class="card like-box-card p-3">
+                            <img class="card-img-top d-block mx-auto blur-img" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jasmin</h5>
+                                <p class="card-text">Lorem ipsum elit.</p>
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-6 like-box-col">
+                        <div class="card like-box-card p-3">
+                            <img class="card-img-top d-block mx-auto blur-img" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="card-title disabled">Jasmin</h5>
+                                <p class="card-text">Lorem ipsum elit.</p>
+                                
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-6 like-box-col">
+                        <div class="card like-box-card p-3">
+                            <img class="card-img-top d-block mx-auto blur-img" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jasmin</h5>
+                                <p class="card-text">Lorem ipsum elit.</p>
+                                
+                              </div>
+                          </div>
+                      </div>
+                     
+                  </div>
+              </div>
+        </section>
+
+        <section class="area-seven position-relative">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card ">
+                 <a href=""> <img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"> </a>
+                </div>
+              </div>
+      
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card">
+                <a href=""><img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+                <div class="download-content">
+                  <p class="dan">Download the app now!</p>
+      
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                <div class="">
+                  <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </section>
+
+    </main>
+
+    {% include 'web/partials/footer.html' %}
+
+ {% endblock %}
+ {% block javascript %}
+<script src="{% static 'web/js/login-check.js' %}"></script>
+{% endblock %}

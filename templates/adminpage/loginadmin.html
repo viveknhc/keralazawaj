@@ -1,0 +1,59 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="login-form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                    <div id="first">
+                        <div class="myform form ">
+                            <div class="logo mb-3">
+                                <div class="col-md-12 text-center">
+                                    <h1 class="login-bismi-ttl">Bismillah</h1>
+                                </div>
+                            </div>
+
+                            <form id="loginAdminForm">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Username</label>
+                                    <input type="email" name="email" class="form-control" aria-describedby="emailHelp"
+                                        placeholder="Enter Email">
+                                    <!-- <p class="" style="color: red;">invalid password</p> -->
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                       placeholder="Enter Password">
+                                    <!-- <p class="" style="color: red;">invalid password</p> -->
+                                </div>
+                                <!-- <div class="form-group">
+                                  <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+                               </div> -->
+                                <div class="col-md-12 text-center ">
+                                    <p id="errorPtagId" style="color: red;"></p>
+                                    <button type="submit"
+                                        class=" btn btn-success login-form-btn btn-block mybtn tx-tfm">Sign in</button>
+                                </div>
+                               
+                                
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}
+{% block javascript %}
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+
+<script src="{% static 'adminpage/js/bismillah/login.js' %}"></script>
+
+{% endblock %}

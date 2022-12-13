@@ -1,0 +1,36 @@
+
+<form id="my-awesome-dropzone"
+method="POST"
+enctype="multipart/form-data">
+<input name="image_one" type="file" id="image_one">
+<input name="image_two" type="file" id="image_two">
+<input name="image_three" type="file" id="image_three">
+{% csrf_token %}
+<input type="submit">
+</form>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- <script>
+$( document ).ready(function() {
+$('form').submit(function(e) {
+  var formData =$(e).serializeArray();
+  console.log(formData)
+  
+  $.ajax({
+      url: 'https://keralazawaj.com/api/user/userImage/',
+      type: $(this).attr('method'),
+      data: formData,
+      headers: {'Authorization': 'Token mytoken'},
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function() { alert('it works') },
+      error:function(jqXhr,responseText){
+        alert(jqXhr,responseText)
+      }
+      
+  });
+});
+});
+</script> -->

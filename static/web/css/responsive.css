@@ -1,0 +1,2009 @@
+@media only screen and (min-width: 1200px) {
+    .dropdown-menu li:hover {
+        background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+    }
+    ul li.dropdown:hover ul.dropdown-menu{ 
+        display: block;
+        padding: 7px 6px;
+        line-height: 38px;
+        position: absolute;
+        color: #fff !important;
+    
+    }
+    ul.dropdown-menu a {
+        color: #fff !important;
+    }
+    .dropdown-menu-header {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        margin: 0.125rem 0 0;
+        font-size: 1rem;
+        color: #006C3A !important;
+        text-align: left;
+        list-style: none;
+        background: linear-gradient(180deg, #006C3A -48.05%, #287058 150.39%);
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0.25rem;
+    }
+    
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    .dropdown-menu li:hover {
+        background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+    }
+    ul li.dropdown:hover ul.dropdown-menu{ 
+        display: block;
+        padding: 7px 6px;
+        line-height: 30px;
+        position: absolute;
+        color: #fff !important;
+
+    
+    }
+
+    .header-form {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        width: 65%;
+        /* background-color: beige; */
+        padding: 50px;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+    }
+    .header-form-button {
+        position: absolute;
+        top: 100%;
+        left: 30%;
+        background: linear-gradient(180deg, #EDFFF0 0%, rgba(250, 255, 250, 0) 100%);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 15px;
+        padding: 23px 100px;
+        border: none;
+    }
+    .header-form-description {
+        position: absolute;
+        top: 263px;
+        left: 30%;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .abt-bismi {
+        padding: 123px 0;
+    }
+   
+    /* ===========login-form================ */
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: rgb(121, 118, 118);
+        background-clip: padding-box;
+        border: 1px solid rgba(196, 39, 39, 0.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+        margin-top: 8rem;
+        background: linear-gradient(
+    179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+        left: 22%;
+    }
+    /* ================download section ================== */
+    .phone-logo {
+        position: relative;
+        top: -11px;
+        width: 256px;
+        object-fit: cover;
+        margin-bottom: -51px;
+        padding-bottom: -27px;
+        height: 235px;
+        left: -30px;
+    }
+    .owl-carousel .owl-next {
+        position: absolute;
+        right: 25px;
+        top: 90px;
+    }
+    .owl-carousel .owl-prev {
+        position: absolute;
+        left: 25px;
+        top: 90px;
+    }
+    .download-logo {
+        padding: 15px 0;
+    }
+    .privacy {
+        float: right;
+        padding: 10px 0;
+        list-style: none;
+        display: flex;
+    }
+    .register-form-section .form-control {
+        display: inline-block;
+        width: 50%;
+        background-color: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+        border-radius: 0%;
+    }
+    .download-content .dan {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 42px;
+    }
+    .area-seven .mobile-logo {
+        object-fit: cover;
+        position: relative;
+        top: -51px;
+        width: 230px;
+        margin-bottom: -51px;
+        padding-bottom: -27px;
+        height: 211px;
+        right: 30px;
+    }
+    .bismi-nav {
+        padding: 0 0;
+    }
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 35px;
+    }
+    .dash-search-box {
+        margin: 0;
+        padding-left: 0px;
+    }
+    .like-premium-box {
+        position: absolute;
+        top: 50%;
+        left: 26%;
+        width: 50%;
+        z-index: 1;
+        margin: 0   ;
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+    .bismi-nav-li-second-icon {
+        font-size: 24px;
+    }
+    .about-pencil {
+        position: absolute;
+        right: 26%;
+        top: 50%;
+    }
+    .preloader-title {
+        color: #fff; 
+        position: absolute; 
+        top: 40%; 
+        left: 30%;
+        font-size: 30px;
+    }
+    .loader {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        left: 40%;
+        z-index:10;
+        top: 50%;
+        animation: loader 2s infinite ease;
+        background-image: url("../images/kerala\ zawaj\ logo.svg");
+      }
+      .view-section-mt {
+        margin-top: 53px;
+    }
+    .editmg {
+        position: relative;
+        top: -32px;
+        left: 83px;
+        color: #006C3A;
+    }
+    .fa-camera {
+        position: absolute;
+        font-size: 32px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        /* padding: 30px 40px; */
+        padding: 1px 40px;
+        background-color: #103524;
+
+    }
+    .header-form {
+        position: absolute;
+        top: 19%;
+        left: 5%;
+        width: 90%;
+        /* background-color: beige; */
+        padding: 50px;
+        background: linear-gradient(
+    179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+    }
+    .header-form-inputs {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        border: none;
+    }
+    .side-line {
+        border-left: none;
+    }
+    .header-form-title {
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 10px 0;
+    }
+    .header-form-button {
+        position: absolute;
+        top: 90%;
+        left: 33%;
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        padding: 23px 50px;
+        border: none;
+    }
+    .header-form-description {
+        position: absolute;
+        top: 396px;
+        left: 27%;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .sign-in-btn {
+        border: 1px solid #fff;
+        border-radius: 40px;
+        padding: 8px 27px !important;
+    }
+    .abt-bismi {
+        padding: 44px;
+    }
+    .owl-carousel .owl-next {
+        right: -22px;
+        top: 75px;
+        position: absolute;
+    }
+    .owl-carousel .owl-prev {
+        position: absolute;
+        left: 2px;
+        top: 75px;
+    }
+
+    .square {
+        border-radius: 30px;
+        background: #EBF9ED;
+        padding: 4px;
+        width: 136px;
+        height: 136px;
+    }
+    .wsua-md-sc {
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .cntnt {
+        color: #081C15;
+        font-size: 24px;
+        font-weight: 600;
+        font-style: bold;
+    }
+    .register-btn {
+        margin: 20px 21px;
+        background-color: #D8F3DC;
+        color: #000 !important;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 30px;
+        box-shadow: -1px 5px 5px rgb(0 0 0 / 25%);
+    }
+
+    /* .download-section-mob-view .store-logo {
+        width: 255px;
+        position: relative;
+        top: 1px;
+    } */
+    .download-section-mob-view .store-logo {
+        width: 223px;
+        position: relative;
+        top: 14px;
+        left: 32px;
+        padding-bottom: 15px;
+    }
+    .download-section-mob-view .download-section-mob-view-content h4 {
+        font-size: 32px;
+        font-weight: 600;
+        position: absolute;
+        top: -41px;
+        left: 74px;
+    }
+    .download-section-mob-view .mob-phone-logo {
+        width: 378px;
+        position: absolute;
+        top: -16%;
+        left: 5%;
+        height: 271px;
+        object-fit: cover;
+    }
+    .footer-bismi-title {
+        font-family: 'Playball', cursive;
+        font-size: 25px;
+    }
+
+    /* --------------------------------- */
+    .mob-bg {
+        background-image: url(../images/bg/mob-banner.png);
+        background-size: cover;
+    }
+    .register-form-section {
+        margin-top: 50px;
+    }
+    .register-form-section .form-control {
+        display: block;
+        width: 100%;
+        background-color: rgba(234, 255, 237, 0.5);
+        border: 1px solid #c6d1c7;
+        border-radius: 2px;
+    }
+    .register-form-section .input-icon {
+        position: relative;
+        left: -10px;
+        float: right;
+        top: -27px;
+    }
+    .register-form-section {
+        background: #fff;
+        border-radius: 15px;
+    }
+    .reg-form-btn {
+        background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+        border: none;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        color: #fff;
+        padding: 13px 30px !important;
+    }
+    .area-seven .mobile-logo {
+        position: relative;
+        width: 244px;
+        bottom: 0;
+        padding-bottom: -27px;
+        height: 211px;
+        object-fit: cover;
+        /* left: -2px; */
+    }
+    /* --------------------------- */
+
+    .box {
+        background-color: #fff;
+    }
+    .profilepic-add {
+        background-image: none;
+        /* background-size: cover; */
+        margin: 0px 0;
+        /* background-color: black; */
+        padding: 0!important;
+    }
+    .propic {
+        width: 99%;
+        object-fit: contain;
+        border: 2px dotted;
+        border-radius: 20px;
+    }
+    .up-btn {
+        background-color: #02B562;
+        padding: 30px;
+        width: 100%;
+        margin-top: -23px;
+        border-radius: 0px 0px 30px 30px;
+        border: none;
+    }
+    .mob-nav-title-hide {
+        display: none;
+    }
+    .img-dashboard-icon {
+        max-width: 100%;
+        padding: 3px 20px;
+    }
+    .mob-nav-user {
+        font-size: 40px;
+    }
+    .has-search .form-control {
+        padding-left: 2.375rem;
+        border-radius: 15px;
+        background-color: #EBF9ED;
+        border: none;
+        color: #000;
+    }
+    .mob-prof-like-part .lk-icon {
+        color: #039A00;
+        font-size: 49px;
+    }
+    .mob-prof-like-part a {
+        font-weight: 600;
+    }
+    .mob-prof-like-part .del-icon {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #039a00;
+    }
+    .like-premium-box {
+        position: absolute;
+        top: 66%;
+        left: 4%;
+        width: 71%;
+        z-index: 1;
+        margin: 0 90px;
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+    .user-name {
+        padding: 20px 13px;
+    }
+    .user-profile-details .user-about .fa-pencil-alt {
+        float: right;
+        position: relative;
+        top: -24px;
+    }
+    .user-profile-details .form-control {
+        display: inline-block;
+        width: 100%;
+        background-color: rgba(234, 255, 237, 0.5);
+        border: 0.2px solid #103524;
+        border-radius: 0%;
+    }
+    .usr-edit-profile .edit-prof-icon {
+        position: relative;
+        top: -29px;
+        left: 266px;
+    }
+    /* ======================login page ================= */
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: rgb(121, 118, 118);
+        background-clip: padding-box;
+        border: 1px solid rgba(196, 39, 39, 0.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+        margin-top: 9rem;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+        left: 14%;
+    }
+    /* ==============dashboard navbar section========== */
+    .userhedaer-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        padding: 0;
+    }
+    .langknowbox {
+        display: block;
+        /* justify-content: space-between; */
+    }
+    .language-known-input .btn-light {
+        background-color: rgba(234, 255, 237, 0.5)!important;
+        border-bottom: 1px solid black;
+        border-radius: 0%;
+        border: 1px solid #c6d1c7;
+        
+    }
+    :not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+        width: 100% !important;
+    }
+    .about-pencil {
+        position: absolute;
+        right: 4%;
+        top: 20%;
+    }
+    .v-prof-dt-cntnt {
+        padding: 0 10px;
+    }
+    .preloader-title {
+        color: #fff; 
+        position: absolute; 
+        top: 40%; 
+        left: 30%;
+        font-size: 20px;
+    }
+    .loader {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        left: 40%;
+        z-index:10;
+        top: 50%;
+        animation: loader 2s infinite ease;
+        background-image: url("../images/kerala\ zawaj\ logo.svg");
+      }
+      .phone-search-form {
+        padding: 0 0px;
+    }
+    .view-section-mt {
+        margin-top: 90px;
+    }
+    .location-inputdiv-phone {
+        padding-right: 10px;
+        padding-left: 0%;
+        
+    }
+    .editmg {
+        position: relative;
+        top: -38px;
+        left: 136px;
+        color: #006C3A;
+    }
+    .fa-camera {
+        position: absolute;
+        font-size: 40px;
+    }
+    .img-dashboard-icon-chat-nav {
+        font-size: 37px;
+        padding: 3px;
+        color: #b5c8bf;
+    }
+    .mob-prof-like-part .del-icon:active {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #f70202;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 40px;
+        background-color: #103524;
+    }
+    
+    .header-form {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        padding: 50px;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+    }
+    .side-line {
+        border-left: none;
+    }
+
+    .header-form-inputs {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        border: none;
+    }
+    .header-form-title {
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 10px 0;
+    }
+    .header-form-button {
+        position: absolute;
+        top: 100%;
+        left: 33%;
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        padding: 23px 50px;
+        border: none;
+    }
+    .header-form-description {
+        position: absolute;
+        top: 423px;
+        left: 27%;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 400;
+    }
+    .sign-in-btn {
+        border: 1px solid #fff;
+        border-radius: 40px;
+        padding: 8px 27px !important;
+    }
+
+    .abt-bismi {
+        padding: 30px 17px;
+    }
+
+    /* =================testimonail ================ */
+    .owl-carousel .owl-next {
+        position: absolute;
+        right: -10px;
+        top: 110px;
+    }
+    .owl-carousel .owl-prev {
+        position: absolute;
+        top: 110px;
+        left: 8px;
+    }
+
+    /* ==============testimonial reg-buton section start===================== */
+    .testimonial-reg-btn {
+        background: #D8F3DC;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        padding: 10px;
+        font-weight: 600;
+        
+    }
+    .testimonial-reg-content {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 40px;
+        letter-spacing: 0.03em;
+        color: #103524;
+    }
+    /* ==============testimonial reg-buton section end ===================== */
+
+    /* ---------------------------download section--------------------- */
+    .download-section-mob-view .store-logo {
+        width: 207px;
+        position: relative;
+        top: 2px;
+    }
+    .download-section-mob-view .mob-phone-logo {
+        width: 378px;
+        position: absolute;
+        top: -18%;
+        left: -22%;
+        height: 235px;
+    }
+    /* .download-section-desktop-view {
+        display: none;
+    } */
+    
+    /* ------------------------------------------- */
+
+    .square {
+        border-radius: 30px;
+        background: #fff;
+        padding: 20px;
+        width: 200px;
+        height: 200px;
+    }
+    .area-five h5 {
+        font-weight: 600;
+    }
+
+
+    /* ------------------------------parent trust section===================== */
+    .cntnt {
+        color: #081C15;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 15px;
+        
+    }
+    .register-btn {
+        margin: 15px 19px;
+        background-color: #D8F3DC;
+        color: #000 !important;
+        font-weight: 600;
+        font-size: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+    
+    /* ------------------------footer style---------------------- */
+    .footer-bismi-title {
+        font-size: 29px;
+
+    }
+    .copyright {
+        padding: 20px;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.5);
+
+    }
+    .mob-ft-privacy {
+        padding: 20px;
+    }
+    .footer .follow-us-tt {
+        font-size: 25px;
+    }
+    .footer .social-icon i {
+        font-size: 30px;
+        padding: 17px 4px;
+    }
+
+    /* ============================================register-page ==================== */
+    .mob-bg{
+        background-image: url(../images/bg/mob-banner.png);
+        background-size: cover;
+    }
+    .register-form-section {
+        background-color: #fff;
+    }
+    .register-form-section .form-control {
+        display: block;
+        width: 100%;
+        background-color:  rgba(234, 255, 237, 0.5);
+        border: 1px solid #EAFFED;
+        border-radius: 2px;
+    }
+    .register-form-section .p-3 {
+        padding: 0 15px !important;
+    }
+    .input-title {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 15px 9px;
+    }
+    .register-form-section .input-icon {
+        position: relative;
+        left: -10px;
+        float: right;
+        top: -27px;
+    }
+    .reg-form-btn {
+        background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+        border: none;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        color: #fff;
+        padding: 13px 30px !important;
+    }
+    .register-form-section .reg-form-btn:hover {
+        color: #fff;
+        background-color: #259460;
+        border: none;
+    
+    }
+    /* ============================================area seven all pages ==================== */
+
+    .download-content .dan {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 34px;
+    }
+    .area-seven .download-content {
+        padding: 11px 3px;
+        text-align: center;
+    }
+    .area-seven .mobile-logo {
+        position: relative;
+        bottom: 0;
+        width: 180px;
+        padding-bottom: -27px;
+        height: 130px;
+        left: -6px;
+        object-fit: cover;
+    }
+    .area-seven .download-logo-second {
+        background-color: transparent !important;
+        border: none;
+        padding-top: 10px !important;
+    }
+    /* ================================profile pic add page ===================== */
+    .profilepic-add {
+        background-image: none;
+        /* background-size: cover; */
+        margin: 0px 0;
+        /* background-color: black; */
+        padding: 0!important;
+    }
+    .box {
+        background-color: #fff;
+    }
+    .propic {
+        width: 100%;
+        object-fit: contain;
+        border: 2px dotted;
+        border-radius: 20px;
+    }
+    .upload-box {
+    background-color: transparent;
+    
+    border: none;
+    }
+    .up-btn {
+        background-color: #02B562;
+        padding: 25px;
+        width: 100%;
+        margin-top: -40px;
+        border-radius: 0px 0px 30px 30px;
+        border: none;
+        font-size: 15px
+    }
+    .upload-title {
+        font-weight: 600;
+        font-size: 11px;
+    }
+    .bismi-title-up {
+        font-family: 'Playball', cursive;
+        font-size: 25px;
+    }
+    /* =================================keralazawaj dashboard ======================== */
+    .bismi-nav {
+        /* padding: 0 50px; */
+        padding: 0 24px;
+    }
+    .mob-nav-title-hide {
+        display: none;
+    }
+    .mob-nav-link-res {
+        /* padding: 0 20px; */
+        padding: 0 12px;
+    }
+    .img-dashboard-icon {
+        max-width: 100%;
+        padding: 3px;
+    }
+    .mob-nav-user {
+        font-size: 30px;
+    }
+    /* -------------------------------dash navbar end- */
+    .has-search .form-control {
+        padding-left: 2.375rem;
+        border-radius: 15px;
+        background-color: #EBF9ED;
+        border: none;
+        color: #000
+    }
+    .mob-dash-prof-view {
+        padding: 20px 0;
+    }
+    .mob-prof-like-part .fa-chevron-up {
+        color: #007bff;
+    }
+    .mob-prof-like-part a {
+        font-weight: 600;
+    }
+    .mob-prof-like-part .del-icon {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #039a00;
+    }
+    .mob-prof-like-part .lk-icon {
+        color: #039A00;
+        font-size: 49px;
+    }
+    
+    /* =================================likepage start==================== */
+    .like-premium-box {
+        position: absolute;
+        top: 70%;
+        left: 9%;
+        width: 50%;
+        z-index: 1;
+        margin: 0 90px;
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+    .pre-titile {
+        font-size: 16px;
+        font-weight: 600;
+        color: #103524;
+    }
+    .pre-button {
+        background: linear-gradient(180deg, #039A00 0%, #81FF7E 100%);
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 20px;
+        border: none;
+        color: #fff;
+        padding: 20px 50px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    .bismi-title-lk {
+        font-family: 'Playball', cursive;
+        font-size: 25px;
+    }
+    /* ======================view profile page==================== */
+    .mob-contact-tt {
+        font-weight: 600;
+    }
+    .mob-contact-tt .fa-phone-alt {
+        padding: 0 10px;
+    }
+    .mob-for-numb {
+        padding: 5px 30px;
+    }
+    .mob-for-numb {
+        font-weight: 600;
+    }
+    .person-adrs {
+        padding: 10px 19px;
+    }
+    .mob-abt-rs {
+        padding: 0 30px;
+    }
+    .like-premium-box-2 {
+        position: absolute;
+        top: 45%;
+        left: 8%;
+        width: 57%;
+        z-index: 1;
+        margin: 0 86px;
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+    /* ======================user profile page ============ */
+
+    .user-name {
+        padding: 70px 13px;
+    }
+    .user-prof-abt-pen-icon {
+        float: right;
+        position: relative;
+        top: -26px;
+    }
+    .user-profile-details .usr-profile-select-input {
+        width: 100%;
+        background: rgba(234, 255, 237, 0.5);
+        border: 1px solid #EAFFED;
+        border-radius: 2px;
+    }
+    .dash-box {
+        background-color: #fff;
+        /* border-radius: 15px; */
+    }
+    /* =====================editprofile form============= */
+    .usr-edit-profile .usr-edit-prof-input {
+        display: inline-block;
+        width: 100%;
+        background-color:  rgba(234, 255, 237, 0.5);
+        border: 0.2px solid #103524;
+        border-radius: 0%;
+    }
+    .user-profile-details .form-control {
+        display: inline-block;
+        width: 100%;
+        background-color:rgba(234, 255, 237, 0.5);
+        border: 0.2px solid #103524;
+        border-radius: 0%;
+    }
+    .usr-edit-profile .edit-prof-icon {
+        /* position: relative;
+        left: 93%;
+        top: -26%; */
+        position: absolute;
+        right: 7%;
+        top: 65%;
+    }
+    /* ==============================login form ===================== */
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: rgb(121, 118, 118);
+        background-clip: padding-box;
+        border: 1px solid rgba(196, 39, 39, 0.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+        margin-top: 2rem;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+        left: 1%;
+    }
+
+    /* ====================additional changes ============= */
+    /* in view profile ============= */
+
+    .carousel-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 0%;
+        z-index: 15;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding-left: 0;
+        margin-right: 15%;
+        margin-left: 15%;
+        list-style: none;
+    }
+    .carousel-indicators li {
+        box-sizing: content-box;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        width: 100%;
+        height: 2px;
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: -999px;
+        cursor: pointer;
+        border-radius: 0%;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 4px solid transparent;
+        /* border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent; */
+        opacity: .5;
+        transition: opacity .6s ease;
+    }
+    .bismi-logo{
+        width: 100%;
+        object-fit: contain;
+    }
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: rgb(121, 118, 118);
+        background-clip: padding-box;
+        border: 1px solid rgba(196, 39, 39, 0.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        /* max-width: 500px; */
+        margin-top: 2rem;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+        left: 1%;
+        top: 50px;
+    }
+
+    .login-form-bg .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        
+    }
+    .langknowbox {
+        display: block;
+        
+    }
+    :not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+        width: 100% !important;
+    }
+    .language-known-input .btn-light {
+        background-color: rgba(234, 255, 237, 0.5)!important;
+        border-bottom: 1px solid black;
+        border-radius: 0%;
+        border: 0.2px solid #103524;
+        
+    }
+    /* ==========dashboard navbar changes======== */
+    .userhedaer-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        padding: 0;
+    }
+    .footer-mob-number-li {
+        padding-left: 46px;
+    }
+    
+    .language-known-input .btn-light {
+        background-color: rgba(234, 255, 237, 0.5)!important;
+        border-bottom: 1px solid black;
+        border-radius: 0%;
+        border: 1px solid #EAFFED;
+        
+    }
+    :not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+        width: 100% !important;
+    }
+    .about-pencil {
+        position: absolute;
+        right: 5%;
+        top: 4%;
+    }
+    .v-prof-dt-cntnt {
+        padding: 0px 20px;
+    }
+    .dashboard-section-mt {
+        margin-top: 95px;
+    }
+    .preloader-title {
+        color: #fff; 
+        position: absolute; 
+        top: 40%; 
+        left: 30%;
+        font-size: 20px;
+    }
+    .loader {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 40%;
+        z-index:3;
+        top: 50%;
+        animation: loader 2s infinite ease;
+        background-image: url("../images/kerala\ zawaj\ logo.svg");
+      }
+      .recomend-div {
+        padding: 0 31px;
+    }
+    .phone-search-form {
+        padding: 0 10px;
+    }
+    .view-section-mt {
+        margin-top: 82px;
+    }
+    .location-inputdiv-phone {
+        padding: 0;
+    }
+    .editmg {
+        position: relative;
+        top: -53px;
+        left: 193px;
+        color: #006C3A;
+    }
+    .fa-camera {
+        position: absolute; 
+        font-size: 40px;
+        left: -31px;
+        top: 16px;
+    }
+    .img-dashboard-icon-chat-nav {
+        font-size: 37px;
+        padding: 3px;
+        color: #b5c8bf;
+    }
+    .mob-prof-like-part .del-icon:active {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #f70202;
+    }
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+    .banner-bg {
+        background: url(../images/bg/banner-img.jpg);
+        background-size: cover;
+        height: 100vh;
+        padding-bottom: 50px;
+        background-position: top;
+    }
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 14px 26px;
+        background-color: #103524;
+    }
+    
+    .dash-nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 8px;
+
+    }
+    .mob-nav-link-res {
+        /* padding: 0 10px; */
+        padding: 0 5px;;
+    }
+    .header-form {
+        position: absolute;
+        top: 30%;
+        left: 2%;
+        width: 96%;
+        padding: 19px;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+    }
+    .header-form-title {
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 10px 0;
+    }
+    
+    .header-form-inputs {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        border: none;
+    }
+    .header-form-button {
+        position: absolute;
+        top: 100%;
+        left: 25%;
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 10px;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        padding: 18px 17px;
+        border: none;
+    }
+    .side-line {
+        border-left: none;
+    }
+    .header-form-description {
+        position: absolute;
+        top: 363px;
+        left: 10%;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 400;
+    }
+    /* ---------------------area-one------------------- */
+    .bismi-title {
+        font-family: 'Playball', cursive;
+        font-size: 28px;
+    }
+    .area-one .bismi-para {
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .area-one .section-one-img-card {
+        border: none;
+        padding: 5px !important;
+        background-color: transparent;
+    }
+    .counts {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 15px;
+        letter-spacing: 0.03em;
+        color: #081C15;
+    }
+    .section-one-mob-title {
+        padding: 30px 10px;
+    }
+    .abt-bismi {
+        padding: 30px 0;
+        font-size: 10px;
+
+    }
+    .abt-bismi-2 {
+        font-size: 10px;
+    }
+    .sign-in-btn {
+        border: 1px solid #fff;
+        border-radius: 32px;
+        padding: 3px 22px !important;
+    }
+
+    .testimonial-reg-content {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 33px;
+        letter-spacing: 0.03em;
+        color: #103524;
+    }
+    .testimonial-reg-btn {
+        background: #D8F3DC;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 20px;
+        padding: 15px 33px;
+        font-weight: 600;
+    }
+
+    .cntnt {
+        color: #081C15;
+        font-size: 12px;
+        font-style: bold;
+        font-weight: 600;
+    }
+    .register-btn {
+        margin: 10px 4px;
+        background-color: #D8F3DC;
+        color: #000 !important;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 18px;
+        box-shadow: -1px 5px 5px rgb(0 0 0 / 25%);
+    }
+
+    /* ============phone app download section========== */
+    .download-section-mob-view .mob-phone-logo {
+        width: 195px;
+        position: absolute;
+        top: -2%;
+        left: -2%;
+        height: 172px;
+        object-fit: cover;
+    }
+    .download-section-mob-view .download-section-mob-view-content h4 {
+        font-size: 17px;
+        font-weight: 600;
+        position: absolute;
+        top: -21px;
+        left: 27px;
+    }
+    .download-section-mob-view .store-logo {
+        width: 148px;
+        position: relative;
+        top: 7px;
+    }
+    /* ----------------------------------- */
+    .owl-carousel .owl-next {
+        position: absolute;
+        right: -10px;
+        top: 44px;
+    }
+    .owl-carousel .owl-prev {
+        position: absolute;
+        top: 44px;
+        left: 8px;
+    }
+    .tt-bis-al-1 {
+        font-size: 25px;
+    }
+    /* ---------------footer area--------- */
+    .copyright {
+        font-size: 8px;
+    }
+    .footer-bismi-title {
+        font-family: 'Playball', cursive;
+        font-size: 16px;
+    }
+    .footer-logo {
+        font-size: 20px;
+    }
+    /* ============================register page ======================== */
+    .mob-bg{
+        background-image: url(../images/bg/mob-banner.png);
+        background-size: cover;
+        margin-top: 4rem;
+    }
+    .register-page-header .register-page-header-title {
+        font-family: 'Playball', cursive;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        color: #081C15;
+    }
+    .register-page-header .register-page-header-content {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 36px;
+        letter-spacing: 0.03em;
+        color: #081C15;
+    }
+    .register-form-section .form-control {
+        display: block;
+        width: 100%;
+        background-color: rgba(234, 255, 237, 0.5);
+        border: 1px solid #EAFFED;
+        border-radius: 2px;
+     
+    }
+    .register-form-section {
+        background-color: #fff;
+    }
+    .register-form-section .p-3 {
+        padding: 0 15px !important;
+    }
+    .input-title {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 0px 9px;
+        padding-top: 15px;
+    }
+    .register-form-section .input-icon {
+        position: relative;
+        left: -10px;
+        float: right;
+        top: -27px;
+    }
+    .reg-form-btn {
+        background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+        border: none;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        color: #fff;
+        padding: 13px 44px !important;
+    }
+    .register-form-section .reg-form-btn:hover {
+        color: #fff;
+        background-color: #259460;
+        border: none;
+    
+    }
+    .register-form-section .form-check-label {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .download-content .dan {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 34px;
+    }
+    .area-seven .download-content {
+        padding: 11px 3px;
+        text-align: center;
+    }
+    /* .area-seven .mobile-logo {
+        position: absolute;
+        top: -23px;
+        width: 151px;
+        margin-bottom: -96px;
+        padding-bottom: -27px;
+        height: 84px;
+        left: -44px;
+    } */
+    .area-seven .mobile-logo {
+        position: absolute;
+        /* top: -31px; */
+        width: 160px; 
+        /* margin-bottom: -96px; */
+        object-fit: cover;
+        padding-bottom: -27px;
+        height: 100px;
+        left: -54px;
+    }
+    .area-seven .download-logo-second {
+        background-color: transparent !important;
+        border: none;
+        padding-top: 10px !important;
+    }
+    /* ================================profile pic add page ===================== */
+    .profilepic-add {
+        background-image: none;
+        /* background-size: cover; */
+        margin: 0px 0;
+        /* background-color: black; */
+        padding: 0!important;
+    }
+    .box {
+        background-color: #fff;
+    }
+    .propic {
+        width: 100%;
+        object-fit: contain;
+        border: 2px dotted;
+        border-radius: 20px;
+    }
+    .upload-box {
+    background-color: transparent;
+    
+    border: none;
+    }
+    .up-btn {
+        background-color: #02B562;
+        padding: 13px;
+        width: 100%;
+        margin-top: -40px;
+        border-radius: 0px 0px 30px 30px;
+        border: none;
+        font-size: 12px;
+    }
+    .upload-title {
+        font-weight: 600;
+        font-size: 11px;
+    }
+    .bismi-title-up {
+        font-family: 'Playball', cursive;
+        font-size: 25px;
+    }
+    .mob-pic-up-ban-head-tt {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .mob-skip-button {
+        background: #EBF9ED;
+        border: 1px solid #103524;
+        box-sizing: border-box;
+        border-radius: 7px;
+        float: left;
+        padding: 2px 14px;
+        margin: 12px;
+    }
+
+    .bismi-nav {
+        padding: 0;
+        flex-direction: row;
+    }
+    .mob-nav-title-hide {
+        display: none;
+    }
+    
+    .img-dashboard-icon {
+        max-width: 80%;
+        padding: 3px;
+    }
+    .mob-nav-user {
+        font-size: 24px;
+    }
+    /* -------------------------------dash navbar end- */
+    .has-search .form-control {
+        padding-left: 2.375rem;
+        border-radius: 15px;
+        background-color: #EBF9ED;
+        border: none;
+        color: #000
+    }
+    .mob-dash-prof-view {
+        padding: 20px 0;
+    }
+    .mob-prof-like-part .fa-chevron-up {
+        color: #007bff;
+    }
+    .mob-prof-like-part a {
+        font-weight: 600;
+    }
+    .mob-prof-like-part .del-icon {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #039a00;
+    }
+    .mob-prof-like-part .del-icon:active {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #f70202;
+    }
+    .mob-prof-like-part .del-iconred {
+        font-size: 49px;
+        /* padding: 25px; */
+        color: #f70202;
+    }
+    .mob-prof-like-part .lk-icon {
+        color: #039A00;
+        /* color: #1d441c; */
+        font-size: 49px;
+    }
+    /* ===============================like page======================= */
+    .like-premium-box {
+        position: absolute;
+        top: 50%;
+        left: -20%;
+        width: 85%;
+        z-index: 1;
+        margin: 0 90px;
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+    .pre-titile {
+        font-size: 15px;
+        font-weight: 600;
+        color: #103524;
+    }
+    .bismi-title-lk {
+        font-family: 'Playball', cursive;
+        font-size: 25px;
+    }
+    .pre-button {
+        background: linear-gradient(180deg, #039A00 0%, #81FF7E 100%);
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        padding: 14px 26px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /* ======================view profile page==================== */
+    .mob-contact-tt {
+        font-weight: 600;
+    }
+    .mob-contact-tt .fa-phone-alt {
+        padding: 0 10px;
+    }
+    .mob-for-numb {
+        padding: 5px 30px;
+        font-size: 12px;
+    }
+    .mob-for-numb {
+        font-weight: 600;
+    }
+    .person-adrs {
+        padding: 10px 19px;
+    }
+    .mob-abt-rs {
+        padding: 0 30px;
+    }
+    .like-premium-box-2 {
+        position: absolute;
+        top: 51%;
+        left: -21%;
+        width: 85%;
+        z-index: 1;
+        /* margin: 0 86px; */
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+
+    /* 12/12/22 */
+    .dash-abt {
+        font-size: 14px;
+        padding: 0;
+    }
+    .dash-abt-desc{
+        font-size: 12px;
+    }
+    
+    .p-user-details .u-name-id {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .my-self-description {
+        font-weight: 400;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+     /* ======================user profile page ============ */
+
+     .user-name {
+        padding: 30px 0px;
+    }
+    .user-profile-details .user-head {
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .user-profile-details .dt {
+        padding-right: 5px;
+        font-weight: 600;
+        font-size: 11px;
+    }
+    .user-abt-desc {
+        font-size: 12px;
+    }
+    .user-profile-details .user-btn {
+        color: #103524!important;
+        font-weight: 700;
+        padding: 15px;
+        width: 100%;
+    }
+    .user-prof-abt-pen-icon {
+        float: right;
+        position: relative;
+        top: -26px;
+    }
+    .user-profile-details .usr-profile-select-input {
+        width: 100%;
+        background: rgba(234, 255, 237, 0.5);
+        border: 1px solid #EAFFED;
+        border-radius: 2px;
+    }
+    .dash-box {
+        background-color: #fff;
+        /* border-radius: 15px; */
+    }
+    /* =====================editprofile form============= */
+    .usr-edit-profile .usr-edit-prof-input {
+        display: inline-block;
+        width: 100%;
+        background-color:  rgba(234, 255, 237, 0.5);
+        border: 0.2px solid #103524;
+        border-radius: 0%;
+    }
+    .user-profile-details .form-control {
+        display: inline-block;
+        width: 100%;
+        background-color:rgba(234, 255, 237, 0.5);
+        border: 0.2px solid #103524;
+        border-radius: 0%;
+    }
+    .usr-edit-profile .edit-prof-icon {
+        position: absolute;
+        right: 7%;
+        top: 65%;
+    }
+    .user-profile-details .usr-form-btn {
+        background: #036A01;
+        border: none;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 15px;
+        padding: 15px 39px !important;
+        color: #fff;
+        font-size: 16px;
+    }
+    .edit-prof-check .form-check-label {
+        font-size: 10px;
+        font-weight: 600;
+
+    }
+    .mob-edit-prof-btn-2 {
+        font-size: 15px;
+    }
+    /* =========================login-form =================  */
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: rgb(121, 118, 118);
+        background-clip: padding-box;
+        border: 1px solid rgba(196, 39, 39, 0.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+        margin-top: 2rem;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+        left: 0%;
+    }
+
+    /* ====================additional changes ============= */
+    /* in view profile ============= */
+
+    .carousel-indicators {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        top: 0%;
+        z-index: 15;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding-left: 0;
+        margin-right: 15%;
+        margin-left: 15%;
+        list-style: none;
+    }
+    .carousel-indicators li {
+        box-sizing: content-box;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        width: 100%;
+        height: 2px;
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: -999px;
+        cursor: pointer;
+        border-radius: 0%;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 4px solid transparent;
+        /* border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent; */
+        opacity: .5;
+        transition: opacity .6s ease;
+    }
+    .bismi-logo {
+        width: 158px;
+        object-fit: contain;
+    }
+    .myform {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: rgb(121, 118, 118);
+        background-clip: padding-box;
+        border: 1px solid rgba(196, 39, 39, 0.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        /* max-width: 500px; */
+        margin-top: 2rem;
+        background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+        border-radius: 15px;
+        left: 1%;
+        top: 50px;
+    }
+
+    .login-form-bg .form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: rgba(255, 255, 255, 0.7);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        
+    }
+    .logo-dashboard {
+        width: 40px;
+    }
+    .langknowbox {
+        display: block;
+        
+    }
+    .recommend-title {
+        font-size: 18px;
+    }
+    .dashboard-section-mt {
+        margin-top: 80px;
+    }
+    .footer-mob-number-li {
+        padding-left: 33px;
+        font-size: 12px;
+    }
+    .language-known-input .btn-light {
+        background-color: rgba(234, 255, 237, 0.5)!important;
+        border-bottom: 1px solid black;
+        border-radius: 0%;
+        border: 1px solid #EAFFED;
+        
+    }
+    :not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+        width: 100% !important;
+    }
+    .about-pencil {
+        position: absolute;
+        right: 9%;
+        top: 4%;
+    
+    }
+    .like-premium-box-3 {
+        width: 100%;
+        z-index: 1;
+        margin: 0px -2%;
+        background-color: rgba(223, 243, 232, 0.5);
+        border-radius: 10px;
+    }
+    .v-prof-dt-cntnt {
+        padding: 0px 20px;
+    }
+    .recomend-description {
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .preloader-title {
+        color: #fff; 
+        position: absolute; 
+        top: 35%; 
+        left: 20%;
+        font-size: 20px;
+    }
+    .loader {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 40%;
+        z-index:10;
+        top: 50%;
+        animation: loader 2s infinite ease;
+        background-image: url("../images/kerala\ zawaj\ logo.svg");
+      }
+    .recomend-div {
+        padding: 0 31px;
+    }
+    .phone-search-form {
+        padding: 0 10px;
+    }
+    .view-section-mt {
+        margin-top: 60px;
+    }
+    .location-inputdiv-phone {
+        padding: 0;
+    }
+    .editmg {
+        position: relative;
+        top: -28px;
+        left: 88px;
+        color: #006C3A;
+    }
+    .fa-camera {
+        position: absolute; 
+        font-size: 31px;
+       
+    }
+    .img-dashboard-icon-chat-nav {
+        font-size: 25px;
+        padding: 4px 0;
+        color: #b5c8bf;
+    }
+    .profile-match-tt {
+        font-size: 28px;
+    }
+}
+

@@ -1,0 +1,1131 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+  
+  <section class="py-5 user-profile-details view-section-mt" >
+    <div class="container dash-box ">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-3">
+          <div class="card user-profile-pic">
+            <img src="" class="rounded-circle" alt="" id="userImageId">
+              <input type="text" id="userImageId" hidden>
+              <a id="editImg" class="editmg">
+                <i class="fas fa-camera"></i>
+              </a> 
+          </div>
+        </div>
+        <div class="col-lg-10 col-md-7 col-sm-6 col-6 p-3">
+          <div class="user-name">
+            <h5 class="user-head" id="userFullNameId"></h5>
+            <span class="dt" id="userAgeId"><sup> <i class="fas fa-heart"></i></sup> </span>
+            <span class="dt" id="userSatusId"> <sup> <i class="fas fa-heart"></i></sup> </span>
+            <span class="dt" id="userLocationId"> </span>
+          </div>
+          <div class="row d-lg-block d-md-block d-sm-none d-none">
+            <div class="col-lg-12 user-about">
+              <h5 class="user-head">About</h5>
+              <div class=""> 
+                <!-- <i class="fas fa-pencil-alt"></i> -->
+              </div>
+              <p class="user-abt-desc" id="userAboutId"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 d-lg-none d-md-none d-sm-block d-block ">
+          <h5 class="user-head">About</h5>
+          <div class="user-prof-abt-pen-icon">
+            <!-- <i class="fas fa-pencil-alt"></i> -->
+          </div>
+          <p class="user-abt-desc" id="userAbout-PhoneId"></p>
+        </div>
+        <div class="col-6 user-btn-col user-btn-col-1">
+          <div class="text-center user-btn-div" id="div-btn-1">
+            <a href="" class="user-btn btn" id="btn-1"><i class="">
+                <img src="{% static 'web/images/icons/volume-bars.png' %}" alt="" class="img-user-pf-btn-icon">
+              </i> <span id="partnerPrefernceTitleId"
+                class="usr-prof-edit-btn-tt-split d-lg-inline-block d-md-inline-block d-sm-none d-none">Partner</span>
+              preferences</a>
+          </div>
+        </div>
+        <div class="col-6 user-btn-col user-btn-col-2">
+          <div class="text-center user-btn-div-2" id="div-btn-2">
+            <a href="" class="user-btn btn" id="btn-2">
+              <i class="fas fa-edit"></i> 
+              <span
+                class="usr-prof-edit-btn-tt-split d-lg-inline-block d-md-inline-block d-sm-none d-none">Edit
+              </span>Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row p-3">
+        <div class="col-lg-12 col-12" id="form-1">
+          <div class="col-12 d-lg-none d-md-block d-sm-block d-block">
+            <div class="mob-show-form-btn">
+              <h4>
+                <button class="btn" id="basic-details-phone-id">Basic Details
+                  <i class="fas fa-caret-right"></i>
+                </button>
+            </div>
+          </div>
+            <!-- ---------------Partner Prefernce form --------- -->
+          <form id="partnerPrfernceFormID">
+            {% csrf_token %}
+            <div class="row p-3">
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none">
+                <h5>Basic Details</h5>
+              </div>
+
+              <div class="row" id="basic-forms-for-phone-id">
+
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12 p-3 d-flex">
+                  <label for="" class="user-input-title">Age</label>
+                  <input type="number" class="form-control usr-profile-select-input age-ipt" name="age_from">
+
+
+                  <label for="" class="user-input-title in-to fr-in-partner">to</label>
+
+                  <input type="number" class="form-control usr-profile-select-input age-ipt" name="age_to">
+
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3 d-lg-block d-md-none d-sm-none d-none"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="user-input-title">Marital status</label>
+                  {{form.marital_status}}
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12 p-3 d-flex">
+                  <label for="" class="user-input-title">Height</label>
+                  <select class="form-control usr-profile-select-input" id="heightFrom" name="height_from">
+
+                  </select>
+
+
+                  <label for="" class="user-input-title in-to">to</label>
+
+                  <select class="form-control usr-profile-select-input" id="heightTo" name="height_to">
+
+                  </select>
+
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3 d-lg-block d-md-none d-sm-none d-none"></div>
+
+                <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                  <!-- id="location-details-phone-div1-id" errror -->
+                  <label for="" class="user-input-title">Body type</label>
+                  {{form.body_type}}
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="user-input-title">Complexion</label>
+
+                  <select name="complexion" class="form-control usr-profile-select-input fr-in-partner" id="ComplexionPreference"> 
+                    <option selected disabled>----------</option>   
+
+                    <option value="Fair skin">Fair skin</option>
+                  
+                    <option value="Extremely fair skin">Extremely fair skin</option>
+                  
+                    <option value="Black skin">Black skin</option>
+                  
+                    <option value="Medium skin">Medium skin</option>
+                  
+                    <option value="Olive skin">Olive skin</option>
+                  
+                    <option value="Brown skin">Brown skin</option>
+                  
+                  </select>
+
+                </div>
+
+                <div class="col-lg-2 col-md-2  p-3 d-lg-block d-md-none d-sm-none d-none"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="user-input-title">Community</label>
+
+                  <select name="community" class="form-control usr-profile-select-input fr-in-partner" id="partnerPrefCommunity">
+
+                    <option value="AMuslim">A Muslim</option>
+                  
+                    <option value="Sunni">Sunni</option>
+                  
+                    <option value="Sunni (EK)">Sunni (EK)</option>
+                  
+                    <option value="Sunni (AP)">Sunni (AP)</option>
+                  
+                    <option value="Salafi (KNM)">Salafi (KNM)</option>
+                  
+                    <option value="Salafi (Markaz dawa)">Salafi (Markaz dawa)</option>
+                  
+                    <option value="Salafi (Wisdom)">Salafi (Wisdom)</option>
+                  
+                    <option value="Jamayath Islam ">Jamayath Islam </option>
+                  
+                    <option value="Thableeg Jamath ">Thableeg Jamath </option>
+                  
+                    <option value="Maliki">Maliki</option>
+                  
+                    <option value="Hanafi">Hanafi</option>
+                  
+                    <option value="Sayyid">Sayyid</option>
+                  
+                    <option value="Soofism">Soofism</option>
+                  
+                    <option value="Other">Other</option>
+                  
+                  </select>
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="user-input-title">Heighest<br class="d-lg-flex d-md-none d-sm-none d-none">Education</label>
+
+                  <select name="highestEducation" class="form-control usr-profile-select-input fr-in-partner" id="partnerPrefhighestEducation">
+
+                    <option selected disabled>----------</option>     
+                                
+                    <option value="Masters">Masters</option>
+                  
+                    <option value="Doctorate">Doctorate</option>
+                  
+                    <option value="Bachelors">Bachelors</option>
+                  
+                    <option value="Diploma">Diploma</option>
+                  
+                    <option value="ITI">ITI</option>
+                  
+                    <option value="Islamic Education">Islamic Education</option>
+                  
+                    <option value="High School">High School</option>
+                  
+                    <option value="Other">Other</option>
+                  
+                  </select>
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3 d-lg-block d-md-none d-sm-none d-none"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="user-input-title">Profession</label>
+                  {{form.profession}}
+                </div>
+
+              </div>
+
+              <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3 location-inputdiv-phone" id="">
+                <!-- id="location-details-phone-div1-id"  error -in phone-->
+                <label for="" class="user-input-title">Location</label>
+
+                {{form.location}}
+
+              </div>
+              <div class="col-lg-2 col-md-2 col-12 p-3"></div>
+
+              <div class="text-center usr-fm-btn-div col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="alert alert-success" role="alert" id="msgDiv">
+
+                </div>
+                <button id="btnPartnrPrefSubmit" type="submit" class="btn usr-form-btn">Save & Submit</button>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+
+         <!-- --------------------userprofile view section------------ -->
+
+         <div class="col-lg-12 col-md-12 col-sm-12 col-12 show-profile-user" id="viewProfilebox">
+          <div class="row">
+
+            <div class="col-lg-12 col-12">
+              <div class="edit-button-user p-2">
+                <i class="fas fa-pencil-alt float-right edit-button-user-pencil" id="userEditButton"></i>
+              </div>
+
+              
+            </div>
+
+            <div class="col-lg-12 col-12">
+              <h2 class="p-2">Personal Details</h2>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Full Name :</label> </div>
+                <div class="col-6"><p id="viewFullname">username</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Date of Birth :</label></div>
+                <div class="col-6"><p id="viewdob">dd-mm-yy</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Height :</label></div>
+                <div class="col-6"><p id="viewHeight">150cm</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Weight :</label></div>
+                <div class="col-6"><p id="viewWeight">150cm</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Community :</label></div>
+                <div class="col-6"><p id="viewCommunity">150cm</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Body Type :</label></div>
+                <div class="col-6"><p id="viewBodytype">150cm</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Marital Status :</label></div>
+                <div class="col-6"><p id="viewStatus">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Number of Children :</label></div>
+                <div class="col-6"><p id="viewNumberOfChildren">0</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Complexion :</label></div>
+                <div class="col-6"><p id="viewComplexion">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Physical Status :</label></div>
+                <div class="col-6"><p id="viewPhysicalStatus">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Mother Tongue :</label></div>
+                <div class="col-6"><p id="viewMotherTongue">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Language Known :</label></div>
+                <div class="col-6"><p  id="viewLanguageKnown"></p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Perform Namaz :</label></div>
+                <div class="col-6"><p id="viewperformNamaz">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Reading Quran :</label></div>
+                <div class="col-6"><p id="viewReadingQuran">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Fasting :</label></div>
+                <div class="col-6"><p id="viewFasting">Single</p></div></div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Attending Islamic Serices :</label></div>
+                <div class="col-6"><p id="viewIslamicService">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Smoking Habit :</label></div>
+                <div class="col-6"><p id="viewSmoking">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Drinking Habit :</label></div>
+                <div class="col-6"><p id="viewDrinking">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-12">
+              <h2 class="p-2">Location and Contact Details</h2>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Native Locality :</label></div>
+                <div class="col-6"><p id="viewNativeLocality">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Native city :</label></div>
+                <div class="col-6"><p id="viewNativeCity">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Home name :</label></div>
+                <div class="col-6"><p id="viewNativeHome">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Current Locality :</label></div>
+                <div class="col-6"><p id="viewCurrentLocality">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Current city :</label></div>
+                <div class="col-6"><p id="viewCurrentCity">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Home name :</label></div>
+                <div class="col-6"><p id="viewCurrentHome">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Pincode :</label></div>
+                <div class="col-6"><p id="viewPincode">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Primary Number :</label></div>
+                <div class="col-6"><p id="viewPrimaryNumber">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Secondary Number :</label></div>
+                <div class="col-6"><p id="viewSecondaryNumber">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Preffered person :</label></div>
+                <div class="col-6"><p id="viewPrefferedPerson">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Relation :</label></div>
+                <div class="col-6"><p id="viewRelation">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Number :</label></div>
+                <div class="col-6"><p id="viewNumber">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-12">
+              <h2 class="p-2">Proffession Details</h2>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Highest Education :</label></div>
+                <div class="col-6"><p id="viewHighestEducation" >Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Specialization :</label></div>
+                <div class="col-6"><p id="viewProfession">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Working with:</label></div>
+                <div class="col-6"><p id="viewWorkingWith">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Working as</label></div>
+                <div class="col-6"><p id="viewWorkinas">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Annual income :</label></div>
+                <div class="col-6"><p id="viewAnnualincome">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12 col-12">
+              <h2 class="p-2">Family Details</h2>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Family Type :</label></div>
+                <div class="col-6"><p id="viewFamilyType">Single</p></div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Family Status :</label></div>
+                <div class="col-6"><p id="viewFamilyStatus">Single</p></div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Father's Job :</label></div>
+                <div class="col-6"><p id="viewFatherJob">Single</p></div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Mother's Job:</label></div>
+                <div class="col-6"><p id="viewMotherJob">Single</p></div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Number of Brothers</label></div>
+                <div class="col-6"><p id="viewNumberofBrothers">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Number of Sisters</label></div>
+                <div class="col-6"><p id="viewNumberofSisters">Single</p></div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+              <div class="row">
+                <div class="col-6"><label for="" class="viewprofile-labels">Religion Interest :</label></div>
+                <div class="col-6"><p id="viewReligionInterest">Single</p></div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-12">
+              <h2 class="p-2">About Yourself</h2>
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-12"><p id="viewAbout">Single</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- ------------------------userprofile edit form start------------------------ -->
+
+        <div class="col-lg-12 col-12 usr-edit-profile" id="form-2">
+
+          <form action="" id="userEditForm">
+
+            <div class="row p-3">
+
+              <div class="col-12 d-lg-none d-md-block d-sm-block d-block">
+                <div class="mob-show-form-btn">
+                  <h4>
+                    <button class="btn" id="edit-form-btn-1">Personal Details
+                      <i class="fas fa-caret-right"></i>
+                    </button>
+                </div>
+              </div>
+              <div class="row" id="edit-form-personal-id">
+
+                <div class="col-lg-12 d-lg-block d-md-none d-sm-none d-none">
+                  <h5 class="edit-prof-title">Personal Details</h5>
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Full Name :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" name="full_name">
+                  <input type="text" class="form-control usr-edit-prof-input fr" id="userEditId" hidden>
+
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 p-3 d-lg-block d-md-none d-sm-none d-none"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+
+                  <label for="" class="input-title"> Dob:</label>
+                  <input type="date" class="form-control usr-edit-prof-input desk-blank-input fr" name="dob">
+
+                </div>
+
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3 ">
+                  <label for="" class="input-title">Height :</label>
+                  <select class="form-control edit-form-select-input fr" id="userEditHeight" name="height">
+                   
+                  </select>
+                  <input type="text" id="userProfileId" hidden>
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+
+                  <label for="" class="input-title"> Weight :</label>
+                  <select class="form-control edit-form-select-input fr" id="userEditWeight" name="weight">
+                 
+                  </select>
+
+
+                </div>
+
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Community :</label>
+                  {{userprofileForm.community}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Body Type :</label>
+                  {{userprofileForm.bodyType}}
+
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Marital Status :</label>
+                  {{userprofileForm.status}}
+
+                </div>
+               <!-- ----------- -->
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3" id="noOfChildrenDiv">
+                  <label for="" class="input-title">No of children<b>*</b></label>
+                  <input type="number" name="no_of_children" id="noOfChildren" min="0" value="0" placeholder="No of children" class="form-control fr">
+  
+                </div>
+                
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Complexion<b>*</b></label>
+                  {{form.complexion}}
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Physical Status :</label>
+                  {{userprofileForm.physical_status}}
+
+                </div>
+
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Mother Tongue :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="motherTongue">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+                
+
+                <div class="col-lg-5 col-md-5 langknowbox p-3">
+                  <label for="languageKnown" class="input-title">Language Known</label> 
+                  <select id="languageKnown" class="form-control reg-form-select-input fr selectpicker language-known-input"  multiple data-live-search="true">
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Kannada">Kannada</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="English">English</option>
+                  </select>
+                </div>
+
+
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Perform Namaz :</label>
+                  {{userprofileForm.perform_namaz}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Reading Quran :</label>
+                  {{userprofileForm.readQuran}}
+
+                </div>
+
+
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Fasting :</label>
+                  {{userprofileForm.fasting}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Attending Islamic <br>Serices :</label>
+                  {{userprofileForm.islamic_services}}
+
+                </div>
+
+
+          
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Smoking Habit :</label>
+                  {{userprofileForm.smoking}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Drinking Habit</label>
+                  {{userprofileForm.drinking}}
+
+                </div>
+
+
+                <div class="clearfix"></div>
+
+              </div>
+
+              <div class="pt-3 col-lg-12 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none">
+                <h5 class="edit-prof-title">Location and Contact Details</h5>
+              </div>
+
+              <div class="col-12 d-lg-none d-md-block d-sm-block d-block">
+                <div class="mob-show-form-btn">
+                  <h4>
+                    <button class="btn mob-edit-prof-btn-2" id="edit-form-btn-2">Location and Contact Details
+                      <i class="fas fa-caret-right"></i>
+                    </button>
+                </div>
+              </div>
+
+              <div class="row" id="edit-form-location-id">
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Native Locality :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="native_locality">
+                  <input type="text" class="form-control usr-edit-prof-input" value="" id="userLocationId" hidden >
+
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Native city :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" name="native_city">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Home name : </label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="674 678" name="home_name">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="form-check pt-3 edit-prof-check col-lg-12 col-md-12 col-sm-12 col-12">
+                  <input type="checkbox" class="form-check-input fr" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Current location is same as Native
+                    location</label>
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Current Locality :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="current_locality">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Current city :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="current_city">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Home name : </label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="current_home_name">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Pincode : </label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="pincode">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Primary Number :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="primary_number">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <span class="input-title">Secondary Number :</span>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="secondary_number">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Preffered person :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value=""
+                    name="preffered_person">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title "> Relation :</label>
+                  {{locationform.relation}}
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title"> Number :</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="phone_number">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+                <div class="clearfix"></div>
+
+              </div>
+
+              <div class="pt-3 col-lg-12 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none">
+                <h5 class="edit-prof-title">Proffession Details</h5>
+              </div>
+
+              <div class="col-12 d-lg-none d-md-block d-sm-block d-block">
+                <div class="mob-show-form-btn">
+                  <h4>
+                    <button class="btn mob-edit-prof-btn-2" id="edit-form-btn-3">Profession Details
+                      <i class="fas fa-caret-right"></i>
+                    </button>
+                </div>
+              </div>
+
+              <div class="row" id="editProfessionId">
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Highest Education :</label>
+                  {{professionform.highestEducation}}
+                  <input type="text" class="form-control usr-edit-prof-input" value="" id="userProfessionId" hidden >
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Specialization :</label>
+                  <select class="required form-control reg-form-select-input fr valid" name="Profession">
+                    <option value="MBBS">MBBS</option>
+                    <option value="BDS">BDS</option>
+                    <option value="BAMS">BAMS</option>
+                    <option value="BUMS">BUMS</option>
+                    <option value="B.Sc Nursing">B.Sc Nursing</option>
+                    <option value="B.Pharm">B.Pharm</option>
+                    <option value="M.Pharm">M.Pharm</option>
+                    <option value="D.Pharm">D.Pharm</option>
+                    <option value="B.Arch">B.Arch</option>
+                    <option value="M.Arch">M.Arch</option>
+                    <option value="Bachelor of Arts">Bachelor of Arts</option>
+                    <option value="Bachelor of Science">Bachelor of Science</option>
+                    <option value="Bachelor of Fine Art">Bachelor of Fine Art</option>
+                    <option value="Master of Arts">Master of Arts</option>
+                    <option value="Master of Science">Master of Science</option>
+                    <option value="B.A English">B.A English</option>
+                    <option value="B.A History">B.A History</option>
+                    <option value="B.A Economics">B.A Economics</option>
+                    <option value="B.A Psychology">B.A Psychology</option>
+                    <option value="B.A Journalism">B.A Journalism</option>
+                    <option value="B.A Arabic">B.A Arabic</option>
+                    <option value="B.A Political Science">B.A Political Science</option>
+                    <option value="B.A (Honors)">B.A (Honors)</option>
+                    <option value="M.A English">M.A English</option>
+                    <option value="M.A History">M.A History</option>
+                    <option value="M.A Economics">M.A Economics</option>
+                    <option value="M.A Arabic">M.A Arabic</option>
+                    <option value="B.Sc in Computer Science">B.Sc in Computer Science</option>
+                    <option value="B.Sc Physics">B.Sc Physics</option>
+                    <option value="B.Sc Mathematics">B.Sc Mathematics</option>
+                    <option value="B.Sc Botany">B.Sc Botany</option>
+                    <option value="B.Sc in Zoology">B.Sc in Zoology</option>
+                    <option value="B.Sc in Statistics">B.Sc in Statistics</option>
+                    <option value="M.Sc in Computer Science">M.Sc in Computer Science</option>
+                    <option value="M.Sc Physics">M.Sc Physics</option>
+                    <option value="M.Sc Mathematics">M.Sc Mathematics</option>
+                    <option value="B.Sc Botany">B.Sc Botany</option>
+                    <option value="M.Sc in Zoology">M.Sc in Zoology</option>
+                    <option value="M.Sc in Statistics">M.Sc in Statistics</option>
+                    <option value="B.com">B.com</option>
+                    <option value="M.com">M.com</option>
+                    <option value="BBA">BBA</option>
+                    <option value="MBA">MBA</option>
+                    <option value="Chartered Accountant (CA)">Chartered Accountant (CA)</option>
+                    <option value="Company Secretary (CS)">Company Secretary (CS)</option>
+                    <option value="LLB">LLB</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="M.Tech">M.Tech</option>
+                    <option value="B.Tech Mechanical">B.Tech Mechanical</option>
+                    <option value="B.Tech Civil">B.Tech Civil</option>
+                    <option value="B.Tech Computer Science and Engineering">B.Tech Computer Science and Engineering
+                    </option>
+                    <option value="B.Tech ECE">B.Tech ECE</option>
+                    <option value="B.Tech Aerospace">B.Tech Aerospace</option>
+                    <option value="Diploma Courses">Diploma Courses</option>
+                    <option value="Certificate Couses">Certificate Couses</option>
+                    <option value="Diploma in Interior Designing">Diploma in Interior Designing</option>
+                    <option value="Diploma in Fashion Designing">Diploma in Fashion Designing</option>
+                    <option value="Hotel Management">Hotel Management</option>
+                    <option value="Animation, Graphics and Multimedia">Animation, Graphics and Multimedia</option>
+                    <option value="ITI">ITI</option>
+                    <option value="Higher Secondary">Higher Secondary</option>
+                    <option value="High School">High School</option>
+                    <option value="Other">Other</option>
+                  </select>
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Working with:</label>
+                  {{professionform.working_with}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Working as</label>
+                  {{professionform.working_as}}
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Annual income : </label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="annual_income">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+              </div>
+
+              <div class="pt-3 col-lg-12 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none">
+                <h5 class="edit-prof-title">Family Details</h5>
+              </div>
+
+              <div class="col-12 d-lg-none d-md-block d-sm-block d-block">
+                <div class="mob-show-form-btn">
+                  <h4>
+                    <button class="btn mob-edit-prof-btn-2" id="edit-form-btn-4">Family Details
+                      <i class="fas fa-caret-right"></i>
+                    </button>
+                </div>
+              </div>
+
+              <div class="row" id="editFamilyId">
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Family Type :</label>
+                  {{familyForm.familyType}}
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" id="userFamilyId" hidden >
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Family Status :</label>
+                  {{familyForm.family_status}}
+
+                  <!-- <i class="fas fa-pencil-alt edit-prof-icon"></i> -->
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Father's Job</label>
+                  {{familyForm.fatherOccupation}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Mother's Job</label>
+                  {{familyForm.motherOccupation}}
+
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Number of Brothers</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="numberof_brothers">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label class="input-title">Number of Sisters</label>
+                  <input type="text" class="form-control usr-edit-prof-input fr" value="" name="numberof_sisters">
+                  <i class="fas fa-pencil-alt edit-prof-icon"></i>
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-sm-12 col-12 p-3">
+                  <label for="" class="input-title">Religion Interest : </label>
+                  {{familyForm.relegion}}
+
+                </div>
+
+                <div class="col-lg-2 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-block d-md-none d-sm-none d-none p-3"></div>
+                <div class="col-12">
+                  <div class="text-center p-3 d-lg-block d-md-block d-sm-none d-none">
+                    <h4>About Yourself<b>*</b></h4>
+                  </div>
+                  <div class="mob-head p-4 d-lg-none d-md-none d-sm-block d-block">
+                    <h4>About Yourself<b>*</b></h4>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-lg-12 p-3 text-center">
+                      <textarea type="text" class="form-control" name="about" maxlength="150" placeholder="Describe about yourself in few words" id="about"></textarea>
+                      <!-- <i class="fas fa-pencil-alt input-icon"></i> -->
+                    </div>
+  
+                    <!-- <textarea name="about" id="" cols="30" rows="10" class="form-control d-lg-none d-md-block d-sm-block"
+                      placeholder="Describe about yourself in few words..."></textarea> -->
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="text-center col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="alert alert-success" role="alert" id="msgDiv1">
+
+                </div>
+                <button class="btn usr-form-btn p-3">Save & Submit</button>
+              </div>
+          </form>
+        </div>
+        
+
+
+         
+
+      </div>
+    </div>
+  </section>
+
+  <section class="area-seven position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+          <div class="download-logo-second card ">
+           <a href=""> <img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+          <div class="download-logo-second card">
+           <a href=""> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+          <div class="download-content">
+            <p class="dan">Download the app now!</p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+          <div class="">
+            <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+{% include 'web/partials/footer.html' %}
+
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'web/js/login-check.js' %}"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+<script src="{% static 'web/js/partner-preference.js' %}"></script>
+<script src="{% static 'web/js/user-edit-profile.js' %}"></script>
+<script src="{% static 'web/js/helper.js' %}"></script>
+<!-- -------------ashisq added script---and css file---- -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+{% endblock %}

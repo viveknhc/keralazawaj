@@ -1,0 +1,193 @@
+{% load static %}
+<header>
+    <nav class="navbar navbar-expand-sm fixed-top main-nav main-nav-bg dash-nav" id="nav">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="{% url 'web:dashboard' %}">
+            <img src="{% static 'web/images/kerala zawaj logo.svg' %}" alt="miss" class="logo-dashboard" style="width: 43px;">
+        </a>
+
+        <div class="form-group has-search mob-nav-title-hide d-lg-flex d-md-none d-sm-none d-none dash-search-box">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="Search">
+        </div>
+
+        <ul class="navbar-nav mt-lg-0 bismi-nav">
+            <li class="nav-item  bismi-nav-link mob-nav-link-res bismi-nav-li">
+                
+                <a class="nav-link" href="{% url 'web:dashboard' %}" id="nav1">
+                    <span class="mob-nav-title-hide">Discover </span>
+                    <i>
+                        <img src="{% static 'web/images/icons/nav-icons/discovery.svg' %}" alt=""
+                            class="img-dashboard-icon">
+                    </i>
+                </a>
+            </li>
+            <li class="nav-item bismi-nav-link mob-nav-link-res bismi-nav-li" id="premieumsubscrptn">
+                <a class="nav-link prm-chk likes" href="{% url 'web:subscription_plans_view' %}" id="nav2"> <span class="mob-nav-title-hide">Likes</span> 
+                     <i class=""><img src="{% static 'web/images/icons/nav-icons/heart.png' %}" alt="" class="img-dashboard-icon"></i>
+                     <i class="icon-bell mx-0" id="likeCountItag"><span class="count" id="likeCount"></span></i>
+                    
+                </a>
+
+            </li>
+            <li class="nav-item bismi-nav-link mob-nav-link-res bismi-nav-li" id="premieumsubscrptn">
+                <a class="nav-link prm-chk matches" href="{% url 'web:subscription_plans_view' %}" id="nav3"><span class="mob-nav-title-hide">Matches</span>
+                    <i><img src="{% static 'web/images/icons/nav-icons/matches.png' %}" alt=""class="img-dashboard-icon"></i>
+                    <i class="icon-bell mx-0" id="matchCountItag"><span class="count" id="matchCount"></span></i>
+                </a>
+            </li>
+
+            <li class="nav-item bismi-nav-link mob-nav-link-res bismi-nav-li" id="premieumsubscrptn">
+                <a class="nav-link prm-chk chats" href="{% url 'web:subscription_plans_view' %}"><span class="mob-nav-title-hide">Messages</span>
+                    <i class="fas fa-comment img-dashboard-icon-chat-nav"></i>   
+                </a>
+            </li>
+
+        </ul>
+        <div>
+
+        </div>
+
+        <!-- Links -->
+        <ul class="navbar-nav mt-lg-0 mob-nav-ul-two">
+            <!-- <li class="nav-item bismi-nav-link mob-nav-link-res-second mob-nav-title-hide bismi-nav-li-second">
+                    
+                    <a class="nav-link" href="{% url 'web:chat_direct' %}"><i class="fas fa-comment bismi-nav-li-second-icon chat-icondpadd"></i>
+                    <i class="icon-bell mx-0" id="chatCountItag"><span class="count" id="ChatCount"></span></i>
+                    </a>
+            </li> -->
+            <li class="nav-item bismi-nav-link mob-nav-link-res-second bismi-nav-li-second dropdown" id="mob-show-dropdown">
+
+                <a class="nav-link dropdown"  id="nav4">
+
+                    <span class="mob-nav-title-hide" id="userNameViewSapn"></span>
+                    <img id="userImgViewId"  alt="" class="mob-nav-user bismi-nav-li-second-icon bismi-nav-li-second-icon-user userhedaer-image">
+                </a>
+                    <!-- <i class="fas fa-user-circle mob-nav-user bismi-nav-li-second-icon bismi-nav-li-second-icon-user"></i> -->
+                    <ul class="dropdown-menu dropdown-menu-header">
+                        <li id="btnMyProfile">
+                            <a>My profile</a>
+                        </li>
+                        <li id="btnPartnerPreference">
+                            <a>Partner Preferences</a>
+                        </li>
+                        <li id="btnLogout" class="" title="Logout">
+                            <a style="color: #fff;"><span class="mob-nav-title-hide" id="userNameViewSapn"></span>Logout</a> 
+                        </li>
+                    </ul>
+                
+            </li>
+
+                <!-- -----logout  -->
+            <!-- <li class="nav-item bismi-nav-link mob-nav-link-res-second bismi-nav-li-second padd" title="Logout">
+                <a class="nav-link" id="btnLogout"><span class="mob-nav-title-hide" id="userNameViewSapn"></span>
+                    <i class="fas fa-power-off mob-nav-user bismi-nav-li-second-icon bismi-nav-li-second-icon-user"></i>
+                </a>
+                
+            </li> -->
+        </ul>
+    </nav>
+</header>
+<!-- --------------phone navbar----------- -->
+<div class="container-fluid" id="phoneMenu">
+    <div class="row">
+      <div class="col-12">
+        <ul class="text-center">
+          <li id="close-navId"><a class="float-right pb-2 pr-3 far fa-times"></a></li>
+          <li id="btnMyProfile"><a>My Profile</a></li>
+          <li id="btnPartnerPreference"><a >Partner Preference</a></li>
+          <li id="btnLogout" ><a id="btnLogout" style="color: #fff !important;"></a> Logout</li>
+          
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  
+{% block javascript %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $.ajax({
+        url: "https://keralazawaj.com/api/user/get_user/",
+        type: "GET",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader(
+                "Authorization",
+                "Token " + localStorage.getItem("token")
+            );
+        },
+        success: function (response) {
+            $("#userNameViewSapn").html(response['name'])
+            $("#userImgViewId").prop('src', response.image.image_one['medium_square_crop'])
+        }
+    });
+</script>
+
+<script>
+    $("[id=btnLogout]").click(function () {
+        $.ajax({
+            url: "https://keralazawaj.com/api/user/logout/",
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    "Authorization",
+                    "Token " + localStorage.getItem("token")
+                );
+            },
+            success: function () {
+                localStorage.removeItem("token")
+                window.location = "https://keralazawaj.com/"
+            },
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#likeCountItag").hide();
+        $("#matchCountItag").hide();
+        $("#chatCountItag").hide();
+        $.ajax({
+            url: "https://keralazawaj.com/api/user/liked-count/",
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    "Authorization",
+                    "Token " + localStorage.getItem("token")
+                );
+            },
+            success: function (response) {
+                if(response['count'] > 0){
+                    $("#likeCountItag").show();
+                    $("#likeCount").html(response['count']);
+                }
+                if(response['matched_count'] > 0){
+                    $("#matchCountItag").show();
+                    $("#matchCount").html(response['matched_count']);
+                }
+              
+                
+            },
+        });
+    })
+</script>
+
+<script>
+    $('[id=btnMyProfile]').click(function(){
+        
+        window.location = '/user-profile/?lat=profile'
+    });
+</script>
+
+<script>
+    $('[id=btnPartnerPreference]').click(function(){
+        
+        window.location = '/user-profile/?lat=partner-preference'
+    });
+</script>
+<script src="{% static 'web/js/mobile-navigation.js' %}"></script>
+
+
+
+{% endblock %}

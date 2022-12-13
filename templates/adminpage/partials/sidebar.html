@@ -1,0 +1,81 @@
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'official:admin_dashboard' %}">
+          <i class="icon-grid menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'official:verified_user' %}" aria-expanded="false" aria-controls="form-elements">
+          <!-- <i class="icon-columns menu-icon"></i> -->
+          <i class="fas fa-user-check menu-icon"></i>
+          <span class="menu-title">Registered Users</span>
+          <!-- <i class="menu-arrow"></i> -->
+        </a>
+       
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'official:males' %}" aria-expanded="false" aria-controls="charts">
+          <!-- <i class="icon-bar-graph menu-icon"></i> -->
+          <i class="fas fa-male menu-icon"></i>
+
+          <span class="menu-title">Males</span>
+          <!-- <i class="menu-arrow"></i> -->
+        </a>
+       
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'official:females' %}" aria-expanded="false" aria-controls="tables">
+          <!-- <i class="icon-grid-2 menu-icon"></i> -->
+          <i class="fas fa-female menu-icon"></i>
+          <span class="menu-title">Females</span>
+          <!-- <i class="menu-arrow"></i> -->
+        </a>
+        
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'official:uncompleted_profiles' %}" aria-expanded="false" aria-controls="tables">
+          <!-- <i class="icon-grid-2 menu-icon"></i> -->
+          
+          <i class="fas fa-clipboard-list  menu-icon"></i>
+          <span class="menu-title">Incompleted Profile</span>
+          <!-- <i class="menu-arrow"></i> -->
+        </a>
+        
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'official:subscription_plans' %}" aria-expanded="false" aria-controls="tables">
+          <!-- <i class="icon-grid-2 menu-icon"></i> -->
+          
+          <i class="fas fa-clipboard-list  menu-icon"></i>
+          <span class="menu-title">Subscription plans</span>
+          <!-- <i class="menu-arrow"></i> -->
+        </a>
+        
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="fas fa-home menu-icon"></i>
+         
+          <span class="menu-title">Home</span>
+          <i class="menu-arrow"></i>
+
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{% url 'official:stories' %}">Success Stories</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'official:testimonial' %}">Testimonial</a></li>
+            
+          </ul>
+        </div>
+      </li>
+
+
+      
+    </ul>
+  </nav>

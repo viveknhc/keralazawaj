@@ -1,0 +1,665 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<header>
+  <nav class="navbar navbar-expand-sm fixed-top main-nav main-nav-bg d-md-flex justify-content-between">
+    <!-- Brand/logo -->
+    <a class="navbar-brand " href="/">
+      <img src="{% static 'web/images/KeralZawaj.svg' %}" alt="logo" class="bismi-logo">
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item d-md-flex d-sm-none d-none">
+        <a class="nav-link pr-4" href="#">Already a member ?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link sign-in-btn" href="{% url 'web:login' %}">Sign In</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="register-page-header">
+    <div class="container-fluid mob-bg">
+      <div class="row">
+        <div class="col-12 text-center p-4">
+          <h2 class="register-page-header-title">KeralaZawaj</h2>
+
+          <p class="register-page-header-content d-lg-block d-sm-none d-none">Create your profile with ease, nothing
+            more nothing less</p>
+          <p class="register-page-header-content d-lg-none d-sm-block d-block">Create your profile with ease</p>
+        </div>
+      </div>
+
+
+  </section>
+
+  <section class="register-form-section-pb">
+    <div class="container register-form-section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <form id="userDetailsForm" method="">
+            {% csrf_token %}
+            <div class="text-center p-3 d-lg-block d-md-block">
+              <h4>Fill your details</h4>
+            </div>
+            <!-- <div class="mob-head p-4 d-lg-none d-md-none d-sm-block d-none">
+              <h4>Basic details</h4>
+            </div> -->
+
+            <div class="row p-3" id="userDetailsDiv">
+              <input type="number" value="{{register}}" name="register" id="register" hidden>
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+
+                <label for="" class="input-title"> Bride / Groom*</label>
+                <input type="text" name="full_name" id="fullName" placeholder="Full Name" class="form-control fr">
+                <i class="fas fa-pencil-alt input-icon"></i>
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                <label class="input-title">D.O.B*</label>
+                <input name="dob" id="dob" type="date" class="form-control fr">
+              </div>
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12  p-3">
+                <label for="" class="input-title"> E-mail ID*</label>
+                <input type="email" name="email" id="email" class="form-control fr" placeholder="Username">
+
+                <i class="fas fa-pencil-alt input-icon"></i>
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                <label for="" class="input-title"> Password*</label>
+                <input type="password" name="password" id="password" class="form-control fr" value=""
+                  placeholder="Password">
+
+                <i class="fas fa-eye input-icon" aria-hidden="true" onclick="myFunction()"></i>
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                <label for="" class="input-title">Confirm Password*</label>
+                <input type="password" name="conformPassword" id="conformPassword" class="form-control fr" value=""
+                  placeholder="Confirm Password">
+                <i class="fas fa-eye input-icon" aria-hidden="true" onclick="myFunctionConformPassword()"></i>
+              </div>
+
+              <div class="text-center regbtn-box col-12 pt-3">
+                <p id="alertId" style="color: red;"></p>
+                <button type="submit" class="btn reg-form-btn">Save & Next <i class="fas fa-caret-down"></i></button>
+              </div>
+            </div>
+          </form>
+
+          <form id="userProfileForm" method="">{% csrf_token %}
+
+            <!-- <div class="text-center p-3 d-lg-block d-md-block d-sm-none d-none">
+              <h4 id="userDetailsH4div">Create your profile</h4>
+            </div>
+
+            <div class="mob-head  d-lg-none d-md-none d-sm-block d-block">
+              <h5 id="userDetailsH4div1">Create your profile</h5>
+            </div> -->
+            <input type="number" value="{{register}}" name="register" id="register1" hidden>
+
+            <div class="row p-3" id="userProfileDetailsDiv">
+              <!-- -------------gender--------------- -->
+              <div class="col-lg-5 col-md-5 p-3">
+                <label for="" class="input-title">Gender<b>*</b></label>
+                {{form.gender}}
+              </div>
+              <!-- --------------------- -->
+              <div class="col-lg-2 col-md-2 p-3 d-lg-block d-md-block d-sm-none"></div>
+
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3 ">
+                <label for="" class="input-title">Height<b>*</b></label>
+                <select name="height" id="height" class="form-control reg-form-select-input fr"></select>
+              </div>
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                <label for="" class="input-title">Weight<b>*</b></label>
+                <select name="weight" id="weight" class="form-control reg-form-select-input fr"></select>
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3 d-lg-block d-md-block d-sm-none "></div>
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                <label for="" class="input-title">Community<b>*</b></label>
+
+                {{form.community}}
+
+
+              </div>
+
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Body type<b>*</b></label>
+                {{form.bodyType}}
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Physical status<b>*</b></label>
+                {{form.physical_status}}
+              </div>
+
+              <!-- --------------------- -->
+              <div class="col-lg-5 col-md-5 p-3">
+                <label for="" class="input-title">Marital Status<b>*</b></label>
+                {{form.status}}
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3" id="divId"></div>
+              <div class="col-lg-7 col-md-7 p-3" id="div2Id"></div>
+
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3" id="noOfChildrenDiv">
+                <label for="" class="input-title">No of children<b>*</b></label>
+                <input type="number" name="no_of_children" id="noOfChildren" min="0" value="0"
+                  placeholder="No of children" class="form-control fr">
+
+              </div>
+              <!-- --------------------  -->
+
+
+              <div class="col-lg-5 col-md-5 col-sm-12 col-12 p-3">
+                <label for="" class="input-title">complexion<b>*</b></label>
+                {{form.complexion}}
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Mother Tongue<b>*</b></label>
+                {{form.motherTongue}}
+              </div>
+
+
+              <div class="col-lg-5 col-md-5 langknowbox p-3">
+                <label for="languageKnown" class="input-title">Language Known</label>
+                <select id="languageKnown"
+                  class="form-control reg-form-select-input fr selectpicker language-known-input" multiple
+                  data-live-search="true">
+                  <option>Malayalam</option>
+                  <option>Tamil</option>
+                  <option>Hindi</option>
+                  <option>Kannada</option>
+                  <option>Arabic</option>
+                  <option>English</option>
+                </select>
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Perform Namaz<b>*</b></label>
+                {{form.perform_namaz}}
+
+              </div>
+
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Reading Quran<b>*</b></label>
+                {{form.readQuran}}
+
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Fasting<b>*</b></label>
+                {{form.fasting}}
+
+              </div>
+
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Attending Islamic <br> Services<b>*</b></label>
+                {{form.islamic_services}}
+
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Smoking Habits</label>
+                {{form.smoking}}
+
+              </div>
+
+
+              <div class="col-lg-5 col-md-5  p-3">
+                <label for="" class="input-title">Drinking Habits</label>
+                {{form.drinking}}
+
+              </div>
+
+              <div class="col-lg-2 col-md-2 p-3"></div>
+
+              <!-- --------------------------------------------- -->
+
+
+              <div class="text-center regbtn-box col-12">
+                <p id="formProfileAlert" style="color: red;"></p>
+
+                <button type="submit" class="btn reg-form-btn p-2">Save & Next <i
+                    class="fas fa-caret-down"></i></button>
+              </div>
+            </div>
+          </form>
+
+          <!-- ----------------------profession details form start---------------------- -->
+
+          <!-- <div class="text-center p-3 d-lg-block d-md-block d-sm-none d-none">
+            <h4 id="divProfesionH4Div">Profession Details</h4>
+          </div> -->
+
+          <!-- <div class="mob-head p-4 d-lg-none d-md-none d-sm-block d-block">
+            <h4 id="divProfesionH4Div1">Profession Details</h4>
+          </div> -->
+
+          <div id="divProfeesionForm">
+            <form id="userProfessionForm">
+              {% csrf_token %}
+              <div class="row p-3" id="">
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Highest Education<b>*</b></label>
+                  {{profession_form.highestEducation}}
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3"></div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Specialization<b>*</b></label>
+                  <select class="required form-control reg-form-select-input fr valid" name="profession">
+                    <option value="MBBS">MBBS</option>
+                    <option value="BDS">BDS</option>
+                    <option value="BAMS">BAMS</option>
+                    <option value="BUMS">BUMS</option>
+                    <option value="B.Sc Nursing">B.Sc Nursing</option>
+                    <option value="B.Pharm">B.Pharm</option>
+                    <option value="M.Pharm">M.Pharm</option>
+                    <option value="D.Pharm">D.Pharm</option>
+                    <option value="B.Arch">B.Arch</option>
+                    <option value="M.Arch">M.Arch</option>
+                    <option value="Bachelor of Arts">Bachelor of Arts</option>
+                    <option value="Bachelor of Science">Bachelor of Science</option>
+                    <option value="Bachelor of Fine Art">Bachelor of Fine Art</option>
+                    <option value="Master of Arts">Master of Arts</option>
+                    <option value="Master of Science">Master of Science</option>
+                    <option value="B.A English">B.A English</option>
+                    <option value="B.A History">B.A History</option>
+                    <option value="B.A Economics">B.A Economics</option>
+                    <option value="B.A Psychology">B.A Psychology</option>
+                    <option value="B.A Journalism">B.A Journalism</option>
+                    <option value="B.A Arabic">B.A Arabic</option>
+                    <option value="B.A Political Science">B.A Political Science</option>
+                    <option value="B.A (Honors)">B.A (Honors)</option>
+                    <option value="M.A English">M.A English</option>
+                    <option value="M.A History">M.A History</option>
+                    <option value="M.A Economics">M.A Economics</option>
+                    <option value="M.A Arabic">M.A Arabic</option>
+                    <option value="B.Sc in Computer Science">B.Sc in Computer Science</option>
+                    <option value="B.Sc Physics">B.Sc Physics</option>
+                    <option value="B.Sc Mathematics">B.Sc Mathematics</option>
+                    <option value="B.Sc Botany">B.Sc Botany</option>
+                    <option value="B.Sc in Zoology">B.Sc in Zoology</option>
+                    <option value="B.Sc in Statistics">B.Sc in Statistics</option>
+                    <option value="M.Sc in Computer Science">M.Sc in Computer Science</option>
+                    <option value="M.Sc Physics">M.Sc Physics</option>
+                    <option value="M.Sc Mathematics">M.Sc Mathematics</option>
+                    <option value="B.Sc Botany">B.Sc Botany</option>
+                    <option value="M.Sc in Zoology">M.Sc in Zoology</option>
+                    <option value="M.Sc in Statistics">M.Sc in Statistics</option>
+                    <option value="B.com">B.com</option>
+                    <option value="M.com">M.com</option>
+                    <option value="BBA">BBA</option>
+                    <option value="MBA">MBA</option>
+                    <option value="Chartered Accountant (CA)">Chartered Accountant (CA)</option>
+                    <option value="Company Secretary (CS)">Company Secretary (CS)</option>
+                    <option value="LLB">LLB</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="M.Tech">M.Tech</option>
+                    <option value="B.Tech Mechanical">B.Tech Mechanical</option>
+                    <option value="B.Tech Civil">B.Tech Civil</option>
+                    <option value="B.Tech Computer Science and Engineering">B.Tech Computer Science and Engineering
+                    </option>
+                    <option value="B.Tech ECE">B.Tech ECE</option>
+                    <option value="B.Tech Aerospace">B.Tech Aerospace</option>
+                    <option value="Diploma Courses">Diploma Courses</option>
+                    <option value="Certificate Couses">Certificate Couses</option>
+                    <option value="Diploma in Interior Designing">Diploma in Interior Designing</option>
+                    <option value="Diploma in Fashion Designing">Diploma in Fashion Designing</option>
+                    <option value="Hotel Management">Hotel Management</option>
+                    <option value="Animation, Graphics and Multimedia">Animation, Graphics and Multimedia</option>
+                    <option value="ITI">ITI</option>
+                    <option value="Higher Secondary">Higher Secondary</option>
+                    <option value="High School">High School</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Working With</label>
+                  {{profession_form.working_with}}
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3"></div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Working as</label>
+                  {{profession_form.working_as}}
+
+                </div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Annual income</label>
+                  <select name="annual_income" class="form-control reg-form-select-input fr">
+                    <option selected disabled>Choose from list</option>
+                    <option value="2 lakh per/annum">
+                      < 2 Lakh per annum </option>
+                    <option value="5 lakh per/annum">
+                      < 5 Lakh per annum</option>
+                    <option value="10 lakh per/annum">
+                      < 10 Lakh per annum </option>
+                    <option value="15 lakh per/annum"> < 15 Lakh per annum </option>
+                    <option value="20 lakh per/annum"> < 20 Lakh per annum</option>
+
+                  </select>
+                </div>
+
+
+                <div class="col-lg-2 col-md-2 p-3"></div>
+
+                <div class="col-lg-5 col-md-5  p-3"></div>
+
+                <div class="text-center regbtn-box col-12">
+                  <p id="formProfileAlert" style="color: red;"></p>
+
+                  <button type="submit" class="btn reg-form-btn p-2">Save & Next <i
+                      class="fas fa-caret-down"></i></button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <!-- ----------------------profession details form end---------------------- -->
+
+          <!-- ----------------------Family details form start---------------------- -->
+          <!-- <div class="text-center p-3 d-lg-block d-md-block d-sm-none d-none">
+            <h4 id="familyH4Div">Family Details</h4>
+          </div> -->
+
+          <!-- <div class="mob-head p-4 d-lg-none d-md-none d-sm-block d-block">
+            <h5 id="familyH4Div1">Family Details</h5>
+          </div> -->
+
+          <div id="userFamilyFormDiv">
+            <form id="userFamilyForm">
+              {% csrf_token %}
+              <div class="row p-3" id="">
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Family Type<b>*</b></label>
+                  {{family_form.familyType}}
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3"></div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Religious Interest<b>*</b></label>
+                  {{family_form.relegion}}
+                </div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Number of Brothers<b>*</b></label>
+                  <input type="number" name="numberof_brothers" id="numberof_brothers" min="0" value="0"
+                    placeholder="No of children" class="form-control fr">
+                </div>
+                <div class="col-lg-2 col-md-2 p-3"></div>
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Number of Sisters<b>*</b></label>
+                  <input type="number" name="numberof_sisters" id="numberof_sisters" min="0" value="0"
+                    placeholder="No of children" class="form-control fr">
+                </div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Father's Job<b>*</b></label>
+                  {{family_form.fatherOccupation}}
+
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3"></div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Mother's Job<b>*</b></label>
+                  {{family_form.motherOccupation}}
+
+                </div>
+
+                <div class="col-lg-5 col-md-5  p-3">
+                  <label for="" class="input-title">Family Status<b>*</b></label>
+                  {{family_form.family_status}}
+
+                  <!-- <input type="text" name="family_status" id="family_status" placeholder="Family Status" class="form-control fr"> -->
+
+
+                </div>
+
+                <div class="col-lg-2 col-md-2 p-3"></div>
+
+                <div class="col-lg-5 col-md-5  p-3"></div>
+
+
+
+                <div class="text-center regbtn-box col-12">
+                  <p id="formProfileAlert" style="color: red;"></p>
+
+                  <button type="submit" class="btn reg-form-btn p-2">Save & Next <i
+                      class="fas fa-caret-down"></i></button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+
+          <!-- ----------------------Family details form end---------------------- -->
+
+
+
+          <!-- <div class="text-center p-3 d-lg-block d-md-block d-sm-none d-none">
+            <h4 id="userLocationAndConactDeatilsH41">Location& Contact details</h4>
+          </div> -->
+<!-- 
+          <div class="mob-head p-4 d-lg-none d-md-none d-sm-block d-block">
+            <h4 id="userLocationAndConactDeatilsH4">Location & Contact details</h4>
+          </div> -->
+
+          <div>
+            <form id="userLocationForm">
+              {% csrf_token %}
+              <div class="row p-3" id="userLocationAndConactDeatilsDiv">
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Native city<b>*</b></label>
+                  <input type="text" name="native_city" id="nativeCity" class="form-control fr"
+                    placeholder="District" />
+                </div>
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Native Locality<b>*</b></label>
+                  <input type="text" name="native_locality" id="nativeLocality" class="form-control fr" />
+                </div>
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Home name<b>*</b></label>
+                  <input type="text" name="home_name" class="form-control fr" id="nativeHomrName"
+                    placeholder="Native Home Name" />
+                </div>
+
+                <div class="col-lg-4 col-md-4 pt-3 check-register">
+                  <input type="checkbox" class="form-check-input" id="chkCheckbox">
+                  <label class="form-check-label" for="exampleCheck1">Current location is same as Native
+                    location</label>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Current City<b>*</b></label>
+                  <input type="text" id="currentCity" name="current_city" class="form-control fr" />
+                </div>
+
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Current Locality<b>*</b></label>
+
+                  <input type="text" id="currentLocality" name="current_locality" class="form-control fr" />
+                </div>
+
+                <div class="col-lg-6 col-md-6 p-3">
+                  <label for="" class="input-title">Home Name<b>*</b></label>
+
+                  <input type="text" class="form-control" name="current_home_name" id="currentHomeName"
+                    placeholder="Current Home Name">
+
+                </div>
+                <div class="col-lg-6 col-md-6 p-3">
+                  <label for="" class="input-title">Primary Number<b>*</b></label>
+
+                  <input type="text" name="primary_number" class="form-control fr" value="+91"
+                    placeholder="Primary number">
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 p-3">
+                  <label for="" class="input-title">Secondary Number</label>
+
+                  <input type="text" name="secondary_number" class="form-control fr" value="+91"
+                    placeholder="Secondary number">
+                </div>
+                <div class="col-lg-6 col-md-6 p-3">
+                  <label for="" class="input-title">Pin code<b>*</b></label>
+
+                  <input type="text" name="pincode" class="form-control fr" placeholder="Pin code">
+                </div>
+
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Preffered person</label>
+
+                  <input type="text" name="preffered_person" class="form-control Preffered fr" />
+                </div>
+
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Relation</label>
+
+                  {{user_form.relation}}
+                </div>
+
+                <div class="col-lg-4 col-md-4 p-3">
+                  <label for="" class="input-title">Number</label>
+
+                  <input type="text" name="phone_number" class="form-control fr" placeholder="">
+                </div>
+                <div class="container" id="userLocationAndConactDeatilsDiv1">
+                  <div class="row">
+
+                    <div class="col-12">
+                      <div class="text-center p-3 d-lg-block d-md-block d-sm-none d-none">
+                        <h4>About Yourself<b>*</b></h4>
+                      </div>
+                      <div class="mob-head p-4 d-lg-none d-md-none d-sm-block d-block">
+                        <h4>About Yourself<b>*</b></h4>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-12 p-3 text-center">
+                          <textarea type="text" class="form-control" name="about" maxlength="150"
+                            placeholder="Describe about yourself in few words" id="about" required></textarea>
+                          <i class="fas fa-pencil-alt about-pencil"></i>
+                        </div>
+                      </div>
+
+
+                      <div class="text-center regbtn-box">
+                        <button type="submit" class="btn reg-form-btn px-4 py-2">Submit</button>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+          </div>
+
+
+          </form>
+        </div>
+      </div>
+
+  </section>
+
+  <!-- ------------------------------ app download section------------------------------------- -->
+
+  <section class="area-seven position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+          <div class="download-logo-second card ">
+          <a href=""><img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+          <div class="download-logo-second card">
+           <a href=""> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+          <div class="download-content">
+            <p class="dan">Download the app now!</p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+          <div class="">
+            <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+{% endblock %}
+
+{% block javascript %}
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+<script src="{% static 'web/js/user-profile-register.js' %}"></script>
+<script src="{% static 'web/js/helper.js' %}"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+
+
+<script>
+  $('#languageKnown').selectpicker();
+</script>
+
+
+{% endblock %}

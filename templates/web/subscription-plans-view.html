@@ -1,0 +1,97 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main>
+
+    <section class="subscription-plans-section pb-6" style="margin-top: 6rem;">
+        <div class="container">
+            <form class="row">
+                {% for subscription in subscriptions %}
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-3">
+                    <label class="card radio-card">
+
+                        <span class="plan-details">
+                            <h6 class="plan-type d-flex justify-content-between">{{subscription.plan_title}} <span
+                                    class="plan-month">{{subscription.duration}}{{subscription.duration_type}} <span
+                                        class="slash">/</span> <span
+                                        class="plan-amount">&#x20B9;{{subscription.price}}</span> </span> </h6>
+
+                            <ul class="pl-3 ">
+                                <p class="">{{subscription.content|safe}}</p>
+                                <!-- <li class="py-1">See all people who likes you with kerala zawaj Premium</li>
+                                <li class="py-1">Send Personalised MessagesView</li> -->
+                            </ul>
+                        </span>
+                        <input name="plan" class="radio" type="radio" value="{{subscription.id}}">
+                    </label>
+                </div>
+
+                {% endfor %}
+                <!-- <div class="col-lg-12 col-md-12 col-12 text-center mt-3 py-3">
+                    <button class="btn subscription-btn" type="button" onclick="displayRadioValue()">Submit</button>
+                </div> -->
+
+
+
+
+
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="area-seven position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                    <div class="download-logo-second card ">
+                        <a href=""><img src="{% static 'web/images/icons/playstore-logo.png' %}" alt=""
+                                class="apple-android mx-auto d-block"></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                    <div class="download-logo-second card">
+                        <a href=""> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt=""
+                                class="apple-android mx-auto d-block"></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+                    <div class="download-content">
+                        <p class="dan">Download the app now!</p>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                    <div class="">
+                        <img src="{% static 'web/images/icons/phone-logo.png' %}" alt=""
+                            class="mobile-logo position-absolute" style="bottom: 0;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+{% include 'web/partials/footer.html' %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).on("click", ".radio", function () {
+        var a = $('.radio:checked').val();
+        window.location.href="/payment-view/?subscription="+a
+    });
+   
+</script>
+{% endblock %}

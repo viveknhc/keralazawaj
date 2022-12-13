@@ -1,0 +1,1674 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* ============================   navbar  =============================== */
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 115px;
+    padding: 4px 72px;
+    /* padding: 15px 40px; */
+
+    
+}
+.main-nav-sticky {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 74px;
+    background-color: #103524;
+}
+
+
+.main-nav a {
+    color: #fff;
+}
+.sign-in-btn {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 8px 20px !important;
+}
+
+/* ==================================banner section start==================================== */
+.banner-bg {
+    background: url(../images/bg/banner-img.jpg); 
+    background-size: cover; 
+    height: 100vh;
+    padding-bottom: 50px;
+}
+.header-title {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: #fff;
+}
+.header-form {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 55%;
+    /*background-color: beige;*/
+    padding: 50px;
+    background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+    border-radius: 15px;	
+}
+.header-form-inputs {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: none;
+}
+.header-form-button {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    background: linear-gradient(180deg, #EDFFF0 0%, rgba(250, 255, 250, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    padding: 23px 100px;
+    border: none;
+
+}
+.header-form-description {
+    position: absolute;
+    top: 270px;
+    left: 43%;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+}
+.header-form-title{
+    color: #fff;
+}
+.side-line {
+    border-left: 1px solid rgba(8, 28, 21, 0.5);    
+}
+/* ===========================bannner section end =================================== */
+
+/* =====================================section one SERVICE AREA-ONE start============================ */
+
+.area-one {
+    background-color: rgba(216, 243, 220, 0.3);
+}
+.area-one .section-one-img {
+    width: 100%;
+    object-fit: contain;
+    overflow: hidden;
+}
+.area-one .section-one-img-card {
+    border: none;
+    padding: 20px !important;
+    background-color: transparent;
+}
+.bismi-title {
+    font-family: 'Playball', cursive;
+    font-size: 45px;
+}
+.area-one .bismi-para {
+    font-weight: 600;
+    font-size: 26px;
+}
+.section-one-mob-title{
+    
+    padding: 40px 10px;
+}
+.counts {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 40px;
+    /* identical to box height */
+    letter-spacing: 0.03em;
+    color: #081C15;
+
+}
+
+/* =================area one for desktop============ */
+
+.area-one .ct-apperas {
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 30px;
+}
+.round {
+  border-radius: 100px;
+  background:rgba(216, 243, 220, 0.5);
+  padding: 20px; 
+  width: 200px;
+  height: 200px;  
+}
+.icons {
+    max-width: 50%;
+}
+/* ===============================area section one end=========================== */
+
+/* =============================AREA TWO ABOUT SECTION START============================ */
+
+.area-two {
+    background-image: url(../images/bg/about.png);
+    background-size: cover;
+
+}
+.abt-bismi {
+    padding: 60px 0;
+}
+
+.split-title {
+   font-family: 'Playball', cursive;  
+
+}
+/* =============================AREA TWO ABOUT SECTION END============================ */
+
+/* =======================testimonial area ====================================== */
+.owl-carousel .owl-item img {
+    display: block;
+    width: 60%;
+}
+
+.owl-carousel .owl-next,
+.owl-carousel .owl-prev {
+    width: 50px;
+    height: 50px;
+	line-height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+	font-size: 70px;
+    color: #fff;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+.owl-carousel .owl-prev {
+    left: -70px;
+}
+
+.owl-carousel .owl-prev span,
+.owl-carousel .owl-next span{
+    font-size: 70px;
+    color: #D8F3DC;
+}
+  
+.owl-carousel .owl-next {
+    right: -70px;
+}
+.testimonial-description {
+    padding: 20px;
+}
+
+/* ========================================testimonial area end ====================== */
+
+/* ==========================below testimonial register-btn section ================== */
+.testimonial-reg-btn {
+    background: #D8F3DC;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 7px;
+    padding: 15px 33px;
+    font-weight: 600;
+}
+.testimonial-reg-content {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 40px;
+    letter-spacing: 0.03em;
+    color: #103524;
+}
+
+
+/* =========================what sets up apart ============================ */
+
+.area-five {
+    background-image: url(../images/bg/banner-img-2.png);
+    background-size: cover;
+}
+.square {
+    border-radius: 30px;
+    background:#EBF9ED;
+    padding: 20px; 
+    width: 200px;
+    height: 200px;  
+}
+
+.para {
+    padding: 10px 20px;
+   
+}
+.cntnt {
+    color: #081C15;
+    font-size: 30px;
+    font-style:bold;
+}
+
+.register-btn{
+    margin: 0 21px;
+    background-color: #D8F3DC;
+    color: #000 !important;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 30px;
+    box-shadow: -1px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* =======================download app section index page==================== */
+
+.area-seven {
+    background-color: rgba(235, 249, 237, 0.6);
+
+}
+.apple-android {
+    width: 100%;
+    object-fit: contain;
+    padding-top: 8px;
+}
+.download-content-index {
+    padding: 73px 25px;
+    
+}
+.download-content-index {
+    font-size: 18px;
+    font-weight: 600;
+
+}
+.phone-logo{
+    position: relative;
+    top: -11px;
+    width: 355px;
+    margin-bottom: -51px;
+    padding-bottom: -27px;
+    height: 211px;
+    
+}
+.download-logo {
+    padding-left: 11px;
+}
+
+/* ============================ story section start============================= */
+
+.story-section .owl-carousel .owl-next,
+.story-section .owl-carousel .owl-prev {
+    display: none;
+}
+
+/* .item {
+    padding: 70px;
+} */
+
+
+/* ===============================foooter section========================== */
+
+.footer {
+    background-color: #103524;
+    color: #fff;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+.privacy { 
+    float: right;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    
+}
+.mob-ft-privacy {
+    list-style: none;
+}
+.mob-ft-privacy li {
+    padding: 10px;
+}
+.footer .privacy li {
+    padding: 5px;
+}
+.footer .privacy a {
+    text-decoration: none;
+}
+.copyright {
+    font-size: 14px;
+
+}
+.social {
+    float: right;
+}
+.social-icon {
+    list-style: none;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* download section indexpage in mobile view start */
+
+.download-section-mob-view .mob-dwnld-img-box {
+    background-color: transparent;
+    border: none;
+
+
+}
+.download-section-mob-view  .download-section-mob-view-content {
+    padding: 10px 34px;
+}
+.download-section-mob-view  .download-section-mob-view-content h4 {
+    font-size: 25px;
+    font-weight: 600;
+    position: absolute;
+    top: -39px;
+}
+.download-section-mob-view .store-logo {
+    width: 207px;
+    position: relative;
+    top: -3px;
+}
+.download-section-mob-view .mob-phone-box{
+    /* background-color: tomato; */
+    padding: 0;
+    margin: -34px;
+    height: 203px;
+}
+.download-section-mob-view .mob-phone-logo {
+    width: 378px;
+    position: absolute;
+    top: -16%;
+    left: -22%;
+    height: 235px;
+}
+/* download section indexpage in mobile view end */
+
+
+/* =================================================index page style end======================== */
+
+
+/* ========================================== register page.html start ========================= */
+
+.main-nav-bg {
+    background: linear-gradient(180deg, #103524 -48.05%, #006C3A 150.39%);
+}
+.mob-bg {
+    margin-top: 5rem;
+    /* background-color: tomato; */
+}
+
+.register-page-header .register-page-header-title {
+    font-family: 'Playball', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 62px;
+    letter-spacing: 0.03em;
+    color: #081C15;
+
+}
+
+.register-page-header .register-page-header-content {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0.03em;
+    color: #081C15;
+}
+.register-form-section-pb {
+    padding-bottom: 90px;
+}
+.register-form-section {
+    background: rgba(235, 248, 237, 0.5);
+    border-radius: 15px;
+}
+.register-form-section .form-control {
+    
+    display: inline-block;
+    width: 60%;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+}
+.input-title {
+    font-size: 13px;
+    font-weight: 600;
+    padding-right: 30px;
+}
+.register-form-section .form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 2.5em;
+    margin-bottom: .125rem;
+}
+
+.register-form-section .regbtn-box {
+    padding: 35px;
+}
+.register-form-section .input-icon {
+    /* position: relative;
+    left: -30px; */
+    position: absolute;
+    right: 5%;
+    top: 39%;
+}
+.reg-form-btn {
+    background: #103524;
+    border: 0.1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    color: #fff;
+    padding: 13px 30px !important;
+}
+.register-form-section .reg-form-btn:hover {
+    color: #fff;
+    background-color: #259460;
+    border: none;
+
+}
+
+/* ======================.area-seven in common in all page section ================ */
+
+.area-seven .download-logo-second {
+    background-color: transparent !important;
+    border: none;
+    /* padding-top: 3.5rem!important; */
+
+}
+.area-seven .download-content {
+    padding: 50px 50px;
+} 
+.download-content .dan {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 42px;
+
+} 
+
+.area-seven .mobile-logo {
+
+    position: relative;
+    /* top: -51px; */
+    width: 344px;
+    /* margin-bottom: -51px; */
+    padding-bottom: -27px;
+    height: 211px;
+}
+
+/* ======================.area-seven in common in all page section end ================ */
+
+/* ======================profile pic add page start ================ */
+
+
+
+.profilepic-add{
+    background-image: url(../images/bg/banner-img-2.png);
+    background-size: cover;
+    margin: 70px 0;
+    /* background-color: black; */
+}
+.box {
+    background-color: rgba(235, 248, 237, 0.75);
+}
+
+.skip-btn {
+    color: #103524 !important;
+    border: 1px solid #103524;
+    padding: 6px 25px;
+    border-radius: 50px;
+}
+.mob-skip-button {
+    background: #EBF9ED;
+    border: 1px solid #103524;
+    box-sizing: border-box;
+    border-radius: 7px;
+    float: left;
+    padding: 5px 20px;
+    margin-top: 20px; 
+}
+
+.upload-box {
+    background-color: transparent;
+    border: none;
+}
+.propic {
+    width: 70%;
+    object-fit: contain;
+    border: 2px dotted;
+    border-radius: 20px;
+}
+.btn-body {
+    padding: 0;
+}
+.up-btn {
+    background-color: #02B562;
+    padding: 20px;
+    width: 70%;
+    margin-top: -40px;
+    border-radius: 0px 0px 30px 30px;
+    border: none;
+    
+}
+.file {
+    position: relative;
+    overflow: hidden;
+}
+.file-input  {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.like-premium-box-3 {
+    /* position: absolute;
+    top: 25%;
+    left: 26%; */
+    width: 60%;
+    z-index: 1;
+    margin: 0 18%;
+    background-color:    rgba(223, 243, 232, 0.5);
+    border-radius: 10px;
+}
+/* ====================================profile pic add page end=================== */
+
+/* ===============================dashboard page start================== */
+.bismi-nav {
+    padding: 0 50px;
+}
+.bismi-nav-link-underline {
+    border-bottom: 2px solid #ffffff66;
+    /* border-radius: 2px; */
+}
+.has-search .form-control {
+    /* padding-left: 2.375rem; */
+    padding-left: 4.375rem;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    
+}
+.has-search .form-control input {
+    color: rgb(255, 255, 255);
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #fff;
+}
+.img-dashboard-icon {
+    /* max-width: 20px; */
+    max-width: 25px;
+    padding: 3px;
+}
+
+.dash-box {
+    background-color: rgba(235, 248, 237, 0.3);
+    border-radius: 15px;
+}
+.p-user-details .u-name-id {
+    font-size: 28px;
+    font-weight: 600;
+    color: #212529;
+}
+.p-user-details .u-name-id:hover {
+    color: #027B00;
+    cursor: pointer;
+}
+
+.p-user-details .dt {
+    padding: 5px;
+    font-weight: 600;
+}
+.p-user-details .fa-heart {
+    font-size: 6px;
+}
+.dash-box .view-profile-btn {
+    color: #004fff !important;
+
+} 
+.dash-box  .pass-btn {
+    color: #004fff !important;
+    border: 1px solid #004fff;
+    border-radius: 10px;
+    padding: 12px 30px;
+    margin: 0 10px;
+}
+
+.dash-box  .pass-btn .fa-times-circle,
+.dash-box .like-btn .fa-heart-circle {
+    padding-right: 10px;
+    font-size: 25px;
+    
+}
+
+.dash-box .like-btn:hover {
+    /* background-color: #039a00; */
+    background: linear-gradient(179.15deg, rgba(160, 221, 169, 0.8) -24.21%, rgba(200, 218, 203, 0) 99.27%);
+    color: #fff;
+
+}
+.dash-box .like-btn {
+    color: #039a00 !important;
+    border: 1px solid #039a00 ;
+    border-radius: 10px;
+    padding: 12px 26px;
+}
+.dash-box .like-btn .img-like-icon {
+    max-width: 22px;
+
+}
+.profile-box{
+    background-color: transparent;
+    border: none;
+    /* padding: 15px; */
+    
+}
+.profile-box .prof-view {
+    border-radius: 20px;
+    border: none !important;
+    height: 158px;
+    width: 171px;
+}
+.dash-abt {
+    /* padding: 10px; */
+    padding: 0;
+}
+.premium-btn-box .premium-btn {
+    background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+    border: none;
+    padding: 15px 56px;
+    font-size: 35px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.premium-btn-box .premium-description {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* =====================================like page start============ */
+
+.profile-blur-section {
+    padding-bottom: 6rem;
+}
+.like-box {
+    background-color: rgba(223, 243, 232, 0.3);
+    filter: blur(7px);
+}
+.like-box .like-box-col {
+    padding: 30px;
+}
+.like-box .like-box-card {
+    background-color: transparent;
+    
+}
+.like-box .blur-img {
+    border: none;
+    /* padding: 20px; */
+}
+.like-premium-box {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    width: 36%;
+    z-index: 1;
+    margin: 0 90px;
+    background-color:  rgba(223, 243, 232, 0.5);
+    border-radius: 10px;
+}
+.pre-icon {
+    max-width: 40%;
+    object-fit: contain;
+}
+.pre-titile {
+    font-size: 26px;
+    font-weight: 600;
+    color:  #103524;
+}
+.bismi-color {
+    color: #039a00;
+}
+.pre-button {
+    background: linear-gradient(180deg, #039A00 0%, #81FF7E 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    padding: 20px 50px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.upload-title {
+    font-weight: 600;
+    font-size: 25px;
+
+}
+.bismi-title-lk {
+    font-family: 'Playball', cursive;
+    font-size: 45px;
+}
+
+/* ================================view profile page section================ */
+.view-prof-titles {
+    font-size: 20px;
+    font-weight: 700;
+}
+.my-self-description {
+    font-weight: 400;
+    font-size: 18px;
+}
+.person-description {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #081C15;
+}
+.person-description .person-details {
+    padding-left: 20px;
+}
+.person-contact-details {
+    padding: 30px 50px;
+}
+.person-contact-details p {
+    padding: 20px;
+}
+.person-contact-details .fa-phone-alt {
+    padding-right: 8px;
+}
+.person-contact-details .ct-title {
+    font-weight: 600;
+    line-height: 30px;
+}
+.person-adrs {
+    padding: 10px 50px;
+}
+.person-adrs p {
+    font-weight: 600;
+}
+.adrs-icon {
+    padding-right: 8px;
+}
+/* .location {
+    margin-left: 50px;
+} */
+.img-change-btns {
+    border: 1px solid black;
+    height: 12px;
+    padding: 4px;
+    margin: 3px;
+}
+.person-description .p-desc {
+    padding: 6px 0;
+    font-size: 17px;
+}
+.viewprof-dtls-head {
+    font-weight: 700;
+    /* padding: 0 60px; */
+    font-size: 20px;
+}
+.v-prof-dt-cntnt {
+    padding: 0 74px;
+}
+.p-desc i {
+    font-weight: 600;
+}
+
+/* ======================view-profile premium page ========================== */
+.view-profile-premium {
+    /* background-color: rgba(223, 243, 232, 0.3); */
+    filter: blur(7px);
+}
+.like-premium-box-2 {
+    position: absolute;
+    top: 25%;
+    left: 26%;
+    width: 36%;
+    z-index: 1;
+    margin: 0 90px;
+    background-color:  rgba(223, 243, 232, 0.5);
+    border-radius: 10px;
+
+}
+
+
+/* ========================================user profile page==================================== */
+
+.user-profile-pic {
+    border: none;
+    background-color: transparent;
+}
+
+.user-profile-details .user-btn-col {
+    
+    box-sizing: border-box;
+}
+.user-profile-details .user-btn-col-1 {
+    padding-right: 0;
+}
+
+.user-profile-details .user-btn-col-2 {
+    padding-left: 0;
+}
+.user-profile-details .user-btn {
+    color: #103524!important;
+    font-weight: 700;
+    padding: 20px;
+    width: 100%;
+}
+.user-profile-details .user-btn-div {
+    border: 1px solid #103524;
+    border-radius: 15px 0 0 15px;
+    border-right: none;
+    background: #D8F3DC;
+}
+.user-profile-details .user-btn-div-2 {
+    border: 1px solid #103524;
+    border-radius: 0 15px 15px 0;
+
+}
+
+.user-profile-details .form-control {
+    display: inline-block;
+    width: 65%;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+}
+
+.view-prof-titles {
+    font-size: 20px;
+    font-weight: 700;
+}
+.my-self-description {
+    font-weight: 400;
+    font-size: 18px;
+}
+.person-description {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    color: #081C15;
+}
+.person-description .person-details {
+    padding-left: 20px;
+}
+.person-contact-details {
+    padding: 6px 50px;
+}
+.person-contact-details p {
+    padding: 20px;
+}
+.person-contact-details .fa-phone-alt {
+    padding-right: 8px;
+}
+.person-contact-details .ct-title {
+    font-weight: 600;
+    line-height: 30px;
+}
+.person-adrs {
+    padding: 10px 50px;
+}
+.person-adrs p {
+    font-weight: 600;
+}
+.adrs-icon {
+    padding-right: 8px;
+}
+/* .location {
+    margin-left: 50px;
+} */
+.img-change-btns {
+    border: 1px solid black;
+    height: 12px;
+    padding: 4px;
+    margin: 3px;
+}
+
+.user-profile-details .user-about {
+    padding-top: 20px;
+}
+.user-profile-details .user-about .fa-pencil-alt {
+    float: right;
+}
+.user-profile-details .user-about .user-abt-desc {
+    font-size: 14px;
+}
+.user-profile-details .fa-heart {
+    font-size: 5px;
+}
+.user-profile-details .dt {
+    padding-right: 5px;
+    font-weight: 600;
+}
+.user-profile-details .user-head {
+    font-weight: 600;
+}
+.user-profile-details .usr-profile-select-input {
+    background: transparent;
+    /* width: 70%; */
+    width: 65%;
+    border-bottom: 1px solid;
+    border-radius: 0%;
+}
+.user-profile-details .user-input-title {
+    font-size: 13px;
+    font-weight: 600;
+    padding-right: 17px;
+}
+.user-profile-details .age-ipt {
+    width: 38%;
+}
+.user-profile-details  .in-to {
+    padding-left: 35px;
+}
+.user-profile-details .usr-form-btn{
+    background: #036A01;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 15px 39px !important;
+    color: #fff;
+    font-size: 20px;
+}
+.user-profile-details .usr-fm-btn-div {
+    padding: 30px;
+}
+
+.usr-edit-profile .edit-prof-title {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+}
+.usr-edit-profile .edit-prof-icon {
+    position: absolute;
+    right: 3%;
+}
+.usr-edit-profile .usr-edit-prof-input {
+    display: inline-block;
+    width: 65%;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+}
+.usr-edit-profile .edit-form-select-input {
+    border-bottom: 1px solid;
+    border-radius: 0%;
+
+}
+.usr-edit-profile .edit-prof-check {
+    padding-left: 40px;
+}
+
+.form-check-input:checked {
+    background-color: #11883e;
+    border-color: #09e288;
+}
+.img-user-pf-btn-icon {
+    max-width: 20px !important;
+    padding: 3px;
+}
+.mob-show-form-btn a {
+    color: #081C15;
+    text-transform: none;
+}
+
+/* ========================login page ================ */
+
+
+.myform{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1rem;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: rgb(121, 118, 118);
+    background-clip: padding-box;
+    border: 1px solid rgba(196, 39, 39, 0.2);
+    border-radius: 1.1rem;
+    outline: 0;
+    max-width: 500px;
+    margin-top: 5rem;
+    background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+    border-radius: 15px;
+    left: 25%;
+    padding-bottom: 70px;
+}
+.myform ::placeholder{
+    color: rgb(112, 105, 105);
+}
+
+.tx-tfm{
+    text-transform:uppercase;
+}
+.mybtn{
+    border-radius:50px;
+}
+
+.login-or {
+    position: relative;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    margin-left: -25px;
+    background: linear-gradient(179.15deg, rgba(228, 255, 232, 0.8) -24.21%, rgba(249, 255, 250, 0) 99.27%);
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+.google {
+    color:rgb(253, 249, 249);
+    width:100%;
+    height:40px;
+    text-align:center;
+    outline:none;
+    border: 1px solid lightgrey;
+}
+form .error {
+    color: #ff0000;
+}
+.login-form-bg {
+    /* background: linear-gradient(180deg, #103524 -48.05%, #006C3A 150.39%);  */
+    background-image: url(../images/bg/login-bg.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh; 
+}
+.login-form-bg .login-bismi-ttl {
+    font-family: 'Playball', cursive;
+}
+.login-form-bg .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.login-form-bg label {
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+.login-form-bg .login-form-btn {
+   
+    background: linear-gradient(180deg, #EDFFF0 0%, rgba(250, 255, 250, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    padding: 10px 20px;
+    border: none;
+   
+}
+
+/* .login-form-bg .login-form-btn:hover {
+    background: linear-gradient(180deg, #214227 0%, rgba(0, 0, 0, 0) 100%);
+
+} */
+.login-form-bg #signup {
+    color: #fff;
+    text-decoration: none;
+}
+.login-form-bg .signup-para {
+    color: #fff;
+}
+.login-form-bg #signup:hover {
+    color: rgb(85, 170, 85);
+}
+.contact-detail-box {
+    background-color: rgba(216, 243, 220, 0.3);
+}
+.contact-icon {
+    padding: 20px;
+    background: green;
+    border-radius: 100%;
+    color: white;
+}
+.contact-head-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.prvc-terms {
+    text-align: justify;
+    color: #212529;
+}
+/* =============password reset form page */
+.pswd-rst-form {
+    padding: 26px;
+    background-color: rgba(235, 249, 237, 0.6);
+}
+.pswd-rst-form-btn{
+    background: #103524;
+    border: 0.1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    color: #fff;
+    padding: 13px 30px !important;
+}
+
+/* =======================additional changes =============== */
+
+/* in dashboard navbar ================ */
+
+.dash-search-box {
+    margin: 0;
+    padding-left: 25px;
+}
+.bismi-nav-li {
+    padding: 12px;
+}
+
+.bismi-nav-li-second {
+    /* padding-right: 15px; */
+    padding-right: 7px;
+}
+.bismi-nav-li-second-icon {
+    font-size: 30px;
+}
+.bismi-nav-li-second-icon-user {
+    padding-left: 10px;
+}
+.sm-circle {
+    position: absolute;
+    color: #004FFF;
+    font-size: 8px;
+    right: 26%;
+   
+}
+
+.dropdown-menu-header {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #006C3A !important;
+    text-align: left;
+    list-style: none;
+    background: linear-gradient(180deg, #19b467 -48.05%, #287058 150.39%);
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0.25rem;
+}
+.dropdown-menu a {
+    text-decoration: none;
+}
+/* .dropdown-menu li:hover {
+    background: linear-gradient(180deg, #52B788 0%, #027B00 100%);
+
+}
+.dropdown-menu1 li:hover {
+    display: block;
+
+}
+
+
+ul li.dropdown:hover ul.dropdown-menu{ 
+    display: block;
+    padding: 7px 6px;
+    line-height: 30px;
+    position: absolute;
+
+} */
+
+
+/* ===============in user edit profile form ========= */
+
+.desk-blank-input {
+    border:  none !important;
+}
+
+
+/* ====================in view profile================== */
+
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 15px;   
+    height: 15px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color:  #103524;
+    background-clip: padding-box;
+    
+    opacity: .5;
+    border-radius: 100%;
+    transition: opacity .6s ease;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 100%;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+.w-100 {
+    width: 100%!important;
+    border-radius: 30px;
+}
+
+/* ====================in register.html=============== */
+.fr {
+    float: right;
+}
+.reg-icon {
+    position: relative;
+    left: 80%;
+}
+.check-register {
+    padding-left: 35px !important;
+}
+.form-check-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+.langknowbox {
+    display: flex;
+    justify-content: space-between;
+}
+.language-known-input .btn-light {
+    background-color: transparent !important;
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}
+:not(.input-group) > .bootstrap-select.form-control:not([class*="col-"]) {
+    width: 63% !important;
+}
+
+/*PRELOADING------------ */
+#overlayer {
+  width:100%;
+  height:100vh;  
+  position:absolute;
+  top: 11px;
+  z-index:4;
+  background: linear-gradient(180deg, #103524 -48.05%, #006C3A 150.39%);;
+}
+.loader {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  z-index:10;
+  top: 50%;
+  animation: loader 2s infinite ease;
+  background-image: url("../images/kerala\ zawaj\ logo.svg");
+}
+.preloader-title {
+    color: #fff; 
+    position: absolute; 
+    top: 35%; 
+    left: 40%;
+}
+
+/* .loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+} */
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+
+/* ========================================== */
+
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+/* animate new box */
+.anim {
+	animation: append-animate 0.8s linear;
+}
+
+.dyimg {
+    border-color: red;
+    
+}
+.bismi-logo{
+    width: 100%;
+    object-fit: contain;
+}
+/* =======================in userprofilepage============= */
+.show-profile-user .viewprofile-labels {
+    font-weight: 600;
+}
+.edit-button-user .edit-button-user-pencil {
+    background: #D8F3DC;
+    padding: 12px;
+    border-radius: 50px;
+    /* color: green; */
+}
+.edit-button-user .edit-button-user-pencil:hover {
+    cursor: pointer;
+    background-color: rgb(85, 170, 85);
+    color: #fff;
+}
+.userhedaer-image {
+    width: 28px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 0;
+    border: 2px solid #fff;
+}
+
+.hover-active{
+    color: rgba(188, 23, 88, 1);
+    /* background: linear-gradient(
+        179.15deg, rgba(160, 221, 169, 0.8) -24.21%, rgba(200, 218, 203, 0) 99.27%); */
+}
+/* .hover-active:hover{
+    background-color: red;
+} */
+.likedButton:hover{
+    background: linear-gradient(
+        179.15deg, rgba(75, 192, 95, 0.8) -24.21%, rgba(200, 218, 203, 0) 99.27%) !important;
+
+}
+/* .passedButton:hover{
+    background: linear-gradient(
+        179.15deg, rgba(230, 84, 26, 0.8) -24.21%, rgba(61, 199, 84, 0) 99.27%) !important;
+
+} */
+.passedButton2:hover {
+    background: linear-gradient(
+        179.15deg, rgba(75, 192, 95, 0.8) -24.21%, rgba(200, 218, 203, 0) 99.27%) !important;
+}
+/* ===================dashboard navbar updation ============ */
+.mob-nav-ul-two {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.mob-nav-ul-two .padd {
+    padding-top: 4px;
+}
+.dashboard-section-mt {
+    margin-top: 95px;
+}
+a {
+    text-decoration: none !important;
+}
+
+.mob-prof-like-part .btns-mob-li {
+    list-style: none;
+    padding: 0 10px;
+
+}
+.footer-mob-number-li {
+    padding-left: 63px;
+}
+.about-pencil {
+    position: absolute;
+    right: 22%;
+    top: 50%;
+}
+.u-bismi-id{
+    color: black;
+    font-size: small;
+}
+.view-prof-details-label {
+    font-weight: 600;
+}
+.recomend-description {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 1px;
+}
+.view-prof-user-id {
+    font-size: 15px;
+    font-weight: 600;
+}
+/* ====================phone menu start============= */
+#phoneMenu {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background: #1e6e49;
+    border-radius: 60px 60px 0px 0px;
+    padding: 15px !important;
+    
+    
+}
+#phoneMenu li {
+    list-style: none;
+    padding: 12px 0px;
+    color: #fff;
+}
+#phoneMenu a {
+    color: #fff !important;
+
+}
+.mob-swipe-prof {
+    cursor: pointer;
+}
+.recomend-div {
+    padding: 0 21px;
+}
+.view-section-mt {
+    margin-top: 80px;
+}
+.chat-icon-desk {
+    font-size: 25px;
+    padding-right: 10px;
+    width: 37px;
+    height: 28px;
+}
+.like-btn-2 {
+    color: #039a00 !important;
+    border: 1px solid #039a00;
+    border-radius: 10px;
+    padding: 12px 30px;
+    margin: 0 10px;
+}
+.like-title-desk {
+    padding-bottom: 2px;
+}
+.close-btn-desktop:hover {
+    color: red;
+}
+.location-inputdiv-phone {
+    padding: 6px 0!important ;
+    
+}
+.chat-icondpadd {
+    font-size: 25px;
+    padding-top: 3px;
+}
+.fr-in-partner {
+    float: right;
+}
+.editmg {
+    position: relative;
+    top: -37px;
+    left: 114px;
+    color: #006C3A;
+}
+
+.editmg:hover {
+    color: #039a00;
+    cursor: pointer;
+}
+.fa-camera {
+    position: absolute; 
+    font-size: 38px;
+    
+}
+/* ===============new changes 23-12-2021============ */
+
+.fa-eye:hover {
+    cursor: pointer;
+}
+.filter-option {
+    color:  #121312c2;
+}
+.inner .dropdown-item {
+    color: #000 !important;
+ }
+.count {
+    position: absolute;
+    right: -5px;
+    width: 18px;
+    height: 19px;
+    border-radius: 100%;
+    background: #fffffff5;
+    top: -11px;
+    
+    font-size: 12px;
+    padding: 0px 0px;
+    padding: 0px 2px;
+    color: black;
+}
+.icon-bell {
+    font-size: 1.25rem;
+    margin-right: 0;
+    vertical-align: middle;
+    color: #fff;
+    position: relative;
+}
+.img-dashboard-icon-chat-nav {
+    font-size: 18px;
+    padding: 3px;
+    color: #b5c8bf;
+}
+.plc-text h6 {
+    font-weight: 700;
+}
+.get-premium-2 {
+    color: #fff;
+}

@@ -1,0 +1,449 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+  <section class="pb-5 py-5 view-section-mt">
+    <div class="container">
+      <div class="row p-4">
+        <input type="number" id="userId" value="{{pk}}" hidden>
+        <input type="number" id="userProfileIdHid" hidden>
+        <input type="number" id="chatUserId" hidden>
+
+        <div class="col-12 text-center">
+          <div class="form-group has-search d-lg-none d-md-flex d-sm-flex d-flex">
+            <span class="fa fa-search form-control-feedback"></span>
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- -------------ok -->
+
+    <div class="container dash-box">
+      <form>
+        {% csrf_token %}
+        <div class="row py-4 d-lg-flex d-md-none d-sm-none d-none">
+
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12 p-user-details">
+            <h5 class="u-name-id" id="userfullName"></h5>
+            <h5 class="u-bismi-id" id="bismiId"></h5>
+            <span class="dt" id="userAge"></span><sup> <i class="fas fa-heart"></i></sup> </span>
+            <span class="dt" id="userMartialStatus"><sup> <i class="fas fa-heart"></i></sup> </span>
+            <span class="dt" id="userLocation"> </span>
+          </div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12"></div>
+
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12" id="likeDiv">
+            <!-- <a href="" class="btn pass-btn"><i class="fas fa-times-circle"></i>Pass</a> -->
+
+          </div>
+
+        </div>
+      </form>
+      <!-- ----------ok -->
+
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12 py-2">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" id="userImageOne" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" id="userImageTwo" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" id="userImageThree" alt="Third slide">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 col-12 p-user-details d-lg-none d-md-block d-sm-block d-block mob-dash-prof-view px-4">
+          <h5 class="u-name-id" id="userfullName"></h5>
+          <h5 class="view-prof-user-id" id="bismiId"></h5>
+          <span class="dt">22<sup> <i class="fas fa-heart"></i></sup> </span>
+          <span class="dt" id="usrMartialStatusMob"><sup> <i class="fas fa-heart"></i></sup> </span>
+          <span class="dt" id="usrLocationMob"></span>
+        </div>
+
+        <div class="col-lg-8 col-md-12 col-sm-12 col-12 py-2 mob-abt-rs">
+          <div class="">
+            <h5 class="view-prof-titles d-lg-block d-md-none d-sm-none d-none">My self-summary</h5>
+            <h5 class="view-prof-titles d-lg-none d-md-block d-sm-block d-block">About</h5>
+            <p class="my-self-description" id="about"></p>
+          </div>
+          <div class="person-description">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12 col-12">
+                <p class="p-desc"> <i class=""> Height</i> :<span class="person-details" id="userHeight"></span> </p>
+                <p class="p-desc"> <i class=""> Weight</i> :<span class="person-details" id="userWieght"></span> </p>
+                <p class="p-desc"> <i class=""> Community</i> :<span class="person-details" id="community"></span> </p>
+                <p class="p-desc"> <i class=""> Body Type</i> :<span class="person-details" id="bodytype"></span> </p>
+                <p class="p-desc"> <i class=""> Complexion</i> :<span class="person-details" id="complexion"></span>
+                </p>
+                <p class="p-desc"> <i class=""> Mother Tongue</i> :<span class="person-details"
+                    id="motherTongue"></span> </p>
+                <!-- <p class="p-desc"> <i class="fas fa-globe"></i> <span class="person-details" id="userHigestQualification"></span></p> -->
+                <!-- <p class="p-desc"> <i class="fas fa-suitcase"></i> <span class="person-details" id="userProfession"></span></p> -->
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- -------------detail section starting------------- -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3">
+          <div class="prof-head text-center pb-3">
+            <h6 class="viewprof-dtls-head">Personal Details</h6>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label">Physical Status </label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="physicalStatus"></p>
+                </div>
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label">Perform Namaz</label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="performNamaz"></p>
+                </div>
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label">Fasting</label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="fasting"></p>
+                </div>
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label">Smoking Habit</label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="smokingHabbit"></p>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                  <label class="p-desc view-prof-details-label"> Language Known</label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                  <p class="person-details" id="languageKnown"></p>
+                </div>
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label"> Reading Quran </label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="readingQuran"></p>
+                </div>
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label"> Attend Islamic Services</label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="attendIslamicServices"></p>
+                </div>
+
+                <div class="col-6">
+                  <label class="p-desc view-prof-details-label"> Drinking Habit</label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="drinkingHabit"></p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="row d-lg-none d-md-flex d-sm-flex d-flex">
+            <div class="col-12">
+              <h6 class="mob-contact-tt"><i class="fas fa-phone-alt" id="userContactDetails"></i>Contact details </h6>
+
+            </div>
+
+            <div class="col-lg-12 col-md-6 col-sm-6 col-6 mob-for-numb">
+              <p id="userPrimaryNumber"></p>
+            </div>
+            <div class="col-lg-12 col-md-6 col-sm-6 col-6 mob-for-numb" id="userSecondaryNumber"></div>
+          </div>
+          <div class="justify-content-space-around person-contact-details d-lg-flex d-sm-none d-none">
+            <p class="ct-title mob-ct-title"><i class="fas fa-phone-alt"></i> <span></span> <span></span> Contact
+              details</p>
+            <p class="ct-title" id="primaryTiltle">Primary<br><span id="userPrimaryMobNumber"></span></p>
+            <p class="ct-title">Secondary Number <br><span id="userSecondaryMobNumber"></span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="person-adrs">
+            <p> <i class="fas fa-home adrs-icon"></i>Native Address</p>
+            <p>
+            <address class="location" id="userNativeAddress">
+              <br>
+            </address>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="person-adrs ">
+            <p> <i class="fas fa-map-marker-alt adrs-icon"></i>Current Address</p>
+            <p>
+            <address class="location" id="userCurrentAddress">
+              Kerala House, Vaidhyarangadi <br>
+              Ramanattukara Pin: 678 876
+            </address>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3">
+          <div class="prof-head text-center pb-3">
+            <h6 class="viewprof-dtls-head">Profession Details</h6>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-sm-12  col-12 v-prof-dt-cntnt">
+              <div class="row">
+                <div class="col-6"><label class="p-desc view-prof-details-label">Heighest Education</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="highestEducation"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label">Working With</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="workingWith"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label">Annual income </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="annualIncome"></p>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+                <div class="col-6">
+                  <p class="p-desc view-prof-details-label"> Specialization </label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="specialization"></p>
+                </div>
+
+                <div class="col-6">
+                  <p class="p-desc view-prof-details-label"> Working as</label>
+                </div>
+                <div class="col-6">
+                  <p class="person-details" id="workingAs"></p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3">
+          <div class="prof-head text-center pb-3">
+            <h6 class="viewprof-dtls-head">Family Details</h6>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Family Type</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="familyType"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Father's Job</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="fathersJob"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Number of Brothers</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="numberOfBrothers"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Religion</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="relegion"></p>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Family Status </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="familyStatus"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Mother's Job</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="mothersJob"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label"> Number of Sisters </label> </div>
+                <div class="col-6">
+                  <p class="person-details" id="numberOfSisters"></p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-3" id="partnerPrefDivId">
+          <div class="prof-head text-center pb-3">
+            <h6 class="viewprof-dtls-head">Partner Preference</h6>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+                <div class="col-6"><label class="p-desc view-prof-details-label" id="txtAgeRange"> Age Range </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="ageRange"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label" id="txtMartialStatus"> Marital Status </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="prefmartialStatus"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label" id="txtEducation"> Heighest Education</label></div>
+                <div class="col-6">
+                  <p class="person-details" id="prefhighestEducation"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label" id="txtLocation"> Location </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="prefLocation"></p>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-12 col-12 v-prof-dt-cntnt">
+              <div class="row">
+
+                <div class="col-6"> <label class="p-desc view-prof-details-label" id="txtHeight"> Height </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="prefHeight"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label" id="txtCommunity"> Community </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="prefCommunity"></p>
+                </div>
+
+                <div class="col-6"><label class="p-desc view-prof-details-label" id="txtProfession"> Profession </label></div>
+                <div class="col-6">
+                  <p class="person-details" id="prefProfession"></p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-none d-md-block d-sm-block d-block mob-prof-like-part">
+
+          <div class="mob-llps-btn p-3 text-center" id="mob-like-button-div">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <section class="area-seven position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+          <div class="download-logo-second card ">
+           <a href=""> <img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+          <div class="download-logo-second card">
+          <a href="">  <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+          <div class="download-content">
+            <p class="dan">Download the app now!</p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+          <div class="">
+            <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+{% include 'web/partials/footer.html' %}
+
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'web/js/login-check.js' %}"></script>
+<script src="{% static 'web/js/customjs/discovery.js' %}"></script>
+<script src="{% static 'web/js/view-profile.js' %}"></script>
+<script src="{% static 'web/js/helper.js' %}"></script>
+<script src="{% static 'web/js/user-like.js' %}"></script>
+<script src="{% static 'chatbox\js\create-or-get-chat.js' %}"></script>
+{% endblock %}

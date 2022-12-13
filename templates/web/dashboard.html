@@ -1,0 +1,210 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+{% block title %}Kerala Zawaj -Dashboard {% endblock %}
+{% block content %}
+
+<!-- <div id="overlayer">
+    <h2 class="text-center preloader-title">Loading profiles for you</h2>
+</div>
+
+ <span class="loader"></span> -->
+
+<main>
+    <section class="pb-5 dashboard-section-mt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="form-group has-search d-lg-none d-md-flex d-sm-flex d-flex phone-search-form">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <input type="number" id="userProfileIdHid" hidden>
+                </div>
+                <div class="recomend-div">
+                    <h2 class="recommend-title">Recommended Just For You</h2>
+                    <label for="" class="recomend-description">Like, Pass or Chat with verified Profiles and Find your perfect match</label>
+                </div>
+            </div>
+            <div class="container dash-box fade-in" id="dashBoard">
+                <!-- <div class="row py-4 d-lg-flex d-md-none d-sm-none d-none">
+                        <div class="col-4 p-user-details ">
+                            <h5 class="u-name-id">Username / Matrimony ID</h5>
+                            <span class="dt">22<sup> <i class="fas fa-heart"></i></sup> </span>
+                            <span class="dt"> Unmarried <sup> <i class="fas fa-heart"></i></sup> </span>
+                            <span class="dt">Calicut</span>
+                        </div>
+                        <div class="col-4">
+                            <div class="">
+                                <a href="{% url 'web:view_profile_premium' %}" class="view-profile-btn">View Profile <i class="far fa-greater-than"></i>
+                                <a href="{% url 'web:chat_direct' %}" class="btn pass-btn">View Profile>Chat</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 col-4 ">
+
+                            <button id="btnPass"  type="button" class="btn pass-btn"><i class="fas fa-times-circle"></i>Pass</button>
+                            <button id="btnLike" type="button" class="btn like-btn"> <i class="fas fa-heart-circle"></i>Like</button>
+
+
+                        </div>
+
+                </div> -->
+
+                    <!-- <div class="row"> 
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-12 py-2">
+                            <div class="card profile-box">
+                                <img class="card-img-top mx-auto prof-view" src="{% static 'web/images/profiles/pf-1.png' %}" alt="Card image cap">
+                            </div>
+                            <div class="col-12 p-user-details d-lg-none d-md-block d-sm-block d-block mob-dash-prof-view">
+                                <h5 class="u-name-id">Username / Matrimony ID</h5>
+                                <span class="dt">22<sup> <i class="fas fa-heart"></i></sup> </span>
+                                <span class="dt"> Unmarried <sup> <i class="fas fa-heart"></i></sup> </span>
+                                <span class="dt">Calicut</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 col-4 py-2 d-lg-block d-md-none d-sm-none d-none">
+                            <div class="card profile-box">
+                                <img class="card-img-top mx-auto d-block prof-view" src="{% static 'web/images/profiles/pf-2.png' %}"
+                                    alt="Card image cap">
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-12 col-4 py-2 d-lg-block d-md-none d-sm-none d-none">
+                            <div class="card profile-box">
+                                <img class="card-img-top mx-auto d-block prof-view" src="{% static 'web/images/profiles/pf-3.png' %}"
+                                    alt="Card image cap">
+                            </div>
+                        </div>
+                       
+                    </div> -->
+
+                    <!-- <div class="row">
+                        <div class="col-lg-7 col-md-12 col-sm-12 col-12 py-2">
+                            <h3 class="dash-abt">About</h3>
+                            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada condimentum pretium
+                                augue nunc, ut volutpat a etiam</p>
+                        </div>
+                        <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-none d-md-block d-sm-block d-block mob-prof-like-part">
+                            <div class="mob-swipe-prof text-center">
+                                
+                                <a href="">Click to see full profile</a>
+                            </div>
+                            <div class="mob-llps-btn p-3 text-center">
+                                <ul class="d-flex justify-content-center">
+                                <li class="btns-mob-li"><a href=""><i class="fas fa-times-circle del-icon"></i></a></li>
+                                
+                                <li class="btns-mob-li"><a href=""><i class="fas fa-heart-circle lk-icon"></i></a></li>
+                                <li class="btns-mob-li"><a href=""><img src="{% static 'web/images/icons/Chat 49x51.png' %}" alt="missing"></a></li>
+                                </ul>
+                                <div class="text-center plc-text"><h6>Pass, <span></span> Like or  <span></span> Chat</h6></div>
+            
+                                
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="premium-btn-box text-center d-lg-block d-md-none d-sm-none d-none">
+                        <a href="{% url 'web:view_profile_premium' %}" class="btn premium-btn get-premium-2"> Get Premium</a>
+                        <p class="p-4 premium-description ">See everyone who likes you with <span
+                                class="bismi-title">Kerala Zawaj</span> Premium.</p>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ------------------------------ app download section------------------------------------- -->
+
+
+    <section class="area-seven d-lg-block d-md-block d-sm-none d-none  position-relative">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card ">
+                 <a href=""> <img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card ">
+                 <a href=""> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+                <div class="download-content">
+                  <p class="dan">Download the app now!</p>
+      
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                <div class="">
+                  <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </section>
+
+</main>
+
+<footer class="footer d-lg-block d-md-block d-sm-none d-none ">
+    <div class="container">
+        <div class="row ">
+
+            <div class="cl-lg-12 col-md-12 col-sm-12 col-12">
+                <ul class="privacy d-lg-flex d-md-none d-sm-none d-flex">
+                    <li><a href="{% url 'web:contact' %}">Contact Us</a> <span class=""> | </span> </li>
+                    <li><a href="{% url 'web:terms' %}">Terms & Conditions</a> <span class=""> |</span> </li>
+                    <li><a href="{% url 'web:privacy' %}"> Privacy Policy</a></li>
+                </ul>
+
+                <ul class="text-center mob-ft-privacy d-lg-none d-md-block d-sm-block d-none">
+                    <li><a href="{% url 'web:contact' %}">Contact Us</a> </li>
+                    <li><a href="{% url 'web:terms' %}">Terms & Conditions</a> </li>
+                    <li><a href="{% url 'web:privacy' %}"> Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-12 col-md-6 col-sm-6 col-6">
+                <div class="footer-logo">
+                    <!-- <h2 class="footer-logo">LOGO</h2> -->
+                    <a class="navbar-brand " href="/">
+                        <img src="{% static 'web/images/KeralZawaj.svg' %}" alt="logo" class="bismi-logo">
+                    </a>
+                    <ul style="list-style: none;">
+                        <li style="padding-left: 63px;">
+                            <i class="fas fa-phone-alt pr-1"></i>
+                            <a href="">9876543210</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-sm-6">
+                <div class="social d-lg-flex d-flex d-sm-block ">
+                    <span class="follow-us-tt">Follow us on</span>
+                    <ul>
+                        <li class="social-icon"><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li class="social-icon"><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li class="social-icon"><a href=""><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <p class="copyright"> Copyright © 2021. All rights reserved.Passionately created by <a
+                    href="https://gedexo.com/" target="_blank">Gedexo</a> Designs</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'web/js/dashboard.js' %}"></script>
+<script src="{% static 'web/js/helper.js' %}"></script>
+<script src="{% static 'web/js/user-like.js' %}"></script>
+<script src="{% static 'web/js/login-check.js' %}"></script>
+<script src="{% static 'web/js/check-user-details.js' %}"></script>
+<script src="{% static 'chatbox/js/create-or-get-chat.js' %}"></script>
+<script src="{% static 'chatbox/js/get-messages-lists.js' %}"></script>
+<script src="{% static 'chatbox/js/get-chat-lists.js' %}"></script>
+<script src="{% static 'web/js/passed-profile.js' %}"></script>
+
+{% endblock %}

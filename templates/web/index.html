@@ -1,0 +1,524 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block title %}Kerala Zawaj - Home {% endblock %}
+{% block content %}
+
+
+<header class="banner-bg">
+  <nav class="navbar navbar-expand-sm fixed-top main-nav " id="navbar-scroll">
+
+    <a class="navbar-brand " href="/">
+      <img src="{% static 'web/images/KeralZawaj.svg' %}" alt="logo" class="bismi-logo">
+    </a>
+
+
+    <ul class="navbar-nav">
+
+      <li class="nav-item d-lg-flex d-md-flex d-sm-none d-none">
+        <a class="nav-link pr-4" href="#">Already a member ?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link sign-in-btn" href="{% url 'web:login' %}">Sign In</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid " id="mainBanner">
+    <div class="header-title d-lg-block d-md-none d-sm-none d-none">
+      <h1>Register Now!</h1>
+      <h1>Kerala's best Matrimonial services</h1>
+    </div>
+
+    <form class="header-form" id="registerForm" name="registerForm">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+          <label for="exampleFormControlSelect1" class="header-form-title">Matrimony profile for?</label>
+          <select name="profileFor" id="profileFor" class="form-control header-form-inputs">
+            <option selected disabled>Select Profile</option>
+            <option value="Self">Self</option>
+            <option value="Son">Son</option>
+            <option value="Daughter">Daughter</option>
+            <option value="Sister">Sister</option>
+            <option value="Brother">Brother</option>
+            <option value="Friend">Friend</option>
+            <option value="Father">Father</option>
+            <option value="Mother">Mother</option>
+          </select>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12 side-line">
+          <label for="exampleFormControlSelect1" class="header-form-title">Name</label>
+
+          <input name="fullName" id="fullName" type="text" class="form-control header-form-inputs"
+            placeholder=" Your Name" autocomplete="off">
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-12 side-line">
+          <label for="exampleFormControlSelect1" class="header-form-title">Mobile Number</label>
+
+          <input name="mobileNumber" id="mobileNumber" type="text" class="form-control header-form-inputs"
+            placeholder="Mobile Number" autocomplete="off">
+          <p id="errorId" style="color: red;"></p>
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-success header-form-button">Register for Free</button>
+      <div class="">
+        <span class="header-form-description">By clicking register for free, I agree to the T&C and Privacy
+          Policy</span>
+      </div>
+    </form>
+  </div>
+</header>
+
+<main>
+  <section class="pt-5 pb-5 area-one">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="area-one-title text-center">
+            <h2 class="bismi-title">KeralaZawaj</h2>
+            <p class="bismi-para">Kerala’s No. 1 Matrimony Website</p>
+          </div>
+        </div>
+      </div>
+      <!-- -------------------------for mobile view------------------------ -->
+      <div class=" row mobile-view-section-one d-lg-none d-md-none">
+        <div class="col-lg-12 col-md-6 col-sm-5 col-5 moble-view-div">
+          <div class="card section-one-img-card">
+            <img class="card-img-top" src="{% static 'web/images/icons/1.png' %}"
+              alt="Card image cap ronded-circle mx-auto section-one-img">
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6 col-sm-7 col-7 moble-view-div">
+          <div class="section-one-mob-title">
+            <h5 class="counts">12,000 <sup>+</sup></h5>
+            <p class="counts">Active Users</p>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-6 col-sm-5 col-5 moble-view-div">
+          <div class="card section-one-img-card">
+            <img class="card-img-top" src="{% static 'web/images/icons/2.png' %}"
+              alt="Card image cap ronded-circle mx-auto section-one-img">
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6 col-sm-7 col-7 moble-view-div">
+          <div class="section-one-mob-title">
+            <h5 class="counts">3,000 <sup>+</sup></h5>
+            <p class="counts">Sucessful stories</p>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-6 col-sm-5 col-5 moble-view-div">
+          <div class="card section-one-img-card">
+            <img class="card-img-top" src="{% static 'web/images/icons/3.png' %}"
+              alt="Card image cap ronded-circle mx-auto section-one-img">
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6 col-sm-7 col-7 moble-view-div">
+          <div class="section-one-mob-title">
+            <h5 class="counts">450<sup>+</sup></h5>
+            <p class="counts">Cities in service</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------------for large screen--------------------------- -->
+      <div class="row d-lg-flex d-sm-none d-md-flex d-none">
+        <div class="col-lg-4 col-md-4 pt-4 d-flex justify-content-center">
+          <div class="round">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/user.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center">
+              <h5 class="ct-apperas">12,000 <sup>+</sup></h5>
+              <p>Active User</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 pt-4 d-flex justify-content-center">
+          <div class="round">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/ring.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center">
+              <h5 class="ct-apperas">3,000 <sup>+</sup></h5>
+              <p>Successfull Stories</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 pt-4 d-flex justify-content-center">
+          <div class="round">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/service.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center">
+              <h5 class="ct-apperas">450 <sup>+</sup></h5>
+              <p>Cities in Service</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="area-two">
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="text-center abt-bismi">
+            <h2>About <span class="split-title"> KeralaZawaj</span></h2>
+            <p>Keralazawaj is the leading matrimonial website that aims to find perfect partners for everyone. The
+              profiles are verified and only trustful ones are accepted. The best proficient methods are followed to
+              keep your profile data safe. The enormous collection of profiles assures your chances of getting the
+              perfect mate.</p>
+          </div>
+
+          <div class="text-center">
+            <h2>Why <span class="split-title"> KeralaZawaj</span></h2>
+            <p class="abt-bismi-2">We value the prestige of a wedding and we are bound to find the best mates for all.
+              We present a simple and easier process for searching for your dream partner. Registration is completely
+              free and a wide range of profile collections are available on this matrimonial website. The user can
+              search profiles by setting their preferences and requirements. We strive for your happy marriage and happy
+              family life.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- -------------------------testimonial start-------------------------------------- -->
+
+  <section>
+    <div class="container">
+      <div class="row pt-5">
+
+        <div class="col-lg-12">
+          <div class="owl-carousel">
+            {% for testimonial in testimonials %}
+            <div class="item">
+              <div class="story-image">
+                <img src="{{testimonial.image.url}}" alt="" class="rounded-circle mx-auto">
+              </div>
+              <div class="star-box text-center pt-2">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+              </div>
+              <div class="text-center pt-2 testimonial-description">
+                <p class="">“ {{testimonial.description}} ”</p>
+                <h5>{{tesimonial.name}}</h5>
+              </div>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="item">
+                <div class="story-image">
+                  <img src="{% static 'web/images/testimonial/testi-2.png' %}" alt="" class="rounded-circle mx-auto">
+                </div>
+                <div class="text-center pt-2 testimonial-description">
+                  <div class="star-box text-center">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                  </div>
+                  <p class="">“ Lorem ipsum dolor sit amet, consectetur adipiscing elit ”</p>
+                  <h5>Mohammed Ashik</h5>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="story-image">
+                  <img src="{% static 'web/images/testimonial/testi-3.png' %}" alt="" class="rounded-circle mx-auto">
+                </div>
+                <div class="text-center pt-2 testimonial-description">
+                  <div class="star-box text-center">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                  </div>
+                  <p class="">“ Lorem ipsum dolor sit amet, consectetur adipiscing elit ”</p>
+                  <h5>Mohammed Ashik</h5>
+                </div>
+              </div>
+              <div class="item">
+                <div class="story-image">
+                  <img src="{% static 'web/images/testimonial/testi-4.png' %}" alt="" class="rounded-circle mx-auto">
+                </div>
+                <div class="text-center pt-2">
+                  <div class="star-box text-center">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                  </div>
+                  <p class="">“ Lorem ipsum dolor sit amet, consectetur adipiscing elit ”</p>
+                  <h5>Mohammed Ashik</h5>
+                </div>
+              </div> -->
+
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-12 col-12 p-3">
+          <div class="text-center">
+            <a href="#mainBanner" class="btn testimonial-reg-btn"> Register for Free</a>
+            <p class="testimonial-reg-content">Register now to gain free access to 50+ Profiles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------testimonial end-------------------------------------- -->
+
+  <section class="area-five">
+    <div class="container">
+      <div class="row pb-5">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 pt-5 pb-4">
+          <div class="area-five-title text-center">
+            <h2>What sets us apart?</h2>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-6 py-5 d-flex justify-content-center">
+          <div class="square">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/hand-shake.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center pt-3">
+              <h5 class="wsua-md-sc">Manually Verified Profiles</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-6 py-5 d-flex justify-content-center">
+          <div class="square">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/advice.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center pt-3">
+              <h5 class="wsua-md-sc">Live Assistance</h5>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-6  py-5 d-flex justify-content-center">
+          <div class="square">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/owl.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center pt-3">
+              <h5 class="wsua-md-sc">Personal Advisor </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-6  py-5 d-flex justify-content-center">
+          <div class="square">
+            <div class="icon text-center">
+              <i class=""> <img src="{% static 'web/images/icons/secure.png' %}" alt="" class="icons"></i>
+            </div>
+            <div class="text-center pt-3">
+              <h5 class="wsua-md-sc">100% Secure & Geniune Profiles</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area-six">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 pt-5 pb-5">
+          <div class="text-center">
+            <p class="para cntnt">Community Matchmaking, Trusted by Parents
+              <a href="#mainBanner" class="btn para register-btn">Register for Free</a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area-seven">
+    <div class="container">
+
+      <div class="row download-section-desktop-view d-lg-flex d-md-none d-sm-none d-none">
+        <div class="col-lg-3 col-md-3">
+
+          <div class="row">
+            <div class="col-12">
+              <div class="download-logo">
+                <a href="#"> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt=""
+                    class="apple-android"></a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="download-logo">
+                <a href="#"><img src="{% static 'web/images/icons/playstore-logo.png' %}" alt=""
+                    class="apple-android"></a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- <div class="download-logo">
+              <img src="{% static 'web/images/icons/apple android.png' %}" alt="" class="apple-android">
+            </div> -->
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="download-content-index">
+            <p>Now instantly contact your matches from your community</p>
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3">
+          <div class="phone-logo">
+            <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="phone-logo">
+          </div>
+        </div>
+      </div>
+      <!-- download mobile-view-------------------------- -->
+      <div class="row download-section-mob-view d-lg-none d-md-flex d-sm-flex d-flex">
+        <div class="col-md-6 col-sm-6 col-6">
+          <div class="download-section-mob-view-content">
+            <h4>Download free Mobile app</h4>
+          </div>
+          <div class="card mob-dwnld-img-box">
+            <a href=""> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}"
+                class="card-img-top mx-auto store-logo" alt="store-logo"></a>
+            <a href=""><img src="{% static 'web/images/icons/playstore-logo.png' %}"
+                class="card-img-top mx-auto store-logo" alt="store-logo"></a>
+
+          </div>
+          <!-- <div class="card mob-dwnld-img-box" >
+              <img src="{% static 'web/images/icons/playstore-logo.png' %}" class="card-img-top mx-auto store-logo" alt="store-logo">
+            </div> -->
+        </div>
+        <div class="col-md-6 col-sm-6 col-6 mob-phone-box">
+          <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mx-auto mob-phone-logo">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- --------------------------stories start ------------------------------------------- -->
+  <section class="story-section">
+    <div class="container pt-5 pb-5">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center p-4">
+            <h2> <span class="bismi-title tt-bis-al-1">Our wedding </span> Stories</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-theme">
+            {% for story in stories %}
+            <div class="item">
+              <div class="story-image">
+                <img src="{{story.image.url}}" alt="" class="rounded-circle mx-auto">
+              </div>
+              <div class="text-center pt-2">
+                <h4>"{{story.name}}"</h4>
+              </div>
+            </div>
+            {% endfor %}
+
+            <!-- <div class="item">
+                <div class="story-image text-center">
+                  <img src="{% static 'web/images/team/2.png' %}" alt="" class="rounded-circle mx-auto">
+                </div>
+                <div class="text-center pt-2">
+                  <h4>"Akbarali & Easa"</h4>
+                </div>
+              </div>
+              <div class="item">
+                <div class="story-image text-center">
+                  <img src="{% static 'web/images/team/3.png' %}" alt="" class="rounded-circle mx-auto">
+                </div>
+                <div class="text-center pt-2">
+                  <h4>"Akbarali & Easa"</h4>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="story-image text-center">
+                  <img src="{% static 'web/images/team/4.png' %}" alt="" class="rounded-circle mx-auto">
+                </div>
+                <div class="text-center pt-2">
+                  <h4>"Akbarali & Easa"</h4>
+                </div>
+              </div> -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- --------------------------stories end ------------------------------------------- -->
+
+
+
+</main>
+
+
+
+{% endblock %}
+
+{% block javascript %}
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+<script src="{% static 'web/js/register.js' %}"></script>
+<script src="{% static 'web/js/owlcarousel.js' %}"></script>
+
+<!-- <script>
+    $(document).ready(function() {
+        var url      = window.location.href;   
+    $.ajax({
+        url : 'https://keralazawaj.com/api/user/check-login/',
+        type : 'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader(
+              "Authorization",
+              "Token " + localStorage.getItem("token")
+            );
+          },
+          success: function (response) {
+              if(url!="https://keralazawaj.com/dashboard/"){
+            window.location = "https://keralazawaj.com/dashboard/"
+              }
+          },
+        statusCode: {
+            401: function(response) {
+                if(url!="https://keralazawaj.com/login/" && url!="https://keralazawaj.com/") 
+                window.location = "https://keralazawaj.com/login/"
+            },
+        },
+  
+    });
+  });
+  </script> -->
+
+
+{% endblock %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button class="btn" id="pay-btn">Donate❤️</button>
+<form>
+    {% csrf_token %}
+</form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        let params = (new URL(document.location)).searchParams;
+        let subscription = params.get("subscription");
+    </script>
+    <script>
+        var options = null
+        $.ajax({
+            url: "/api/user/payment/?subscription=" + subscription,
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    "Authorization",
+                    "Token " + localStorage.getItem("token")
+                );
+            },
+            success: function (response) {
+                if (response['payment'] == 404) {
+                    window.location.href = "/subscription-plans-view/"
+                }
+                options = {
+                    // Enter the Key ID generated from the Dashboard
+                    key: "rzp_test_eKEgcDtu6x5aa9",
+
+                    // Amount is in currency subunits.
+                    // Default currency is INR. Hence,
+                    // 50000 refers to 50000 paise
+                    amount: response.payment.amount,
+                    currency: response.payment.currency,
+
+                    // Your/store name.
+                    name: "Dj Razorpay",
+
+                    // Pass the `id` obtained in the response of Step 1
+                    order_id: response.payment.id,
+
+                    handler: function (response) {
+                        // we will handle success by calling handlePaymentSuccess method and
+                        // will pass the response that we've got from razorpay
+                        handlePaymentSuccess(response);
+                    },
+                };
+
+                // initialise razorpay with the options.
+
+                // add event listener to the payment button.
+
+
+            },
+        });
+        document.getElementById("pay-btn").onclick = function (e) {
+            var rzp1 = new Razorpay(options);
+
+            rzp1.open();
+            e.preventDefault();
+        };
+        function handlePaymentSuccess(response) {
+            let bodyData = new FormData();
+
+            console.log("-------- Reponse : ", response.razorpay_payment_id);
+
+            var csrf_token1 = $('[name="csrfmiddlewaretoken"]').val();
+            bodyData.append("response", JSON.stringify(response));
+            bodyData.append("csrfmiddlewaretoken", csrf_token1);
+            bodyData.append("subscription", subscription);
+            bodyData.append("razorpay_payment_id", response.razorpay_payment_id);
+            bodyData.append("razorpay_order_id", response.razorpay_order_id);
+            bodyData.append("razorpay_signature", response.razorpay_signature);
+
+            for (var pair of bodyData.entries()) {
+                console.log(pair[0] + ', ' + pair[1]);
+            }
+
+            $.ajax({
+                url: "/api/user/subscribed-users/",
+                type: "POST",
+                data: bodyData,
+                processData: false,
+                contentType: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader(
+                        "Authorization",
+                        "Token " + localStorage.getItem("token")
+                    );
+                },
+                statusCode: {
+            200: function(response) {
+                alert('Order successfull')
+            },
+            404: function(response){
+              alert("Payment Failed")
+                // $("[id=premieumsubscrptn]").hide()
+            }
+        },
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>

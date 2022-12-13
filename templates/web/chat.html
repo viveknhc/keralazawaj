@@ -1,0 +1,131 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+{% block title %}Kerala Zawaj -Chat {% endblock %}
+{% block content %}
+<main>
+    <section style="margin-top: 8rem;" class="pb-4">
+        <div class="container" style="background-color:rgba(235, 248, 237, 0.3);">
+            <div class="row clearfix">
+                <div class="col-lg-12 py-3" >
+                    <div class="chat-card chat-app">
+                        <div id="plist" class="people-list">
+                           
+                            <ul class="list-unstyled chat-list mt-2 mb-0" id="chatlist">
+                                <!-- Remove following <li>s (Will Add dianamicaly by JS) -->
+                                <li class="clearfix">
+                                    <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                    
+                                    <div class="about">
+                                        <div class="name">Vincent Porter</div>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>                                            
+                                    </div>
+                                </li>
+                                <li class="clearfix active">
+                                    <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Aiden Chavez</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Mike Thomas</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                </li>                                    
+                                <li class="clearfix">
+                                    <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Christian Kelly</div>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Monica Ward</div>
+                                        <div class="status"> <i class="fa fa-circle online"></i> online </div>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                    <div class="about">
+                                        <div class="name">Dean Henry</div>
+                                        <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-header clearfix">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                            <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="avatar">
+                                        </a>
+                                        <div class="chat-about">
+                                            <h6 class="m-b-0">Aiden Chavez</h6>
+                                            <small>Last seen: 2 hours ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-history">
+                                <ul class="m-b-0">
+                                    <li class="clearfix">
+                                        <div class="message-data text-right">
+                                            <!-- <small class="message-data-time">10:10 AM, Today</small> -->
+                                            <img src="{% static 'web/images/testimonial/testi-3.png' %}" alt="avatar">
+                                        </div>
+                                        <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? <small class="message-data-time">10:12 AM</small> </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <!-- <div class="message-data">
+                                        </div> -->
+                                           
+                                            <div class="message my-message">Are we meeting today?  <small class="message-data-time">10:12 AM</small></div>                                    
+                                    </li>                               
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <!-- <small class="message-data-time">10:15 AM, Today</small> -->
+                                        </div>
+                                        <div class="message my-message">Project has been already finished and I have results to show you. <small class="message-data-time">10:15 AM, Today</small></div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <div class="message-data text-right">
+                                            <!-- <small class="message-data-time">10:10 AM, Today</small> -->
+                                            <img src="{% static 'web/images/testimonial/testi-3.png' %}" alt="avatar">
+                                        </div>
+                                        <div class="message other-message float-right"> Hi  <small class="message-data-time">10:12 AM</small> </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <!-- <div class="message-data">
+                                        </div> -->
+                                           
+                                            <div class="message my-message">Are we meeting today?  <small class="message-data-time">10:12 AM</small></div>                                    
+                                    </li>   
+                                </ul>
+                            </div>
+                                <!-- -----------text and send------ -->
+                            <div class="chat-message clearfix">
+                                <div class="input-group mb-0">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text send-icon"><i class="fa fa-send"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Enter text here...">                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+</main>
+{% include 'web/partials/footer.html' %}
+<script src="{% static 'web/js/get-chat-lists.js' %}"></script>
+
+
+{% endblock %}

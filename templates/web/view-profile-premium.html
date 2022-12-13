@@ -1,0 +1,191 @@
+{% extends 'web/base-two.html' %}
+{% load static %}
+{% block content %}
+
+
+    <main>
+
+        <div class="like-premium-box-2 p-4" id="premium">
+            <div class="">
+              <img src="{% static 'web/images/profiles/pf-1.png' %}" alt="missing" class="mx-auto d-block pre-icon rounded-circle">
+            </div>
+            <p class="pre-titile text-center">
+                To view full profile & contact details unlock <br>
+              <span class="bismi-title-lk bismi-color">Kerala Zawaj</span> <br> 
+              Premium
+            </p>
+            <div class="text-center p-4">
+            <a href="{% url 'web:view_profile' %}"> <button class="btn pre-button">View full profile</button> </a> 
+    
+            </div>
+          </div>
+
+          <section class="pb-5 py-5 view-profile-premium dashboard-section-mt">
+
+            <div class="container">
+
+                <div class="row p-4">
+                    <div class="col-12 text-center">
+                        <div class="form-group has-search d-lg-none d-md-flex d-sm-flex d-flex">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+    
+                    </div>
+                </div>
+
+            
+            </div>
+            <!-- -------------ok -->
+
+            <div class="container dash-box">
+
+              <div class="row py-4 d-lg-flex d-md-none d-sm-none d-none">
+
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 p-user-details">
+                  <h5 class="u-name-id">Full Name</h5>
+                  <span class="dt">22<sup> <i class="fas fa-heart"></i></sup> </span>
+                  <span class="dt"> Unmarried <sup> <i class="fas fa-heart"></i></sup> </span>
+                  <span class="dt"> Ramanattukara, Calicut</span>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                    <a href="" class="btn pass-btn"><i class="fas fa-times-circle"></i>Pass</a>
+                    <a href="" class="btn like-btn"> <i class="fas fa-heart-circle"></i>Like</a>
+                  </div>
+              </div>
+              <!-- ----------ok -->
+  
+              <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 py-2">
+                  <div class="card profile-box">
+                   <a href="view-profile-premium.html">  <img class="card-img-top mx-auto d-block prof-view" src="{% static 'web/images/profiles/blur-img.png' %}" alt="Card image cap"> </a>
+                  </div>
+                  <!-- <div class="text-center">
+                      <button class="btn img-change-btns rounded-circle"></button>
+                      <button class="btn img-change-btns rounded-circle"></button>
+                      <button class="btn img-change-btns rounded-circle"></button>
+                  </div> -->
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-user-details d-lg-none d-md-block d-sm-block d-block mob-dash-prof-view px-4">
+                    <h5 class="u-name-id">Username / Matrimony ID</h5>
+                    <span class="dt">22<sup> <i class="fas fa-heart"></i></sup> </span>
+                    <span class="dt"> Unmarried <sup> <i class="fas fa-heart"></i></sup> </span>
+                    <span class="dt">Calicut</span>
+                </div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 col-12 py-2 mob-abt-rs">
+                  <div class="">
+                    <h5 class="view-prof-titles d-lg-block d-md-none d-sm-none d-none">My self-summary</h5>
+                    <h5 class="view-prof-titles d-lg-none d-md-block d-sm-block d-block">About</h5>
+                    <p class="my-self-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada condimentum pretium augue nunc, ut volutpat a etiam</p>
+                  </div>
+                  <div class="person-description">
+                      <p> <i class="fas fa-child"></i> <span class="person-details">5 ft 5 in | 65 kg | Fit </span> </p>
+                      <p> <i class="fas fa-users"></i> <span class="person-details">Shafi Ma’dhab</span> </p>
+                      <p> <i class="fas fa-globe"></i> <span class="person-details">Under Graduate (UG)</span></p>
+                      <p> <i class="fas fa-suitcase"></i> <span class="person-details">UI UX Designer</span></p>
+                  </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="row d-lg-none d-md-flex d-sm-flex d-flex">
+                        <div class="col-12">
+                        <h6 class="mob-contact-tt"><i class="fas fa-phone-alt"></i>Contact details </h6>
+
+                        </div>
+
+                        <div class="col-lg-12 col-md-6 col-sm-6 col-6 mob-for-numb">
+                            <p>+91 9876543210</p>
+                        </div>
+                        <div class="col-lg-12 col-md-6 col-sm-6 col-6 mob-for-numb">+91 9876543210</div>
+                    </div>
+                    <div class="justify-content-space-around person-contact-details d-lg-flex d-sm-none d-none">
+                        <p class="ct-title mob-ct-title"><i class="fas fa-phone-alt"></i> <span></span> <span></span> Contact details</p>
+                        <p class="ct-title">Primary Number <br><span>+91 9876543210</span></p>
+                        <p class="ct-title">Secondary Number <br><span>+91 9876543210</span></p> 
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="person-adrs">
+                      <p> <i class="fas fa-home adrs-icon"></i>Native Address</p>
+                      <p><address class="location" >
+                          Bismillah House, Vaidhyarangadi <br>
+                          Ramanattukara  Pin: 678 876
+                      </address></p>
+  
+                    </div>
+                  
+  
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                  <div class="person-adrs ">
+                    <p> <i class="fas fa-map-marker-alt adrs-icon"></i>Current Address</p>
+                    <p><address class="location">
+                        Bismillah House, Vaidhyarangadi <br>
+                        Ramanattukara  Pin: 678 876
+                    </address></p>
+  
+                  </div>
+                 
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-lg-none d-md-block d-sm-block d-block mob-prof-like-part">
+                    
+                    <div class="mob-llps-btn p-3 text-center">
+                        <a href=""><i class="fas fa-times-circle del-icon"></i></a>
+                        <a href=""><i class="fas fa-heart-circle lk-icon"></i></a>
+                    </div>
+                </div>
+              </div>
+
+            </div>  
+
+         
+        </section>
+
+        <section class="area-seven position-relative">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card ">
+                 <a href=""> <img src="{% static 'web/images/icons/playstore-logo.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 d-flex align-items-center">
+                <div class="download-logo-second card">
+                 <a href=""> <img src="{% static 'web/images/icons/apple_store-removebg-preview.png' %}" alt="" class="apple-android mx-auto d-block"></a>
+                </div>
+              </div>
+      
+              <div class="col-lg-5 col-md-4 col-sm-4 d-md-none d-sm-none d-lg-block d-none col-4">
+                <div class="download-content">
+                  <p class="dan">Download the app now!</p>
+      
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-4 col-4">
+                <div class="">
+                  <img src="{% static 'web/images/icons/phone-logo.png' %}" alt="" class="mobile-logo position-absolute" style="bottom: 0;">
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </section>
+
+    </main>
+
+    {% include 'web/partials/footer.html' %}
+
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'web/js/login-check.js' %}"></script>
+
+  <script src="{% static 'web/js/customjs/discovery.js' %}"></script>
+{% endblock %}
